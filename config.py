@@ -20,7 +20,7 @@ config = edict()
 
 config.it=edict()
 config.it.debug=edict()
-config.it.debug.debug =  not  True
+config.it.debug.debug =   True
 config.it.debug.feat_shape=None#[5,4]#None # #  [1,3,6,6]
 
 """
@@ -73,7 +73,7 @@ config.train.timeStamp=time.asctime()
 config.train.outputPath='../output/'
 config.train.save_prefix=os.path.join(config.train.outputPath, config.train.timeStamp+'_angleD='+str(config.ANCHOR_angleD)+\
                          ';HoW='+str(config.ANCHOR_HoW)+';sideLength='+str(config.ANCHOR_sideLength) )
-config.train.batch_size = 2
+config.train.batch_size = 1  # do i forget this mean?
 config.train.callbackBatch = 4
 config.train.is_save = True
 

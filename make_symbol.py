@@ -131,9 +131,12 @@ def feval_l1_angleMetric( label, pred):
     return np.abs(pred).sum()*1./(label>0).sum()
 
 def feval_acc_angleMetric(label, pred):
+#    assert 0, (pred.shape, label.shape)
+    pred = np.argmax(pred, axis=2)
     pred, label = [ x.astype('int32') for x in [pred, label] ]
     # return sum_metric, num_inst
-    sum_metric, num_inst  = ( pred[label>0].flat == label[label>0].flat ).sum(), label[label>0].size
+    
+    sum_metric, num_inst  = np.sum( pred[label>0].flat == label[label>0].flat ), label[label>0].size
     return  sum_metric, num_inst
 
 

@@ -43,7 +43,7 @@ for epoch_i in xrange(cfg.it.epoch):
     mod.update()
     out = mod.get_outputs()
     #logging.info(mx.nd.mean(out[2]).asnumpy())
-    logging.info(out[2].shape)
+#    logging.info(out[2].shape)
 #    logging.info( (mx.nd.min(out[2]), mx.nd.max(out[2]) ) )
 #    logging.info(out[0].asnumpy() )
     mA_acc.update( [ d0.label[0]  ], [out[0]])
@@ -58,5 +58,7 @@ for epoch_i in xrange(cfg.it.epoch):
       mA_acc.reset()
       mA_l1.reset()
       t0 = time.time()
-      
-  mod.save_checkpoint(cfg.train.save_prefix, epoch_i)
+  if not cfg.debug.debug:
+    mod.save_checkpoint(cfg.train.save_prefix, epoch_i)
+  else:
+    logging.debug('epoch[%d] ended, ignore save_checkpoint, release config.debug.debug to save training'%epoch_i)

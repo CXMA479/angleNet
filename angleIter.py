@@ -73,7 +73,7 @@ def post_iou(iou_matrix,anchor,gdt):
 
     # 3rd. each gdt must have its own agent , label
     pred_idx=iou_matrix.argmax(0)
-    logging.debug('each gdt box\'s anchor idx:'+str(pred_idx))
+#    logging.debug('each gdt box\'s anchor idx:'+str(pred_idx))
     target_bbx[pred_idx,:] = gdt[:,1:]
 #    target_weight[pred_indx][:] =1
     target_label[pred_idx]     =1
@@ -86,10 +86,10 @@ def post_iou(iou_matrix,anchor,gdt):
 
     # resolve conflict mappings, several anchors are allowed to share one gdt, but reversal is not allowed
     pred_idx_uniq,idx_cnts = np.unique(pred_idx,return_counts=True)
-    logging.debug('idx_cnt: %s, idx_uniq: %s'%(str(idx_cnts),str(pred_idx_uniq))  )
+#    logging.debug('idx_cnt: %s, idx_uniq: %s'%(str(idx_cnts),str(pred_idx_uniq))  )
     conf_idx = np.where(idx_cnts>1)[0]
     if len(conf_idx)>0:
-      logging.debug('conflict idx:'+str(conf_idx))
+#      logging.debug('conflict idx:'+str(conf_idx))
       for ppidx in conf_idx: # recursive pointer, to keep thing simple, choose the maximum gdt
         anchor_idx = pred_idx_uniq[ppidx]
 #        logging.debug('conflict entry: '+str(iou_matrix[anchor_idx]))
@@ -104,9 +104,9 @@ def post_iou(iou_matrix,anchor,gdt):
   max_fg  = int(config.train.rpn_fg_frac * config.train.rpn_batch_size)
   fg_indx = np.where(target_label==1)[0]  # how many objectives are there
 #  print(len(fg_indx))
-  logging.debug('ojectives num:%d'%len(fg_indx))
+#  logging.debug('ojectives num:%d'%len(fg_indx))
   if len(fg_indx) > max_fg:
-    logging.debug('too many objectives, downsample...')
+#    logging.debug('too many objectives, downsample...')
     disable_indx = npr.choice(fg_indx, len(fg_indx)-max_fg, replace=False)
     target_label[disable_indx] = -1
 
@@ -117,9 +117,9 @@ def post_iou(iou_matrix,anchor,gdt):
 #  assert 0
 
 
-  logging.debug('background num:%d'%len(bg_indx))
+#  logging.debug('background num:%d'%len(bg_indx))
   if len(bg_indx) > max_bg:
-    logging.debug('too many background, downsample...')
+#    logging.debug('too many background, downsample...')
     disable_indx = npr.choice( bg_indx, size=(len(bg_indx) - max_bg),replace=False)
     target_label[disable_indx] = -1
 
@@ -335,8 +335,8 @@ class angleIter(mx.io.DataIter):
 
     self.lgSize=len(self.lg)   # as Batch Channel
     self.imgHWC=self.img.shape
-    if config.debug.debug:
-      logging.debug('image shape:'+str(self.imgHWC))
+#    if config.debug.debug:
+#      logging.debug('image shape:'+str(self.imgHWC))
     H,W,C=self.imgHWC
     if self.feat_sym is not None:
       _, self.feat_shape, _=self.feat_sym.infer_shape(**{self.dataNames[0]:(1,C,H,W)})  # it only needs img
@@ -348,7 +348,7 @@ class angleIter(mx.io.DataIter):
 
     #     label, bbx, weight
     feat_shape = self.feat_shape
-    logging.debug('feat_shape:%s'%(str(feat_shape)))
+#    logging.debug('feat_shape:%s'%(str(feat_shape)))
 #    self.provide_label=[(self.labelNames[0],(feat_shape[-2]*feat_shape[-1]*self.type_num,1)),\
 #            (self.labelNames[1],(feat_shape[-2]*feat_shape[-1]*self.type_num,5))]#,\
 #            (self.labelNames[2],(feat_shape[-2]*feat_shape[-1]*self.type_num,5))]
@@ -402,10 +402,10 @@ class angleIter(mx.io.DataIter):
     self.raw_img = img.astype(np.uint8)
     self.target_label,self.target_bbx, self.rpn_inside_weight, self.rpn_outside_weight =\
                                          post_iou(self.iou_matrix,self.anchor,self.gdt)
-
+    """
     if config.it.debug.debug:
 #      logging.debug('[IoU] time elapsed:'+str(time.time()-start))
-      logging.debug('[IoU] maximum:%f'%np.max(self.iou_matrix))
+#      logging.debug('[IoU] maximum:%f'%np.max(self.iou_matrix))
 #      logging.debug('iou matrix:'+str(iou_matrix))
 #      logging.debug('begin to calculate IoU...')
 #      logging.debug('anchor:'+str(anchor))
@@ -436,7 +436,7 @@ class angleIter(mx.io.DataIter):
 
 #      plt.show()
 
-
+    """
 #    print(self.target_label.shape)
 #    assert 0
 

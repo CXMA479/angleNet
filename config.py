@@ -38,7 +38,7 @@ config.ANCHOR_stride =None#  deprecated, calculated in angleIter.py automaticall
 config.class_num=2   # only building and background
 
 config.debug=edict()
-config.debug.debug= not True
+config.debug.debug= True
 config.debug.it = edict()
 config.debug.it.anchor_num = 60  # randomly show some of anchors on the figure in angleIter.next()
 

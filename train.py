@@ -15,7 +15,7 @@ from config import config as cfg
 
 import sys, time, logging
 from angleIter import angleIter
-from make_symbol import gen_symbol, gen_model, feval_l1_angleMetric
+from make_symbol import gen_symbol, gen_model, feval_l1_angleMetric, feval_acc_angleMetric
 from tool import mytick,viz_score_predict, viz_bbox_gdt, viz_target
 import matplotlib.pyplot as plt
 
@@ -28,7 +28,7 @@ d0=it.next()
 
 #############################################################
 # TODO: 1. acc-metric needs inter-face to ignore specific labels; 2. l1_smooth loss may only need sum/ avg
-mA_acc=mx.metric.create('acc') #mx.metric.CustomMetric(angleMetric)
+mA_acc=mx.metric.CustomMetric(feval_acc_angleMetric, name='masked acc')#mx.metric.create('acc') #
 mA_l1 = mx.metric.CustomMetric(feval_l1_angleMetric, name='l1_smooth loss')
 #############################################################
 
@@ -46,8 +46,8 @@ for epoch_i in xrange(cfg.it.epoch):
     logging.info(out[2].shape)
 #    logging.info( (mx.nd.min(out[2]), mx.nd.max(out[2]) ) )
 #    logging.info(out[0].asnumpy() )
-    mA_acc.update([out[0]], [ d0.label[0]  ])
-    mA_l1.update([out[1]], [ d0.label[1]  ])
+    mA_acc.update( [ d0.label[0]  ], [out[0]])
+    mA_l1.update([ d0.label[0]  ], [out[1]] )
 #    logging.info(batch_i)
 
     if batch_i % cfg.train.callbackBatch ==0 and batch_i is not 0: # log info

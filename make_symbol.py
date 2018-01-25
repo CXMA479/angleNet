@@ -128,7 +128,16 @@ def feval_l1_angleMetric( label, pred):
     """    just abs_sum the pred """
 #    logging.info( np.abs(pred).sum() )
 #    logging.info(pred.size)
-    return np.abs(pred).sum()*1./pred.size
+    return np.abs(pred).sum()*1./(label>0).sum()
+
+def feval_acc_angleMetric(label, pred):
+    pred, label = [ x.astype('int32') for x in [pred, label] ]
+    # return sum_metric, num_inst
+    sum_metric, num_inst  = ( pred[label>0].flat == label[label>0].flat ).sum(), label[label>0].size
+    return  sum_metric, num_inst
+
+
+
 
 
 class AngleMetric(mx.metric.CustomMetric):

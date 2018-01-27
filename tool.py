@@ -283,7 +283,8 @@ def viz_score_predict(img, anchors, anchor_gdt, predict_bbox, scores, score_th=.
         scores:
             (1, hw x num, 2)
     """
-    assert scores.shape[2]==2 and anchor_gdt.shape[0]==1
+    if anchor_gdt is not None:
+        assert scores.shape[2]==2 and anchor_gdt.shape[0]==1
     assert img.dtype==np.uint8
     valid_idx = scores[0]>score_th
     valid_idx = valid_idx[:,1]
@@ -301,16 +302,21 @@ def viz_score_predict(img, anchors, anchor_gdt, predict_bbox, scores, score_th=.
                 valid_idx[idx] = True
 #            print('set some to true',sum(valid_idx))
 #    print(anchors[valid_idx,:].shape, sum(valid_idx),valid_idx)
-    gdt_box = bbox_inv_transfer(anchors[valid_idx,:], anchor_gdt[0][valid_idx,:])
+    if anchor_gdt is not None:
+        gdt_box = bbox_inv_transfer(anchors[valid_idx,:], anchor_gdt[0][valid_idx,:])
+        img=draw_angleBox(img, gdt_box.astype(np.float), [255,0,0]) # cv2 use bgr...  -_-||
+        title_s = 'gdt: blue, pred: red, obj-scores'
+    else:
+        title_s = 'pred: red, obj-scores'
     pred_box = bbox_inv_transfer(anchors[valid_idx,:],predict_bbox[0][valid_idx,:])
     # draw on the image...
     ## gdt is blue, while predict is red...
-    img=draw_angleBox(img, gdt_box.astype(np.float), [255,0,0]) # cv2 use bgr...  -_-||
+
     img=draw_angleBox(img, pred_box.astype(np.float), [0,0,255])
     ## attach scores...
     plt.imshow(img)
     text_fig(ax, pred_box[:,:2],scores[0,valid_idx,1])
-    plt.title('gdt: blue, pred: red, obj-scores')
+    plt.title(title_s)
     plt.show()
 
 
@@ -395,6 +401,14 @@ class GroupMetrix(object):
 
 
 
-
+def proc4pred(imgPath, mean=[0,0,0], std=1):
+    """
+        return img_data for DataBatch
+    """
+    with open(imgPath,'rb') as f:
+        img = mx.nd.array( mx.img.imdecode(f.read()).asnumpy() - np.array(mean) )/std
+    img = mx.nd.transpose(img, axes = (2, 0, 1) )
+    img_data = mx.nd.expand_dims(img, axis=0)
+    return img_data
 
 

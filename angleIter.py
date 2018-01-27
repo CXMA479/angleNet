@@ -159,7 +159,8 @@ class angleIter(mx.io.DataIter):
       'img','label','gdt'
 
   """
-  def __init__(self,symGp=None,featName=None, is_train=True):
+  def __init__(self,symGp=None,featName=None, is_train=True, labelFile=config.it.labelFile,\
+            imgPath = config.it.imgPath):
     """
                         labelName: used for anchor-wise regression
       symGp : mx.symbol.Group([])
@@ -194,10 +195,10 @@ class angleIter(mx.io.DataIter):
     self.data_shapes  = []
     self.label_shapes = []
 
-    assert os.path.isfile(config.it.labelFile)
-    self.fileName = config.it.labelFile
-    assert os.path.isdir(config.it.imgPath)
-    self.imgPath = config.it.imgPath
+    assert os.path.isfile(labelFile),labelFile
+    self.fileName = labelFile
+    assert os.path.isdir(imgPath), imgPath
+    self.imgPath = imgPath
 
     if config.it.debug.feat_shape is not None:
       assert cfg.it.debug.debug is True
@@ -295,7 +296,6 @@ class angleIter(mx.io.DataIter):
 
   def gen_ioufileDir(self,imgName,featName):
     assert '.' in imgName
-
     ioufile=self.ioudir+'_'+imgName[:-4]+featName+'_anchor_iou.npz'# store anchor and iou
     if  not os.path.isfile(ioufile): # prepare to gen, no suffix of .npy
       return self.ioudir+'_'+imgName[:-4]+'_anchor_iou'   

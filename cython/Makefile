@@ -1,5 +1,5 @@
 
-CC=gcc-6
+CC=gcc-4.9
 
 FLAG= -shared -pthread -fPIC -O3 -Wall -fno-strict-aliasing
 INCLUDE = -I/usr/include/python2.7
@@ -11,3 +11,6 @@ all:$(target)
 
 $(target):$(src).c
 	$(CC)  $(FLAG) $(INCLUDE) -o $@ $^
+
+$(src).c:$(src).pyx
+	cython $^

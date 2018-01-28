@@ -17,10 +17,10 @@ import mxnet as mx
 
 
 config = edict()
-
+config.comment ='use dynamic sample allocation'
 config.it=edict()
 config.it.debug=edict()
-config.it.debug.debug =   True
+config.it.debug.debug = not  True
 config.it.debug.feat_shape=None#[5,4]#None # #  [1,3,6,6]
 
 """
@@ -38,7 +38,7 @@ config.ANCHOR_stride =None#  deprecated, calculated in angleIter.py automaticall
 config.class_num=2   # only building and background
 
 config.debug=edict()
-config.debug.debug= True
+config.debug.debug= not True
 config.debug.it = edict()
 config.debug.it.anchor_num = 60  # randomly show some of anchors on the figure in angleIter.next()
 
@@ -46,8 +46,8 @@ config.it.scale=400
 
 config.it.imgPath='../data/%d'%config.it.scale#img'   #  angleNet/lab/it/angleIter.py
 config.it.labelFile='../data/angleList-%d.txt'%config.it.scale
-config.it.epoch=3
-config.it.iteration=40#00#*1000
+config.it.epoch=10
+config.it.iteration=40000#00#*1000
 config.it.dataNames=['data','rpn_inside_weight','rpn_outside_weight']    #  gdt: label, x, y, alphaR, rh, rw     will be used after proposal operation
 config.it.labelNames=['target_label','target_bbox']         #  target_label ONLY indicats wheather it is object
 config.it.shuffle=True
@@ -56,7 +56,7 @@ config.it.mean=[123.68, 116.28, 103.53]
 
 
 config.train=edict()
-config.train.ctx = mx.gpu()#mx.cpu()
+config.train.ctx = mx.gpu(1)#mx.cpu()
 config.train.iou_x_num=10     # referenced by angleIter.py
 config.train.THRESHOLD_OBJECT=.6  # ref by  angleIter.py
 config.train.THRESHOLD_BACKGD =.2
@@ -66,16 +66,19 @@ config.train.rpn_bbx_weight=[10., 10., 10., 20., 20.]  # x,y,alphaR,rh,rw rpn_in
 #config.train.rpn_bbox_outside_weight = 
 #config.train.rpn_bbox_inside_weight
 config.train.rpn_postive_weight=.6
-config.train.lr=0.01
+config.train.lr=0.00001 
 config.train.wd=1E-5
 config.train.momentum=.9
+config.train.l1_smooth_sclr = 3. # ref by mx.sym.smooth_l1
+
+
 config.train.timeStamp=time.asctime()
 config.train.outputPath='../output/'
 config.train.save_prefix=os.path.join(config.train.outputPath, config.train.timeStamp+'_angleD='+str(config.ANCHOR_angleD)+\
                          ';HoW='+str(config.ANCHOR_HoW)+';sideLength='+str(config.ANCHOR_sideLength) )
 config.train.batch_size = 1  # do i forget this mean?
-config.train.callbackBatch = 4
-config.train.is_save = True
+config.train.callbackBatch = 40
+config.train.is_save =  True
 
 
 config.net=edict()
@@ -83,7 +86,6 @@ config.net.rpn_conv_name='relu5_3'
 config.net.rpn_conv_names={'1x1':('relu5_3',),'2x2':('relu4_3', )}   #   used in the construction of the nets
 config.net.symbol_path = '../model/vgg16'
 config.net.params_epoch=0  # by default
-
 config.type_num = len(config.ANCHOR_HoW)*len(config.ANCHOR_angleD)*len(config.ANCHOR_sideLength)
 
 

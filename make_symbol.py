@@ -56,7 +56,7 @@ def gen_symbol():
     ###########################
 
     # symbol is shared by both bbox & score...
-    symbol = mx.sym.Convolution(feat_sym, kernel=(3,3), pad=(1,1), num_filter=512*2,name='rpn_conv',\
+    symbol = mx.sym.Convolution(feat_sym, kernel=(3,3), pad=(1,1), num_filter=512*2,name='rpn_conv1',\
                                 no_bias=True)
     symbol = mx.sym.BatchNorm(symbol)
     symbol = mx.sym.Activation(symbol, act_type='tanh',name='rpn_tanh')  # 1 x 512 x H x W
@@ -64,23 +64,31 @@ def gen_symbol():
 #    symbol = mx.sym.Activation(symbol, act_type='relu',name='rpn_relu')  # 1 x 512 x H x W
 
 
+    symbol = mx.sym.Convolution(symbol, kernel=(3,3), pad=(1,1), num_filter=512*2,name='rpn_conv2',\
+                                no_bias=True)
+    symbol = mx.sym.BatchNorm(symbol)
+    symbol = mx.sym.Activation(symbol, act_type='relu',name='rpn_relu')
+    
     pred_bbox = mx.sym.Convolution(symbol, kernel=(1,1), num_filter=5*cfg.type_num, name='rpn_pred_bbox')
     pred_bbox = mx.sym.transpose(pred_bbox,axes=(0,2,3,1))    # see lab/hist/it/anchor_vs_pred.py for the details
-    reshape_pred_bbox = mx.sym.reshape(pred_bbox, (0,-1,5),name='rpn_pred_bbox_reshape' )
+    reshape_pred_bbox_ = mx.sym.reshape(pred_bbox, (0,-1,5),name='rpn_pred_bbox_reshape' )
 
 #    logging.info('Block the grad of the score for debug...')
 #    x = reshape_pred_bbox
 #    x = mx.sym.BlockGrad(x)
 #    reshape_pred_bbox = x
 
+    
     rpn_bbox_loss_ =     rpn_outside_weight * mx.sym.smooth_l1(\
-               data=rpn_inside_weight* (reshape_pred_bbox - gdt_bbox)  ,\
-                 scalar=3.,    name='rpn_bbox_loss_l1_smooth')
+               data=rpn_inside_weight* (reshape_pred_bbox_ - gdt_bbox)  ,\
+                 scalar=cfg.train.l1_smooth_sclr,    name='rpn_bbox_loss_l1_smooth')
 
 
 #    rpn_bbox_loss_ = rpn_outside_weight * rpn_inside_weight* mx.sym.abs(reshape_pred_bbox - gdt_bbox)
 
-    rpn_pred_bbox = mx.sym.BlockGrad(reshape_pred_bbox)
+    rpn_pred_bbox = mx.sym.BlockGrad(reshape_pred_bbox_)
+    
+    
     rpn_bbox_loss = mx.sym.MakeLoss(rpn_bbox_loss_,name='rpn_bbox_loss')
 
     """
@@ -97,7 +105,12 @@ def gen_symbol():
     X = mx.sym.BlockGrad(X)
     symbol = X
     """
-
+    """
+    logging.info('#'*10+'Block Grad for symbol'+'#'*10)
+    x = symbol#rpn_bbox_loss_
+    x = mx.sym.BlockGrad(x)
+    symbol = x
+    """
 
     symbol_score = mx.sym.Convolution(symbol ,kernel=(1,1), num_filter=2*cfg.type_num, name='rpn_score')
     symbol_score = mx.sym.transpose(symbol_score,axes=(0,2,3,1))    # channel must be at the last
@@ -135,8 +148,8 @@ def feval_acc_angleMetric(label, pred):
     pred = np.argmax(pred, axis=2)
     pred, label = [ x.astype('int32') for x in [pred, label] ]
     # return sum_metric, num_inst
-    
-    sum_metric, num_inst  = np.sum( pred[label>0].flat == label[label>0].flat ), label[label>0].size
+#    logging.debug('whole cls samples:%d\tpostive samples:%d\tnegative samples:%d'%((label>=0).sum(),(label>0).sum(), (label==0).sum()) )
+    sum_metric, num_inst  = np.sum( pred[label>=0].flat == label[label>=0].flat ), (label>=0).sum()
     return  sum_metric, num_inst
 
 

@@ -111,7 +111,10 @@ def post_iou(iou_matrix,anchor,gdt):
     target_label[disable_indx] = -1
 
   # same story for backgd
-  max_bg = config.train.rpn_batch_size - np.sum(target_label == 1)
+  # use dynamic allocation...
+  max_bg = int( len(fg_indx)*(1-config.train.rpn_fg_frac)/(config.train.rpn_fg_frac+1E-3)  )# config.train.rpn_batch_size - np.sum(target_label == 1)
+  
+#  logging.debug( ( len(fg_indx), max_bg ))
   bg_indx = np.where(target_label == 0)[0]
 #  print(len(bg_indx))
 #  assert 0
@@ -139,7 +142,7 @@ def post_iou(iou_matrix,anchor,gdt):
   #  now nonlinear Transfer...
   if gdt.size > 0:
     target_bbx = tool.bbx_transfer(anchor,target_bbx)
-
+#  logging.debug( ( sum(target_label>0), sum(target_label==0) ))
   return target_label, target_bbx, rpn_inside_weight, rpn_outside_weight
 
 

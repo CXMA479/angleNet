@@ -19,15 +19,16 @@ from make_symbol import gen_symbol, gen_model, feval_l1_angleMetric, feval_acc_a
 from tool import mytick,viz_score_predict, viz_bbox_gdt, viz_target
 import matplotlib.pyplot as plt
 
-
 symbol_mod, fixed_param_names = gen_symbol()
 it=angleIter(symbol_mod)#'../../data/angleList.txt','../../data/img',1,100)
 d0=it.next()
 
-
+if not cfg.debug.debug:
+  logging.info(cfg)
+  logging.info(symbol_mod.tojson())
 
 #############################################################
-# TODO: 1. acc-metric needs inter-face to ignore specific labels; 2. l1_smooth loss may only need sum/ avg
+# 1. acc-metric needs inter-face to ignore specific labels; 2. l1_smooth loss may only need sum/ avg
 mA_acc=mx.metric.CustomMetric(feval_acc_angleMetric, name='masked acc')#mx.metric.create('acc') #
 mA_l1 = mx.metric.CustomMetric(feval_l1_angleMetric, name='l1_smooth loss')
 #############################################################
@@ -39,15 +40,15 @@ for epoch_i in xrange(cfg.it.epoch):
   it.reset()
   for batch_i, d in enumerate(it):
     #logging.info( (mx.nd.min(d.label[2]), mx.nd.max(d.label[2]) ) )
-    mod.forward_backward(d0)
+    mod.forward_backward(d)
     mod.update()
     out = mod.get_outputs()
     #logging.info(mx.nd.mean(out[2]).asnumpy())
 #    logging.info(out[2].shape)
 #    logging.info( (mx.nd.min(out[2]), mx.nd.max(out[2]) ) )
 #    logging.info(out[0].asnumpy() )
-    mA_acc.update( [ d0.label[0]  ], [out[0]])
-    mA_l1.update([ d0.label[0]  ], [out[1]] )
+    mA_acc.update( [ d.label[0]  ], [out[0]])
+    mA_l1.update([ d.label[0]  ], [out[1]] )
 #    logging.info(batch_i)
 
     if batch_i % cfg.train.callbackBatch ==0 and batch_i is not 0: # log info
@@ -58,7 +59,7 @@ for epoch_i in xrange(cfg.it.epoch):
       mA_acc.reset()
       mA_l1.reset()
       t0 = time.time()
-  if not cfg.debug.debug:
+  if not cfg.debug.debug and cfg.train.is_save:
     mod.save_checkpoint(cfg.train.save_prefix, epoch_i)
   else:
-    logging.debug('epoch[%d] ended, ignore save_checkpoint, release config.debug.debug to save training'%epoch_i)
+    logging.debug('epoch[%d] ended, ignore save_checkpoint, release .debug.debug and set .train.is_save to save training'%epoch_i)

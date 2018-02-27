@@ -20,14 +20,14 @@ labelFile =None
 imgdir    =None
 ###############   BLOCK II      #############
 """  this block refers to bare image reading without label file..."""
-imgPath   ='37.png'
+imgPath   ='51.png'
 #############################################
 
 
 ctx = mx.gpu()
 
-model_prefix ='../output/Sat Jan 27 10:12:11 2018_angleD=[0, 60, -60];HoW=[1.5, 3];sideLength=[60, 80]'
-model_epoch =0
+model_prefix ='../output/Sat Jan 27 14:18:51 2018_angleD=[0, 60, -60];HoW=[1.5, 3];sideLength=[60, 80]'#Sat Jan 27 10:12:11 2018_angleD=[0, 60, -60];HoW=[1.5, 3];sideLength=[60, 80]'
+model_epoch =6#0
 
 symbol, arg_params, aux_params = mx.model.load_checkpoint(model_prefix, model_epoch)
 symbol_pred = mx.sym.Group(   [symbol.get_internals()[x+'_output'] for\
@@ -62,10 +62,10 @@ if os.path.isfile(imgPath):
 
     mod.forward(dataBatch)
     viz_score_predict(img_mx_raw.asnumpy().astype(np.uint8), anchor, None,mod.get_outputs()[1].asnumpy(),\
-              mod.get_outputs()[0].asnumpy(), score_th=.5,show_num=20 )
+              mod.get_outputs()[0].asnumpy(), score_th=.1,show_num=150 )
     mx.nd.waitall()
-    print 'pass test succeeded!'
-    assert 0
+#    print 'pass test succeeded!'
+#    assert 0
 else:
     it=angleIter(symbol_mod, is_train=False,\
             labelFile=labelFile, imgPath=imgPath)# use data/iou/$scale/test/

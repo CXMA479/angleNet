@@ -10,7 +10,7 @@ cfg = config.config
 from gpu_IoU.gpu_IoU import gpu_it_IoU
 import matplotlib.pyplot as plt
 
-imgdir='../data/448-test'; labelfile='../data/angleList-448.txt' # contents will be analysed...
+imgdir='../data/448'; labelfile='../data/angleList-448.txt' # contents will be analysed...
 
 assert os.path.isdir(imgdir), imgdir
 assert os.path.isfile(labelfile), labelfile
@@ -55,7 +55,10 @@ def parseLine(s):
     gdt=np.zeros((lgSize,6))
     im_info=np.array([H,W])
 
-    lg.append(lg.pop(-1)[:-1])  # get rid of '\n'
+    try:
+        lg.append(lg.pop(-1)[:-1])  # get rid of '\n'
+    except:
+        assert 0, (lg, imgname)
     #   go for 'label', 'gdt'
     for i,obj in enumerate(lg):
       """
@@ -68,17 +71,21 @@ def parseLine(s):
       gdt[i][:] = np.array([label,x,y,alpha,rh,rw])
       return im_info, feat_shape, gdt
 
+valid_imgcnt=0
 for imgname in imglist:
     s = label_dict[imgname]
+    if ';' not in s:
+        continue
     im_info, feat_shape, gdt = parseLine(s)
     stride=(im_info[0]/feat_shape[-2],im_info[1]/feat_shape[-1])
     anchor = tool.genAnchor(im_info, cfg.ANCHOR_angleD, cfg.ANCHOR_HoW, cfg.ANCHOR_sideLength,\
                 feat_shape, stride)
     iou_matrix = gpu_it_IoU(anchor, gdt[:,1:], cfg.train.iou_x_num )
     iou_list += list(iou_matrix.ravel())
+    valid_imgcnt += 1
 
 # plot histogram...
-title = 'sideLength: %s  totle number: %d'%(str(cfg.ANCHOR_sideLength), len(iou_list))
+title = 'sideLength: %s, #anchor: %d, #valid-img: %d'%(str(cfg.ANCHOR_sideLength), len(iou_list), valid_imgcnt)
 
 hist_range = np.arange(0,1,.1)
 

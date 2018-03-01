@@ -31,8 +31,8 @@ stride: pixels(in raw img) between to neighbor anchors' centrs
 sideLength: \sqrt{Aera} ,Aera is fixed for one sideLength wrt. angleD
 """
 config.ANCHOR_angleD=(0,60,-60) #(-60,)#  # degree
-config.ANCHOR_HoW=(1.5,3)   #(3,)#     #   rh over rw
-config.ANCHOR_sideLength=(60,80)
+config.ANCHOR_HoW=(2, .5, 1)   #(3,)#     #   rh over rw
+config.ANCHOR_sideLength=(80, 120, 60)
 config.ANCHOR_stride =None#  deprecated, calculated in angleIter.py automatically  240#16# (250,250)#
 
 config.class_num=2   # only building and background

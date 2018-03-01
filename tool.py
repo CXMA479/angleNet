@@ -181,8 +181,6 @@ def draw_angleBox(img,anchor,color, line_width=1):
   return cv2.cvtColor(retImg,cv2.COLOR_BGR2RGB)
 
 def text_fig(ax, xy_list, iou_list):
-#  logging.debug('number of anchors to show: %d'%xy_list.shape[0])
-#  assert 0
   for xy, iou in zip(xy_list, iou_list):
     ax.text(xy[0], xy[1], '%.2f'%iou, bbox=dict(facecolor='yellow',alpha=.6) )
 
@@ -229,7 +227,20 @@ def viz_target(img, anchors, anchor_gdt, predict_bbox, scores, rpn_inside_weight
     plt.show(block=False)
     return img
 
-
+def viz_anchor_byIoU(img, anchors, raw_gdt, IoU, th, title_s=''):
+    iou_idx = np.max(IoU, axis=1)> th
+    picked_anchor = anchors[iou_idx,:]
+    picked_iou = np.max(IoU[iou_idx,:],axis=1)
+#    picked
+#    gdt_box = bbox_inv_transfer(picked_anchor, picked_gdt)
+#    print (raw_gdt[0], raw_gdt.shape)
+    img =draw_angleBox(img, raw_gdt, [255, 0, 0])
+    img =draw_angleBox(img, picked_anchor, [112, 255, 125] )
+    plt.imshow(img)
+#    text_fig(plt.gca(), picked_anchor[:,:2], picked_iou)
+    title_s = title_s+'th:%f,#anchor:%d, green: anchors, blue: gdt'%(th, picked_iou.size)
+    plt.title(title_s)
+    plt.show()
 
 def viz_bbox_gdt(img, anchors, anchor_gdt, rpn_outside_weight,  show_num=None):
     """

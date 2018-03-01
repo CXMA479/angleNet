@@ -360,7 +360,7 @@ class angleIter(mx.io.DataIter):
     self.gdt=np.zeros((self.lgSize,6))
     self.im_info=np.array([H,W])
 
-    self.lg.append(self.lg.pop(-1)[:-1])  # get rid of '\n'
+    self.lg.append(self.lg.pop(-1).strip())  # get rid of '\n'
     #   go for 'label', 'gdt'
     for i,obj in enumerate(self.lg):
       """

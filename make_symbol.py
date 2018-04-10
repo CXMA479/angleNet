@@ -22,74 +22,78 @@ def gen_symbol():
     ################################
     feat_sym_1x1_0 = symbol.get_internals()[cfg.net.rpn_conv_names['1x1'][0]+'_output']
     feat_sym_2x2_0 = symbol.get_internals()[cfg.net.rpn_conv_names['2x2'][0]+'_output']
+    feat_sym_4x4_0 = symbol.get_internals()[cfg.net.rpn_conv_names['4x4'][0]+'_output']
 #    print(feat_sym_2x2_0.list_arguments())
     fixed_param_names = []
-    for _ in [ feat_sym_1x1_0, feat_sym_2x2_0]: # fixed_param_names will be returned to the caller
+    for _ in [ feat_sym_1x1_0, feat_sym_2x2_0,feat_sym_4x4_0]: # fixed_param_names will be returned to the caller
         fixed_param_names += _.list_arguments()
 #    print(set(fixed_param_names))
     fixed_param_names = list(set(fixed_param_names)) # uniquify...
 
-    feat_sym_1x1_0 = mx.sym.Convolution(feat_sym_1x1_0, kernel=(1,1), num_filter=256, no_bias=True)
+    feat_sym_1x1_0 = mx.sym.Convolution(feat_sym_1x1_0, kernel=(3,3),pad=(1,1), num_filter=256, no_bias=True)
+
+    feat_sym_4x4_0 = mx.sym.Convolution(feat_sym_4x4_0, kernel=(2,2), stride=(2,2),\
+                                            num_filter=256, no_bias=True)
+    feat_sym_4x4_0 = mx.sym.Activation(feat_sym_4x4_0,act_type='relu')
+    
+    feat_sym_2x2_0 = mx.sym.concat(feat_sym_2x2_0, feat_sym_4x4_0)
     feat_sym_2x2_0 = mx.sym.Convolution(feat_sym_2x2_0, kernel=(2,2), stride=(2,2),\
                                             num_filter=256, no_bias=True)
 #    feat_sym_2x2_0 = mx.sym.Pooling(feat_sym_2x2_0, kernel=(2,2), stride=(2,2), pool_type='avg', pooling_convention='full')
 #    feat_sym_2x2_0 = mx.sym.Convolution(feat_sym_2x2_0, kernel=(3,3), pad=(1,1), num_filter=256)
 #    feat_sym_2x2_0 = mx.sym.Activation(feat_sym_2x2_0, act_type='tanh')
-    [feat_sym_1x1_0, feat_sym_2x2_0]= [mx.sym.BatchNorm(_) for _ in [feat_sym_1x1_0, feat_sym_2x2_0] ]
+    #[feat_sym_1x1_0, feat_sym_2x2_0]= [mx.sym.BatchNorm(_) for _ in [feat_sym_1x1_0, feat_sym_2x2_0] ]
     feat_sym_1x1_0 = mx.sym.Activation(feat_sym_1x1_0, act_type='relu')
     feat_sym_2x2_0 = mx.sym.Activation(feat_sym_2x2_0, act_type='relu')
+   
+    
 #    feat_sym_2x2_0 = mx.sym.Convolution(feat_sym_2x2_0, kernel=(3,3), pad=(1,1), num_filter=256)
 #    feat_sym_2x2_0 = mx.sym.Convolution(feat_sym_2x2_0, kernel=(3,3), pad=(1,1), num_filter=256)
 
     # concatenate...
 
-    in_shape,out_shape_2x2 ,uax_shape=feat_sym_2x2_0.infer_shape( data=(1,3, 800, 1000))
-    in_shape,out_shape_1x1 ,uax_shape=feat_sym_1x1_0.infer_shape(data=(1,3, 800, 1000))
+    in_shape,out_shape_2x2 ,uax_shape=feat_sym_2x2_0.infer_shape( data=(1,3, 448, 448))
+    in_shape,out_shape_1x1 ,uax_shape=feat_sym_1x1_0.infer_shape(data=(1,3, 448, 448))
 #    print('1x1: '+str(out_shape_1x1),'2x2: '+str(out_shape_2x2) )
 #    assert 0
 
 
-    feat_sym = feat_sym_1x1_0#mx.sym.concat(feat_sym_1x1_0, feat_sym_2x2_0)#feat_sym_1x1_0# 1 x C x h x w
-
+    feat_sym = mx.sym.concat(feat_sym_1x1_0, feat_sym_2x2_0)#feat_sym_1x1_0#feat_sym_1x1_0# 1 x C x h x w
+    
+    #feat_sym = mx.sym.Convolution(feat_sym, kernel=(3,3), pad=(1,1),num_filter=1024/2,\
+    #                            no_bias=True)
+    #feat_sym = mx.sym.BatchNorm(feat_sym)
+    #feat_sym = mx.sym.Activation(feat_sym, act_type='tanh')
+    """
+    feat_sym = mx.sym.Convolution(feat_sym, kernel=(3,3), pad=(1,1), num_filter=1024,\
+                                no_bias=True)
+    feat_sym = mx.sym.BatchNorm(feat_sym)
+    feat_sym = mx.sym.Activation(feat_sym, act_type='relu')
+    """
     ###########################
     ###   feature maps over ###
     ###########################
-
+    cls_symbol  = feat_sym
+    reg_symbol  = feat_sym
     # symbol is shared by both bbox & score...
-    symbol = mx.sym.Convolution(feat_sym, kernel=(3,3), pad=(1,1), num_filter=512*2,name='rpn_conv1',\
+    """
+    reg_symbol = mx.sym.Convolution(reg_symbol, kernel=(1,1), num_filter=1024,name='rpn_conv1',\
                                 no_bias=True)
-    symbol = mx.sym.BatchNorm(symbol)
-    symbol = mx.sym.Activation(symbol, act_type='tanh',name='rpn_tanh')  # 1 x 512 x H x W
+    reg_symbol = mx.sym.BatchNorm(reg_symbol)
+    reg_symbol = mx.sym.Activation(reg_symbol, act_type='relu',name='rpn_relu')
+    """
+
+
+
 #    symbol = mx.sym.LeakyReLU(symbol, act_type='leaky',name='rpn_leaky')  # 1 x 512 x H x W
 #    symbol = mx.sym.Activation(symbol, act_type='relu',name='rpn_relu')  # 1 x 512 x H x W
 
-
+    """
     symbol = mx.sym.Convolution(symbol, kernel=(3,3), pad=(1,1), num_filter=512*2,name='rpn_conv2',\
                                 no_bias=True)
     symbol = mx.sym.BatchNorm(symbol)
     symbol = mx.sym.Activation(symbol, act_type='relu',name='rpn_relu')
-    
-    pred_bbox = mx.sym.Convolution(symbol, kernel=(1,1), num_filter=5*cfg.type_num, name='rpn_pred_bbox')
-    pred_bbox = mx.sym.transpose(pred_bbox,axes=(0,2,3,1))    # see lab/hist/it/anchor_vs_pred.py for the details
-    reshape_pred_bbox_ = mx.sym.reshape(pred_bbox, (0,-1,5),name='rpn_pred_bbox_reshape' )
-
-#    logging.info('Block the grad of the score for debug...')
-#    x = reshape_pred_bbox
-#    x = mx.sym.BlockGrad(x)
-#    reshape_pred_bbox = x
-
-    
-    rpn_bbox_loss_ =     rpn_outside_weight * mx.sym.smooth_l1(\
-               data=rpn_inside_weight* (reshape_pred_bbox_ - gdt_bbox)  ,\
-                 scalar=cfg.train.l1_smooth_sclr,    name='rpn_bbox_loss_l1_smooth')
-
-
-#    rpn_bbox_loss_ = rpn_outside_weight * rpn_inside_weight* mx.sym.abs(reshape_pred_bbox - gdt_bbox)
-
-    rpn_pred_bbox = mx.sym.BlockGrad(reshape_pred_bbox_)
-    
-    
-    rpn_bbox_loss = mx.sym.MakeLoss(rpn_bbox_loss_,name='rpn_bbox_loss')
+    """
 
     """
         for target label prediction.
@@ -111,15 +115,48 @@ def gen_symbol():
     x = mx.sym.BlockGrad(x)
     symbol = x
     """
-
-    symbol_score = mx.sym.Convolution(symbol ,kernel=(1,1), num_filter=2*cfg.type_num, name='rpn_score')
+    """
+    cls_symbol = mx.sym.Convolution(cls_symbol, kernel=(1,1), num_filter=1024,name='cls_conv1',\
+                                no_bias=True)
+    cls_symbol = mx.sym.BatchNorm(cls_symbol)
+    cls_symbol = mx.sym.Activation(cls_symbol, act_type='relu',name='cls_relu')
+    """
+    symbol_score = mx.sym.Convolution(cls_symbol ,kernel=(1,1), num_filter=2*cfg.type_num, name='rpn_score')
+    #symbol_score = mx.sym.BatchNorm(symbol_score)
+#    symbol_score = mx.sym.Activation(symbol_score, act_type='relu')
     symbol_score = mx.sym.transpose(symbol_score,axes=(0,2,3,1))    # channel must be at the last
     reshape_symbol_score = mx.sym.reshape(symbol_score, (0,-1,2 ),name='rpn_score_reshape' ) # num x HW x 2
     # preserve_shape=True: softmax on the last dim
     softmax_output = mx.sym.SoftmaxOutput(reshape_symbol_score, label=target_label, preserve_shape=True,\
                         use_ignore=True, ignore_label=-1, name='rpn_label_loss')
 
+#    score_mask = mx.sym.argmax(softmax_output, axis=-1, keepdims=True) # (b, HW, 1)
+
+    pred_bbox = mx.sym.Convolution(reg_symbol, kernel=(1,1), num_filter=5*cfg.type_num, name='rpn_pred_bbox')
+    pred_bbox = mx.sym.transpose(pred_bbox,axes=(0,2,3,1))    # see lab/hist/it/anchor_vs_pred.py for the details
+    reshape_pred_bbox_ = mx.sym.reshape(pred_bbox, (0,-1,5),name='rpn_pred_bbox_reshape' )
+
+#    logging.info('Block the grad of the score for debug...')
+#    x = reshape_pred_bbox
+#    x = mx.sym.BlockGrad(x)
+#    reshape_pred_bbox = x
+
+
+    rpn_bbox_loss_ =     rpn_outside_weight * mx.sym.smooth_l1(\
+               data= rpn_inside_weight* (reshape_pred_bbox_ - gdt_bbox) ,\
+                 scalar=cfg.train.l1_smooth_sclr,    name='rpn_bbox_loss_l1_smooth')
+
+
+#    rpn_bbox_loss_ = rpn_outside_weight * rpn_inside_weight* mx.sym.abs(reshape_pred_bbox - gdt_bbox)
+
+    rpn_pred_bbox = mx.sym.BlockGrad(reshape_pred_bbox_)
+    
+    
+    rpn_bbox_loss = mx.sym.MakeLoss(rpn_bbox_loss_*cfg.train.bbox_scalar,name='rpn_bbox_loss')/cfg.train.bbox_scalar
+
+
     symbol = mx.sym.Group([ softmax_output,  rpn_pred_bbox, rpn_bbox_loss])#, mx.sym.BlockGrad(symbol) ] )
+
 
     return symbol, fixed_param_names
 

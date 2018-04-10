@@ -23,6 +23,8 @@ logging.info(symbol_mod.tojson())
 
 it=angleIter(symbol_mod)#'../../data/angleList.txt','../../data/img',1,100)
 d=it.next()
+import copy
+d0 = copy.copy(d)
 #it.cur_it -= 1
 
 
@@ -34,11 +36,13 @@ start_time =time.time()
 for epoch_i in xrange(cfg.it.epoch):
   it.reset()
   for batch_id, d in enumerate(it):
-    mod.forward(d)
-    mod.acc_backward()
-    GM.update(mod, d)
-    if batch_id % cfg.train.batch_size == 0  and not (batch_id == 0) :
-      mod.acc_update()
+    mod.forward(d0)
+    mod.backward()
+    mod.update()
+    GM.update(mod, d0)
+    if batch_id % cfg.train.batch_size == 0  and not (batch_id == 0):
+      pass
+      #mod.acc_update()
 
     if batch_id % cfg.train.callbackBatch==0 and batch_id >= cfg. train. callbackBatch:
       end_time = time.time()

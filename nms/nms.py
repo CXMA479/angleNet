@@ -12,9 +12,10 @@ from gpu_IoU import gpu_it_IoU
 from tool import bbox_inv_transfer
 import numpy as np
 import time
+#sad
 
-
-def mx_nms(raw_pred, anchor, score, iou_thresh=.5, score_thresh=.9):
+def mx_nms(raw_pred, anchor, score, box=None,\
+            iou_thresh=.5, score_thresh=.9, min_area=50*50,max_area=100*200):
     """
     greedily select boxes with high confidence and overlap with current maximum <= thresh
     rule out overlap >= thresh
@@ -24,12 +25,13 @@ def mx_nms(raw_pred, anchor, score, iou_thresh=.5, score_thresh=.9):
         thresh: retain overlap < thresh
     return: indexes to keep
     """
-    score = score.asnumpy()[0]
+#    print score.shape
+    score = score.asnumpy()[0] if not isinstance(score,np.ndarray) else score
     score = score[:,1]
     assert len(score.shape)==1, score.shape
     raw_pred = raw_pred[0]
 #    assert 0, (anchor.shape, raw_pred.shape)
-    box = bbox_inv_transfer(anchor, raw_pred.asnumpy())
+    box = bbox_inv_transfer(anchor, raw_pred.asnumpy()) if anchor is not None else box
     dynamic_score_list = np.array(list(score.asnumpy())) if not isinstance(score,np.ndarray) else list(score)
     dynamic_score_idx_list= list(xrange(len(dynamic_score_list))) # recording org idx
     sub_box = box.copy() if isinstance(box, np.ndarray) else box.asnumpy()# np.array would be better 2 idx
@@ -38,9 +40,19 @@ def mx_nms(raw_pred, anchor, score, iou_thresh=.5, score_thresh=.9):
 
     # filter with score_threshold...
     ps_score_idx = sub_score > score_thresh
+
     sub_score  = sub_score[ps_score_idx]
     sub_box    =   sub_box[ps_score_idx]
     sub_idx    = sub_idx[ps_score_idx]
+#    print('%d boxes to proc...'%len(sub_idx))
+    # filter area...
+    areas = 4*sub_box[:,3]*sub_box[:,4]
+    ps_area_idx = (areas>min_area) * (areas<max_area)
+    sub_score  = sub_score[ps_area_idx]
+    sub_box    =   sub_box[ps_area_idx]
+    sub_idx    = sub_idx[ps_area_idx]
+
+
     print('%d boxes to proc...'%len(sub_idx))
     keep = []
     while len(sub_idx) >0:

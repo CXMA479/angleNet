@@ -105,8 +105,9 @@ def post_iou(iou_matrix,anchor,gdt):
   fg_indx = np.where(target_label==1)[0]  # how many objectives are there
 #  print(len(fg_indx))
 #  logging.debug('ojectives num:%d'%len(fg_indx))
+  logging.debug('objectives(%d), downsample...'%len(fg_indx))
   if len(fg_indx) > max_fg:
-#    logging.debug('too many objectives, downsample...')
+    #logging.debug('too many objectives(%d), downsample...'%len(fg_indx))
     disable_indx = npr.choice(fg_indx, len(fg_indx)-max_fg, replace=False)
     target_label[disable_indx] = -1
 
@@ -121,8 +122,9 @@ def post_iou(iou_matrix,anchor,gdt):
 
 
 #  logging.debug('background num:%d'%len(bg_indx))
+#  logging.debug('background (%d), downsample...'%len(bg_indx))
   if len(bg_indx) > max_bg:
-#    logging.debug('too many background, downsample...')
+    #logging.debug('too many background (%d), downsample...'%len(bg_indx))
     disable_indx = npr.choice( bg_indx, size=(len(bg_indx) - max_bg),replace=False)
     target_label[disable_indx] = -1
 
@@ -272,6 +274,8 @@ class angleIter(mx.io.DataIter):
     logging.info('check if all the iou files are ready...')
     for self.lineIdx in xrange(self.imgNum):
       self.lineStr=self.fs[self.lineIdx]
+      if ';' not in self.lineStr:
+        continue
       self.lg = self.lineStr.rsplit(';\t')
       self.imgName = self.lg.pop(0)
 
@@ -330,6 +334,9 @@ class angleIter(mx.io.DataIter):
                and get the feature map's shape
     """
     self.lineStr=self.fs[self.lineIdx]
+    while ';' not in self.lineStr:
+        self.lineIdx += 1
+        self.lineStr = self.fs[self.lineIdx]
     self.lg = self.lineStr.rsplit(';\t')
     self.imgName = self.lg.pop(0)
     self.img=mx.image.imdecode(open(os.path.join(self.imgPath,self.imgName),'rb').read())

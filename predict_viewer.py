@@ -14,7 +14,7 @@ from config import config as cfg
 from angleIter import angleIter
 import matplotlib.pyplot as plt
 import logging
-
+from nms.nms import mx_nms
 
 class Viewer(object):
   """
@@ -115,7 +115,9 @@ class Viewer(object):
     d = mx.io.DataBatch([img],provide_data=[ ('data',img.shape),], provide_label=None)
     self.mod.forward(d)
    
-    self.predict_bbox, self.predict_score = [mx.nd.reshape(x,(-3,0)).asnumpy() for x in  self.mod.get_outputs()[:2] ]
+    #self.raw_predict_bbox, self.raw_predict_score = [mx.nd.reshape(x,(-3,0)) for x in  self.mod.get_outputs()[:2] ]
+    self.predict_bbox, self.predict_score = [mx.nd.reshape(x,(-3,0)).asnumpy() for x in  self.mod.get_outputs()[:2] ] 
+    
     self.predict_transfered_bbox  = tool.bbox_inv_transfer(self.anchor, self.predict_bbox)
     #  filter who obviously out of boundary...
     pick_idx =  self.predict_transfered_bbox[:,0] < self.im_info[1]
@@ -157,16 +159,26 @@ class Viewer(object):
     self.predict_transfered_bbox = self.predict_transfered_bbox[pick_idx,:]
     self.predict_score           = self.predict_score[pick_idx,:]
 
-  def view(self,filter_th,block=False):
-    assert 0 < filter_th < 1
+  def view(self,filter_th,iou_th,block=False):
+    #assert 0 < filter_th < 1
+    #print self.raw_predict_bbox.shape, self.anchor.shape
+    #assert 0
+    self.indx = mx_nms(self.predict_bbox, None, self.predict_score,\
+             self.predict_transfered_bbox, iou_th,score_thresh=filter_th)#, min_area=0, max_area=np.inf)
+    
     # predict_score.shape :  1 x num x 2
-    self.indx = self.predict_score[:,1] > filter_th
-    logging.debug('num of indexed bbox: '+str(sum(self.indx)))
+
+    #self.indx = self.predict_score[:,1] > filter_th
+    print('num of indexed bbox: %d'%len(self.indx))
     self.filter_transfered_bbox = self.predict_transfered_bbox[self.indx,:]
     img = self.img
+    
+    # nms...
+
     self.view_img = tool.draw_angleBox(img, self.filter_transfered_bbox.astype(np.float),(0,255,0))
 #    plt.figure()
     plt.imshow(self.view_img)
+    plt.title(self.imgname)
     plt.show(block=block)
 
 

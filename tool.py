@@ -7,7 +7,7 @@
 import mxnet as mx
 import numpy as np
 import logging
-import sys,os, time
+import sys,os, time, cv2
 import matplotlib.pyplot as plt
 sys.path.insert(0,'cython')
 
@@ -20,7 +20,8 @@ except:
   from cytool import cp2p
 import cv2
 
-def genAnchor(im_info,angleD,HoW,sideLength,feat_shape,stride):
+def XXX_genAnchor(im_info,angleD,HoW,sideLength,feat_shape,stride):
+  assert 0, 'Deprecated. Use genAnchor'
   """
                 keep all anchors' centrs inside the RAW img
 
@@ -114,6 +115,42 @@ def genAnchor(im_info,angleD,HoW,sideLength,feat_shape,stride):
 
   return anchor[map_idx]
 
+def genAnchor(im_info,angleD,HoW,sideLength,feat_shape,stride):
+    type_num = len(HoW)*len(sideLength)*len(angleD)
+    feat_H,feat_W = feat_shape[-2:]
+    x = np.arange(feat_W)*.0+1
+    y = np.arange(feat_H)*.0+1
+
+    x[0]  = 0.5#stride[1]/2
+    y[0]  =0.5# stride[0]/2
+    x=np.round(x.cumsum()*stride[1])
+    y=np.round(y.cumsum()*stride[0])
+
+
+    X,Y = np.meshgrid(x,y)  # (28,28)
+#    print X,Y
+    X,Y = [np.repeat( np.expand_dims(Z, axis=0),repeats=type_num,axis=0) for Z in [X,Y] ]
+
+    X,Y = [np.transpose(Z, axes=(1,2,0) ).reshape((-1,)) for Z in [X,Y]  ]
+    angle=np.deg2rad(angleD)
+    an_angle = np.array(angle)
+    s=np.array(sideLength)
+    a=np.array(HoW)
+    an_rh  =  (np.reshape(s,(-1,1)) * np.reshape(   np.sqrt(a)  ,(1,-1))/2).reshape((-1,))
+    an_rw  =  (np.reshape(s,(-1,1)) / np.reshape(   np.sqrt(a)  ,(1,-1))/2).reshape((-1,))
+#    print an_rh.shape
+    an_rh,_ = np.meshgrid( an_rh, an_angle )
+    an_rw, an_angle = np.meshgrid(an_rw, an_angle)
+    anchor = np.vstack(  (an_angle.flatten(), an_rh.flatten(), an_rw.flatten())  ).T
+#    print anchor#.shape
+    pixel_num = X.shape[0]/type_num
+    anchor = np.tile(  anchor, (pixel_num,1))
+#    print anchor[:20]#.shape
+    anchor_1 = np.vstack((X,Y)).T
+#    print anchor.shape, anchor_1.shape, pixel_num, type_num, an_angle.shape
+#    assert 0
+    return np.concatenate( (anchor_1,anchor), axis=1  )
+
 def  bbx_transfer(anchor,anchor_gdt):
   """
                   anchor     : n x 5
@@ -172,7 +209,9 @@ def draw_angleBox(img,anchor,color, line_width=1):
 
   num=anchor.shape[0]
   for i in np.arange(num):
-    P = cp2p(anchor[i,0:2],anchor[i,2],anchor[i,3],anchor[i,4])  #   2 x 4
+#    print anchor[i][:2].shape
+#    assert 0
+    P = cp2p(anchor[i][:2],anchor[i,2],anchor[i,3],anchor[i,4])  #   2 x 4
     P = np.round(P).astype(np.int)
     for i in np.arange(3):
       cv2.line(retImg,tuple(P[:,i]),tuple(P[:,i+1]),color,line_width)
@@ -227,20 +266,60 @@ def viz_target(img, anchors, anchor_gdt, predict_bbox, scores, rpn_inside_weight
     plt.show(block=False)
     return img
 
-def viz_anchor_byIoU(img, anchors, raw_gdt, IoU, th, title_s=''):
-    iou_idx = np.max(IoU, axis=1)> th
+def viz_anchor_byIoU(img, anchors, raw_gdt, IoU, th1, th2=1, title_s='', text=True):
+    iou_idx = (np.max(IoU, axis=1)< th2) *( np.max(IoU, axis=1)> th1)
     picked_anchor = anchors[iou_idx,:]
     picked_iou = np.max(IoU[iou_idx,:],axis=1)
 #    picked
 #    gdt_box = bbox_inv_transfer(picked_anchor, picked_gdt)
 #    print (raw_gdt[0], raw_gdt.shape)
-    img =draw_angleBox(img, raw_gdt, [255, 0, 0])
+#    print [iou_idx,:],iou_idx
+#    assert 0
+    gdt = bbox_inv_transfer(anchors[iou_idx,:],raw_gdt[iou_idx,:] )
+    img =draw_angleBox(img, gdt.astype(np.float), [0, 0, 255])
     img =draw_angleBox(img, picked_anchor, [112, 255, 125] )
     plt.imshow(img)
-#    text_fig(plt.gca(), picked_anchor[:,:2], picked_iou)
-    title_s = title_s+'th:%f,#anchor:%d, green: anchors, blue: gdt'%(th, picked_iou.size)
+    if text:
+        text_fig(plt.gca(), picked_anchor[:,:2], picked_iou)
+    title_s = title_s+'th:%f-%f,#anchor:%d, green: anchors, red: gdt'%(th1,th2, picked_iou.size)
     plt.title(title_s)
-    plt.show()
+    #plt.show(False)
+
+def mapgdt(iou,th1, th2=1,feat_hw=(28,28), anchor_num=6,block=False):
+    iou_idx = (np.max(iou, axis=1)< th2) *( np.max(iou, axis=1)> th1)
+    iou_idx = (iou_idx.reshape(feat_hw+(anchor_num,)).mean(axis=-1)*255).astype(np.uint8)
+#    plt.figure()
+    plt.imshow(iou_idx)
+    plt.show(block=block)
+
+def check_order(feat_hw=(28,28),stride=(16,16), anchor_num=6,dim=5):
+
+    x = np.array(xrange(feat_hw[0]))*.0+1#*stride[1]
+    y = np.array(xrange(feat_hw[1]))*.0+1#*stride[0]
+
+    x[0]  = 0.5#stride[1]/2
+    y[0]  =0.5# stride[0]/2
+    x=np.round(x.cumsum()*stride[1])
+    y=np.round(y.cumsum()*stride[0])
+
+
+    X,Y = np.meshgrid(x,y)  # (28,28)
+#    print X,Y
+    X,Y = [np.expand_dims(Z, axis=0) for Z in [X,Y] ]
+#    return None,None,X,Y
+    for channel_idx in range(dim*anchor_num-1): #  (6#,28,28)
+#       print X[0]*10+channel_idx
+#        print np.sum(np.abs(X-Y))
+        X,Y = [ np.concatenate( (Z,np.expand_dims(Z[0]*100+channel_idx, axis=0)) ) for Z in [X,Y] ]
+#    print X.shape
+    # (28,28,6#) -> (28x28x#,6)
+#    return None,None,X,Y
+    return X, Y
+    X_re,Y_re = [np.transpose(Z, axes=(1,2,0) ).reshape((-1,anchor_num)) for Z in [X,Y]  ]
+    print '*'*20
+#    X_re,Y_re = [Z.reshape((-1,)) for Z in [X_re,Y_re]]
+    print np.sum(np.abs(X_re-Y_re))
+    return [X_re,Y_re]#,X,Y]
 
 def viz_bbox_gdt(img, anchors, anchor_gdt, rpn_outside_weight,  show_num=None):
     """
@@ -421,5 +500,7 @@ def proc4pred(imgPath, mean=[0,0,0], std=1):
     img = mx.nd.transpose(img, axes = (2, 0, 1) )
     img_data = mx.nd.expand_dims(img, axis=0)
     return img_data
+
+
 
 

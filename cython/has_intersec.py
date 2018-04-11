@@ -1,9 +1,3 @@
-"""
-    4 x 4 loops to check if therer is any intersection between two boxes.
-    Chen Y. Liang
-    10 May, 2017
-
-"""
 import numpy as np
 import matplotlib.pyplot as plt
 

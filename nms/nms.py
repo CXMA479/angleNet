@@ -5,7 +5,6 @@ we need a clean figure -_-|
 
 Chen Y.liang
 
-Dec 5, 2017
 """
 import mxnet as mx
 from gpu_IoU import gpu_it_IoU
@@ -15,7 +14,7 @@ import time
 #sad
 
 def mx_nms(raw_pred, anchor, score, box=None,\
-            iou_thresh=.5, score_thresh=.9, min_area=50*50,max_area=100*200):
+            iou_thresh=.5, score_thresh=.9, min_area=50*50,max_area=100*200,min_length=30,max_length=220,ctx=mx.gpu()):
     """
     greedily select boxes with high confidence and overlap with current maximum <= thresh
     rule out overlap >= thresh
@@ -52,13 +51,20 @@ def mx_nms(raw_pred, anchor, score, box=None,\
     sub_box    =   sub_box[ps_area_idx]
     sub_idx    = sub_idx[ps_area_idx]
 
+    # filter length...
+    min_l = 2*sub_box[:,3:].min(axis=-1)
+    max_l = 2*sub_box[:,3:].max(axis=-1)
+    ps_area_idx = (min_l>min_length) * (max_l<max_length)
+    sub_score  = sub_score[ps_area_idx]
+    sub_box    =   sub_box[ps_area_idx]
+    sub_idx    = sub_idx[ps_area_idx]
 
     print('%d boxes to proc...'%len(sub_idx))
     keep = []
     while len(sub_idx) >0:
         max_sub_idx = sub_score.argmax()
         keep.append(sub_idx[max_sub_idx])
-        iou_table = gpu_it_IoU(sub_box[max_sub_idx:max_sub_idx+1],sub_box, k=10)[0]
+        iou_table = gpu_it_IoU(sub_box[max_sub_idx:max_sub_idx+1],sub_box, k=10, ctx=ctx)[0]
 
         lefted_sub_idx = iou_table < iou_thresh
         print(time.asctime(), np.sum(lefted_sub_idx))

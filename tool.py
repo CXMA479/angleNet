@@ -1,7 +1,6 @@
 """
        a mount of handles need to be created
                 Chen Y. Liang
-                Apr  28, 2017
 """
 
 import mxnet as mx

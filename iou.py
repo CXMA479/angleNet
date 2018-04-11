@@ -9,7 +9,6 @@
             Matrix transfering is needed.
 
                 Chen Y.Liang
-               April 11, 2017
 """
 
 import numpy as np

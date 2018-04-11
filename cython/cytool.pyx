@@ -1,9 +1,4 @@
 #!python
-"""
-      need a hand?
-      Chen Y.Liang
-      Apr 29, 2017
-"""
 from __future__ import division
 import numpy as np
 

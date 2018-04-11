@@ -2,7 +2,6 @@
 too many lines, setup a new module
 
 Chen Y.liang
-Nov 22, 2017
 """
 import mxnet as mx
 import numpy as np

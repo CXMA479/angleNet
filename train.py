@@ -10,7 +10,7 @@ Author and Date is no longer needed.
 import mxnet as mx
 import numpy as np
 from config import config as cfg
-
+import os
 
 
 import sys, time, logging
@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 symbol_mod, fixed_param_names = gen_symbol()
 it=angleIter(symbol_mod)#'../../data/angleList.txt','../../data/img',1,100)
 d0=it.next()
-
+logging.info('PID:%d'%os.getpid())
 if not cfg.debug.debug:
   logging.info(cfg)
   logging.info(symbol_mod.tojson())
@@ -32,8 +32,10 @@ if not cfg.debug.debug:
 mA_acc=mx.metric.CustomMetric(feval_acc_angleMetric, name='masked acc')#mx.metric.create('acc') #
 mA_l1 = mx.metric.CustomMetric(feval_l1_angleMetric, name='l1_smooth loss')
 #############################################################
+softfixed_param_names=fixed_param_names[:];fixed_param_names=None
+#fixed_param_names=softfixed_param_names[:];softfixed_param_names=None
 
-mod = gen_model(symbol_mod,fixed_param_names,it)
+mod = gen_model(symbol_mod,fixed_param_names,it,softfixed_param_names=softfixed_param_names, softfixed_mul_lr=.01)
 
 t0=time.time()
 for epoch_i in xrange(cfg.it.epoch):

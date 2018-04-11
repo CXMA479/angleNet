@@ -4,7 +4,6 @@
              view them on the figure
 
 Chen Y. Liang
-Sep 10, 2017
 """
 import mxnet as mx
 from module.module import MutableModule
@@ -162,9 +161,10 @@ class Viewer(object):
   def view(self,filter_th,iou_th,block=False):
     #assert 0 < filter_th < 1
     #print self.raw_predict_bbox.shape, self.anchor.shape
-    #assert 0
+#    print self.mod.get_outputs()[0].context
+#    assert 0
     self.indx = mx_nms(self.predict_bbox, None, self.predict_score,\
-             self.predict_transfered_bbox, iou_th,score_thresh=filter_th)#, min_area=0, max_area=np.inf)
+             self.predict_transfered_bbox, iou_th,score_thresh=filter_th,ctx=cfg.predict.ctx)#, min_area=0, max_area=np.inf)
     
     # predict_score.shape :  1 x num x 2
 

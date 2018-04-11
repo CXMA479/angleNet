@@ -21,30 +21,44 @@ def gen_symbol():
     ### construct feature maps...###
     ################################
     feat_sym_1x1_0 = symbol.get_internals()[cfg.net.rpn_conv_names['1x1'][0]+'_output']
-    feat_sym_2x2_0 = symbol.get_internals()[cfg.net.rpn_conv_names['2x2'][0]+'_output']
-    feat_sym_4x4_0 = symbol.get_internals()[cfg.net.rpn_conv_names['4x4'][0]+'_output']
+
+
 #    print(feat_sym_2x2_0.list_arguments())
     fixed_param_names = []
-    for _ in [ feat_sym_1x1_0, feat_sym_2x2_0,feat_sym_4x4_0]: # fixed_param_names will be returned to the caller
+    for _ in [ feat_sym_1x1_0,]:# feat_sym_2x2_0]: # fixed_param_names will be returned to the caller
         fixed_param_names += _.list_arguments()
 #    print(set(fixed_param_names))
     fixed_param_names = list(set(fixed_param_names)) # uniquify...
 
     feat_sym_1x1_0 = mx.sym.Convolution(feat_sym_1x1_0, kernel=(3,3),pad=(1,1), num_filter=256, no_bias=True)
+    feat_sym_1x1_0 = mx.sym.Activation(feat_sym_1x1_0, act_type='relu')
+    feat_sym       = feat_sym_1x1_0
+    feat_sym_2x2 = None
+    if '4x4' in cfg.net.rpn_conv_names:
+      feat_sym_4x4_0 = symbol.get_internals()[cfg.net.rpn_conv_names['4x4'][0]+'_output']
+      feat_sym_4x4_0 = mx.sym.BlockGrad(feat_sym_4x4_0)
+      feat_sym_2x2 = mx.sym.Convolution(feat_sym_4x4_0, kernel=(2,2), stride=(2,2),\
+                                            num_filter=256, no_bias=True)
+      feat_sym_2x2 = mx.sym.Activation(feat_sym_2x2,act_type='relu')    
 
-    feat_sym_4x4_0 = mx.sym.Convolution(feat_sym_4x4_0, kernel=(2,2), stride=(2,2),\
+          
+    if '2x2' in cfg.net.rpn_conv_names: 
+      feat_sym_2x2_0 = symbol.get_internals()[cfg.net.rpn_conv_names['2x2'][0]+'_output']
+      feat_sym_2x2_0 = mx.sym.BlockGrad(feat_sym_2x2_0)
+      feat_sym_2x2   = mx.sym.concat(feat_sym_2x2, feat_sym_2x2_0) \
+                        if feat_sym_2x2 is not None else feat_sym_2x2_0
+      feat_sym_2x2 = mx.sym.Convolution(feat_sym_2x2, kernel=(2,2), stride=(2,2),\
                                             num_filter=256, no_bias=True)
-    feat_sym_4x4_0 = mx.sym.Activation(feat_sym_4x4_0,act_type='relu')
-    
-    feat_sym_2x2_0 = mx.sym.concat(feat_sym_2x2_0, feat_sym_4x4_0)
-    feat_sym_2x2_0 = mx.sym.Convolution(feat_sym_2x2_0, kernel=(2,2), stride=(2,2),\
-                                            num_filter=256, no_bias=True)
+      feat_sym_2x2 = mx.sym.Activation(feat_sym_2x2, act_type='relu')
+      
+    feat_sym = mx.sym.concat(feat_sym_1x1_0, feat_sym_2x2) if feat_sym_2x2 is not None else feat_sym_1x1_0
+
+
 #    feat_sym_2x2_0 = mx.sym.Pooling(feat_sym_2x2_0, kernel=(2,2), stride=(2,2), pool_type='avg', pooling_convention='full')
 #    feat_sym_2x2_0 = mx.sym.Convolution(feat_sym_2x2_0, kernel=(3,3), pad=(1,1), num_filter=256)
 #    feat_sym_2x2_0 = mx.sym.Activation(feat_sym_2x2_0, act_type='tanh')
     #[feat_sym_1x1_0, feat_sym_2x2_0]= [mx.sym.BatchNorm(_) for _ in [feat_sym_1x1_0, feat_sym_2x2_0] ]
-    feat_sym_1x1_0 = mx.sym.Activation(feat_sym_1x1_0, act_type='relu')
-    feat_sym_2x2_0 = mx.sym.Activation(feat_sym_2x2_0, act_type='relu')
+
    
     
 #    feat_sym_2x2_0 = mx.sym.Convolution(feat_sym_2x2_0, kernel=(3,3), pad=(1,1), num_filter=256)
@@ -52,13 +66,12 @@ def gen_symbol():
 
     # concatenate...
 
-    in_shape,out_shape_2x2 ,uax_shape=feat_sym_2x2_0.infer_shape( data=(1,3, 448, 448))
+#    in_shape,out_shape_2x2 ,uax_shape=feat_sym_2x2_0.infer_shape( data=(1,3, 448, 448))
     in_shape,out_shape_1x1 ,uax_shape=feat_sym_1x1_0.infer_shape(data=(1,3, 448, 448))
 #    print('1x1: '+str(out_shape_1x1),'2x2: '+str(out_shape_2x2) )
 #    assert 0
 
 
-    feat_sym = mx.sym.concat(feat_sym_1x1_0, feat_sym_2x2_0)#feat_sym_1x1_0#feat_sym_1x1_0# 1 x C x h x w
     
     #feat_sym = mx.sym.Convolution(feat_sym, kernel=(3,3), pad=(1,1),num_filter=1024/2,\
     #                            no_bias=True)
@@ -160,19 +173,39 @@ def gen_symbol():
 
     return symbol, fixed_param_names
 
+
+
+
+def batch_set_mult_lr(mod, relaxed_param_names, lr):
+    """
+        set all params in lr learning-rate
+    """
+    logging.info('relaxed params: %f'%lr)
+    logging.info(relaxed_param_names)
+    name_lr_dict = {param_name:lr for param_name in relaxed_param_names}
+    mod._optimizer.set_lr_mult(name_lr_dict)
+
+
+
+
 def gen_model(symbol_model,fixed_param_names,it, data_names=cfg.it.dataNames,\
-        label_names=cfg.it.labelNames, ):
+        label_names=cfg.it.labelNames,softfixed_param_names=None, softfixed_mul_lr=0 ):
     """
               generate and initilize the model
                             use MutableModule
     """
+    if fixed_param_names is None:
+        assert softfixed_param_names is not None
+    if softfixed_param_names is None:
+        assert fixed_param_names is not None
     mod = MutableModule(symbol_model, data_names, label_names, context=cfg.train.ctx,fixed_param_prefix=fixed_param_names)
     mod.bind(it.provide_data, label_shapes=it.provide_label)
     _, arg_params, aux_params = mx.model.load_checkpoint(cfg.net.symbol_path,cfg.net.params_epoch)
     mod.init_params(mx.init.Xavier(), arg_params=arg_params, aux_params=aux_params,allow_missing=True)
-    mod.init_optimizer(optimizer_params=(('learning_rate',cfg.train.lr),('wd',cfg.train.wd),('momentum',cfg.train.momentum)) )
+    mod.init_optimizer(optimizer_params=(  ('learning_rate',cfg.train.lr),('wd',cfg.train.wd),('momentum',cfg.train.momentum),('clip_gradient',cfg.train.clip_gradient)  ) )
+    if softfixed_param_names is not None:
+        batch_set_mult_lr(mod._curr_module,softfixed_param_names, softfixed_mul_lr)
     return mod
-
 
 def feval_l1_angleMetric( label, pred):
     """    just abs_sum the pred """

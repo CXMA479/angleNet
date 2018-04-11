@@ -2,7 +2,6 @@
      need a console ?
 
      Chen Y. Liang
-     Apr 29, 2017
 """
 import matplotlib
 matplotlib.use('Qt4Agg')
@@ -17,7 +16,7 @@ import mxnet as mx
 
 
 config = edict()
-config.comment ='more feats'#use zero angle with man-made samples'
+config.comment ='4x4 feat with GradBlock + config feat-conv+ no wd+ run on the naturally crops'#use zero angle with man-made samples'
 config.it=edict()
 config.it.debug=edict()
 config.it.debug.debug =  True
@@ -30,7 +29,7 @@ labelName: used for anchor-wise regression
 stride: pixels(in raw img) between to neighbor anchors' centrs
 sideLength: \sqrt{Aera} ,Aera is fixed for one sideLength wrt. angleD
 """
-config.ANCHOR_angleD=(0,60,-60) #(-60,)#  # degree
+config.ANCHOR_angleD=(0,)#60,-60) #(-60,)#  # degree
 config.ANCHOR_HoW=(2, .5, 1)   #(3,)#     #   rh over rw
 config.ANCHOR_sideLength=(80,60,100)
 config.ANCHOR_stride =None#  deprecated, calculated in angleIter.py automatically  240#16# (250,250)#
@@ -43,15 +42,21 @@ config.debug.it = edict()
 config.debug.it.anchor_num = 60  # randomly show some of anchors on the figure in angleIter.next()
 
 config.it.scale=448
-
+"""
 config.it.imgPath='../data/synthesis/test_2_390/%d'%config.it.scale#img'   #  angleNet/lab/it/angleIter.py
 config.it.labelFile='../data/synthesis/test_2_390/angleList-%d.txt'%config.it.scale
-config.it.epoch=8
-config.it.iteration=400000/2/5#00#*1000
+config.it.ioudir = '../data/iou/%d/'%config.it.scale  #  pre-calculate iou to a file for each image, it 
+"""
+config.it.imgPath='../data/%d'%config.it.scale#img'   #  angleNet/lab/it/angleIter.py
+config.it.labelFile='../data/angleList-%d.txt'%config.it.scale
+config.it.ioudir = '../data/iou/nat/%d/'%config.it.scale  #  pre-calculate iou to a file for each image, it 
+
+config.it.epoch=20
+config.it.iteration=400000/2/5/2#/10#00#*1000
 config.it.dataNames=['data','rpn_inside_weight','rpn_outside_weight']    #  gdt: label, x, y, alphaR, rh, rw     will be used after proposal operation
 config.it.labelNames=['target_label','target_bbox']         #  target_label ONLY indicats wheather it is object
 config.it.shuffle=True
-config.it.ioudir = '../data/iou/%d/'%config.it.scale  #  pre-calculate iou to a file for each image, it contains all .npz 
+
 if not os.path.isdir(config.it.ioudir):
 
         os.mkdir(config.it.ioudir)
@@ -64,7 +69,7 @@ config.train.ctx = mx.gpu(0)#mx.cpu()
 config.train.iou_x_num=10     # referenced by angleIter.py
 config.train.THRESHOLD_OBJECT=.65#65#  # ref by  angleIter.py
 config.train.THRESHOLD_BACKGD =.3#55#
-config.train.rpn_batch_size=128
+config.train.rpn_batch_size=128#50#
 config.train.rpn_fg_frac   =.5
 config.train.rpn_bbx_weight=np.array([10., 10., 10., 20., 20.])  # x,y,alphaR,rh,rw rpn_inside_weight
 config.train.bbox_scalar = 1
@@ -72,10 +77,10 @@ config.train.bbox_scalar = 1
 #config.train.rpn_bbox_inside_weight
 config.train.rpn_postive_weight=.6
 config.train.lr=0.0001 
-config.train.wd=1E-5
+config.train.wd=0#1E-5
 config.train.momentum=.6
 config.train.l1_smooth_sclr = 3. # ref by mx.sym.smooth_l1
-
+config.train.clip_gradient=None#1#.1#None#None#
 
 config.train.timeStamp=time.asctime()
 config.train.outputPath='../output/'
@@ -95,7 +100,7 @@ config.type_num = len(config.ANCHOR_HoW)*len(config.ANCHOR_angleD)*len(config.AN
 
 
 config.predict=edict()
-config.predict.ctx=mx.gpu()
+config.predict.ctx=mx.gpu(1)
 
 LOGFMT = '%(levelname)s: %(asctime)s %(filename)s [line: %(lineno)d]  %(message)s'
 

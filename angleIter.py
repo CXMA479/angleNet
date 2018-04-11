@@ -1,9 +1,3 @@
-"""
-         I need a raw read iter
-             Chen Y. Liang
-             April 29, 2017
-"""
-
 import matplotlib
 matplotlib.use('Qt4Agg')
 import matplotlib.pyplot as plt

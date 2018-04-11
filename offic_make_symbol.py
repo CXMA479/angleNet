@@ -1,6 +1,5 @@
 """
        from mx-rcnn/rcnn/symbol/symbol_vgg.py
-                  May 4, 2017
 
 """
 

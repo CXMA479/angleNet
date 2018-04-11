@@ -37,7 +37,7 @@ config.ANCHOR_stride =None#  deprecated, calculated in angleIter.py automaticall
 config.class_num=2   # only building and background
 
 config.debug=edict()
-config.debug.debug= not   True
+config.debug.debug=    True
 config.debug.it = edict()
 config.debug.it.anchor_num = 60  # randomly show some of anchors on the figure in angleIter.next()
 
@@ -79,6 +79,7 @@ config.train.rpn_postive_weight=.6
 config.train.lr=0.0001 
 config.train.wd=0#1E-5
 config.train.momentum=.6
+config.train.mult_lr= .01
 config.train.l1_smooth_sclr = 3. # ref by mx.sym.smooth_l1
 config.train.clip_gradient=None#1#.1#None#None#
 

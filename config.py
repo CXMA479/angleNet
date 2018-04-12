@@ -101,7 +101,7 @@ config.type_num = len(config.ANCHOR_HoW)*len(config.ANCHOR_angleD)*len(config.AN
 
 
 config.predict=edict()
-config.predict.ctx=mx.gpu(1)
+config.predict.ctx=mx.gpu(0)
 
 LOGFMT = '%(levelname)s: %(asctime)s %(filename)s [line: %(lineno)d]  %(message)s'
 

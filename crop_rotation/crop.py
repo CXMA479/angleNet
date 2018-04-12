@@ -85,8 +85,8 @@ def crop_img(img, tl, br, ignore_partitial=True):
     return img[tl_y:br_y,tl_x:br_x,  :]
 
 def gen_endian(entry):
-    x_tl, x_br = [int(entry[1]+h) for h in [-entry[-2], entry[-2]] ]
-    y_tl, y_br = [int(entry[2]+w) for w in [-entry[-1], entry[-1]] ]
+    x_tl, x_br = [int(entry[-5]+h) for h in [-entry[-2], entry[-2]] ]
+    y_tl, y_br = [int(entry[-4]+w) for w in [-entry[-1], entry[-1]] ]
     return (x_tl, y_tl), (x_br, y_br)
 
 

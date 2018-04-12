@@ -14,6 +14,7 @@ from angleIter import angleIter
 import matplotlib.pyplot as plt
 import logging
 from nms.nms import mx_nms
+#from crop_rotation.crop import rotate_img, gen_endian
 
 class Viewer(object):
   """
@@ -22,13 +23,6 @@ class Viewer(object):
   """
   def __init__(self,model_prefix, epoch, pred_bbox_name='rpn_pred_bbox_reshape',\
                      pred_scor_name='rpn_label_loss', data_names=['data',],label_names=['target_label',]):
-
-#model_prefix = '../output/'
-#epoch=0
-#
-#pred_bbox_name = 'rpn_pred_bbox_reshape'
-#pred_scor_name = 'rpn_label_loss'   # use output of the softmax
-#data_names = ['data',]
 
     symbol_path ='%s-symbol.json'%model_prefix
     params_path ='%s-%04d.params'%(model_prefix,epoch)
@@ -44,12 +38,7 @@ class Viewer(object):
     pred_scor_sym = symbol.get_internals()['%s_output'%pred_scor_name]
     
     symbol = mx.sym.Group([pred_bbox_sym, pred_scor_sym])
-#    print(symbol.list_arguments())
-#    assert 0
-    
-    
-#    it = angleIter(symbol,is_train=False)
-    
+
     mod = MutableModule(symbol,data_names,label_names=label_names, context=cfg.predict.ctx)
     mod.bind([('data',(1,3,800,800)),], label_shapes =[], for_training=False)
     
@@ -115,7 +104,7 @@ class Viewer(object):
     self.mod.forward(d)
    
     #self.raw_predict_bbox, self.raw_predict_score = [mx.nd.reshape(x,(-3,0)) for x in  self.mod.get_outputs()[:2] ]
-    self.predict_bbox, self.predict_score = [mx.nd.reshape(x,(-3,0)).asnumpy() for x in  self.mod.get_outputs()[:2] ] 
+    self.predict_bbox, self.predict_score = [mx.nd.reshape(x,(-3,0)).asnumpy() for x in  self.mod.get_outputs()[:2] ]
     
     self.predict_transfered_bbox  = tool.bbox_inv_transfer(self.anchor, self.predict_bbox)
     #  filter who obviously out of boundary...
@@ -158,7 +147,7 @@ class Viewer(object):
     self.predict_transfered_bbox = self.predict_transfered_bbox[pick_idx,:]
     self.predict_score           = self.predict_score[pick_idx,:]
 
-  def view(self,filter_th,iou_th,block=False):
+  def view(self,filter_th,iou_th,block=False, onlyneed_box=False):
     #assert 0 < filter_th < 1
     #print self.raw_predict_bbox.shape, self.anchor.shape
 #    print self.mod.get_outputs()[0].context
@@ -171,6 +160,8 @@ class Viewer(object):
     #self.indx = self.predict_score[:,1] > filter_th
     print('num of indexed bbox: %d'%len(self.indx))
     self.filter_transfered_bbox = self.predict_transfered_bbox[self.indx,:]
+    if onlyneed_box:
+        return self.filter_transfered_bbox
     img = self.img
     
     # nms...

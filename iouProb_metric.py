@@ -18,8 +18,8 @@ model_prefix='../output/metric-model/Wed Apr 11 10:11:49 2018_angleD=[0];HoW=[2,
 #imgdir='../data/metric/448'; labelfile='../data/metric/angleList-448.txt' # contents will be analysed...
 imgdir='../data/metric/896'; labelfile='../data/metric/angleList-896.txt' # contents will be analysed...
 baseline_dir = '../output/metric-model/baseline'  # store prediction files from baseline
-AA_output_prefix = os.path.join( os.path.dirname(labelfile)+'iou-prob', 'AA_model')
-AG_output_prefix = os.path.join( os.path.dirname(labelfile)+'iou-prob',\
+AA_output_prefix = os.path.join( os.path.dirname(labelfile)+'/iou-prob', 'AA_model')
+AG_output_prefix = os.path.join( os.path.dirname(labelfile)+'/iou-prob','AG_model'+\
                             os.path.basename(model_prefix) +str(epoch) )
 
 for dir_ele in [AA_output_prefix, AG_output_prefix]:

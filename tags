@@ -1,0 +1,1522 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AngleMetric	make_symbol.py	/^class AngleMetric(mx.metric.CustomMetric):$/;"	c
+BBxLosser	make_model.py	/^class BBxLosser():$/;"	c
+C	crop_rotation/gen.py	/^        C= np.random.randint(150, 300,(2,))$/;"	v
+CC	cython/Makefile	/^CC=gcc-4.9$/;"	m
+CC	gpu_IoU/Makefile	/^CC=gcc-6$/;"	m
+CYTHON_ABI	cython/cytool.c	10;"	d	file:
+CYTHON_CCOMPLEX	cython/cytool.c	452;"	d	file:
+CYTHON_CCOMPLEX	cython/cytool.c	454;"	d	file:
+CYTHON_CCOMPLEX	cython/cytool.c	456;"	d	file:
+CYTHON_COMPILING_IN_CPYTHON	cython/cytool.c	40;"	d	file:
+CYTHON_COMPILING_IN_CPYTHON	cython/cytool.c	43;"	d	file:
+CYTHON_COMPILING_IN_PYPY	cython/cytool.c	39;"	d	file:
+CYTHON_COMPILING_IN_PYPY	cython/cytool.c	42;"	d	file:
+CYTHON_FORMAT_SSIZE_T	cython/cytool.c	52;"	d	file:
+CYTHON_INLINE	cython/cytool.c	196;"	d	file:
+CYTHON_INLINE	cython/cytool.c	198;"	d	file:
+CYTHON_INLINE	cython/cytool.c	200;"	d	file:
+CYTHON_INLINE	cython/cytool.c	202;"	d	file:
+CYTHON_NCP_UNUSED	cython/cytool.c	267;"	d	file:
+CYTHON_NCP_UNUSED	cython/cytool.c	269;"	d	file:
+CYTHON_PEP393_ENABLED	cython/cytool.c	77;"	d	file:
+CYTHON_PEP393_ENABLED	cython/cytool.c	86;"	d	file:
+CYTHON_REFNANNY	cython/cytool.c	771;"	d	file:
+CYTHON_RESTRICT	cython/cytool.c	183;"	d	file:
+CYTHON_RESTRICT	cython/cytool.c	185;"	d	file:
+CYTHON_RESTRICT	cython/cytool.c	187;"	d	file:
+CYTHON_RESTRICT	cython/cytool.c	189;"	d	file:
+CYTHON_UNUSED	cython/cytool.c	255;"	d	file:
+CYTHON_UNUSED	cython/cytool.c	257;"	d	file:
+CYTHON_UNUSED	cython/cytool.c	260;"	d	file:
+CYTHON_UNUSED	cython/cytool.c	262;"	d	file:
+CYTHON_USE_PYLONG_INTERNALS	cython/cytool.c	46;"	d	file:
+CYTHON_WITHOUT_ASSERTIONS	cython/cytool.c	249;"	d	file:
+CastAug	it/origin-image.py	/^def CastAug():$/;"	f
+CenterCropAug	it/origin-image.py	/^def CenterCropAug(size, interp=2):$/;"	f
+CfgLosser	make_model.py	/^class CfgLosser():$/;"	c
+ColorJitterAug	it/origin-image.py	/^def ColorJitterAug(brightness, contrast, saturation):$/;"	f
+ColorNormalizeAug	it/origin-image.py	/^def ColorNormalizeAug(mean, std):$/;"	f
+CreateAugmenter	it/origin-image.py	/^def CreateAugmenter(data_shape, resize=0, rand_crop=False, rand_resize=False, rand_mirror=False,$/;"	f
+DECREF	cython/cytool.c	/^    void (*DECREF)(void*, PyObject*, int);$/;"	m	struct:__anon8	file:
+DL_EXPORT	cython/cytool.c	30;"	d	file:
+DL_IMPORT	cython/cytool.c	27;"	d	file:
+DTYPE	cython/cytool.pyx	/^DTYPE=np.float$/;"	v
+DTYPE	gpu_IoU/cytool.pyx	/^DTYPE=np.float$/;"	v
+DataBatch	it/io-0.py	/^class DataBatch(object):$/;"	c
+DataDesc	it/io-0.py	/^class DataDesc(namedtuple('DataDesc', ['name', 'shape'])):$/;"	c
+DataIter	it/io-0.py	/^class DataIter(object):$/;"	c
+FLAG	cython/Makefile	/^FLAG= -shared -pthread -fPIC -O3 -Wall -fno-strict-aliasing$/;"	m
+FLAG	gpu_IoU/Makefile	/^FLAG= -shared -pthread -fPIC -O3 -Wall -fno-strict-aliasing$/;"	m
+FinishContext	cython/cytool.c	/^    void (*FinishContext)(void**);$/;"	m	struct:__anon8	file:
+GIVEREF	cython/cytool.c	/^    void (*GIVEREF)(void*, PyObject*, int);$/;"	m	struct:__anon8	file:
+GM	angleNet.py	/^GM  = GroupMetrix()$/;"	v
+GOTREF	cython/cytool.c	/^    void (*GOTREF)(void*, PyObject*, int);$/;"	m	struct:__anon8	file:
+GroupMetrix	nms/tool.py	/^class GroupMetrix(object):$/;"	c
+GroupMetrix	tool.py	/^class GroupMetrix(object):$/;"	c
+HorizontalFlipAug	it/origin-image.py	/^def HorizontalFlipAug(p):$/;"	f
+INCLUDE	cython/Makefile	/^INCLUDE = -I\/usr\/include\/python2.7$/;"	m
+INCLUDE	gpu_IoU/Makefile	/^INCLUDE = -I\/usr\/include\/python2.7$/;"	m
+INCREF	cython/cytool.c	/^    void (*INCREF)(void*, PyObject*, int);$/;"	m	struct:__anon8	file:
+IS_UNSIGNED	cython/cytool.c	477;"	d	file:
+ImageIter	it/origin-image.py	/^class ImageIter(io.DataIter):$/;"	c
+LOGFMT	config.py	/^LOGFMT = '%(levelname)s: %(asctime)s %(filename)s [line: %(lineno)d]  %(message)s'$/;"	v
+LightingAug	it/origin-image.py	/^def LightingAug(alphastd, eigval, eigvec):$/;"	f
+M	cython/cytool.pyx	/^def M(DTYPE_t beta):$/;"	f
+M	cython/has_intersec.py	/^def M(beta):$/;"	f
+M	gpu_IoU/cytool.pyx	/^def M(DTYPE_t beta):$/;"	f
+MTran	iou.py	/^def MTran(beta):$/;"	f
+MXDataIter	it/io-0.py	/^class MXDataIter(DataIter):$/;"	c
+MutableModule	module/module.py	/^class MutableModule(BaseModule):$/;"	c
+NDArrayIter	it/io-0.py	/^class NDArrayIter(DataIter):$/;"	c
+P1	iou.py	/^P1=cp2p(P1c,alpha1,rh1,rw1)$/;"	v
+P1_mt	iou.py	/^P1_mt=np.dot(MTran(-alpha1),P1)$/;"	v
+P1c	iou.py	/^P1c=np.array([0,0])$/;"	v
+P2	iou.py	/^P2=cp2p(P2c,alpha2,rh2,rw2)$/;"	v
+P2_mt	iou.py	/^P2_mt=np.dot(MTran(-alpha2),P2)$/;"	v
+P2c	iou.py	/^P2c=np.array([5,6])$/;"	v
+PY_LONG_LONG	cython/cytool.c	33;"	d	file:
+PY_SSIZE_T_CLEAN	cython/cytool.c	3;"	d	file:
+PrefetchingIter	it/io-0.py	/^class PrefetchingIter(DataIter):$/;"	c
+PyBaseString_Type	cython/cytool.c	113;"	d	file:
+PyBoolObject	cython/cytool.c	148;"	d	file:
+PyIntObject	cython/cytool.c	131;"	d	file:
+PyInt_AS_LONG	cython/cytool.c	141;"	d	file:
+PyInt_AsLong	cython/cytool.c	140;"	d	file:
+PyInt_AsSsize_t	cython/cytool.c	142;"	d	file:
+PyInt_AsUnsignedLongLongMask	cython/cytool.c	144;"	d	file:
+PyInt_AsUnsignedLongMask	cython/cytool.c	143;"	d	file:
+PyInt_Check	cython/cytool.c	133;"	d	file:
+PyInt_CheckExact	cython/cytool.c	134;"	d	file:
+PyInt_FromLong	cython/cytool.c	137;"	d	file:
+PyInt_FromSize_t	cython/cytool.c	138;"	d	file:
+PyInt_FromSsize_t	cython/cytool.c	139;"	d	file:
+PyInt_FromString	cython/cytool.c	135;"	d	file:
+PyInt_FromUnicode	cython/cytool.c	136;"	d	file:
+PyInt_Type	cython/cytool.c	132;"	d	file:
+PyNumber_Int	cython/cytool.c	145;"	d	file:
+PySet_CheckExact	cython/cytool.c	127;"	d	file:
+PyStringObject	cython/cytool.c	114;"	d	file:
+PyString_Check	cython/cytool.c	116;"	d	file:
+PyString_CheckExact	cython/cytool.c	117;"	d	file:
+PyString_Type	cython/cytool.c	115;"	d	file:
+PyUnicode_Contains	cython/cytool.c	103;"	d	file:
+PyUnicode_InternFromString	cython/cytool.c	152;"	d	file:
+Py_HUGE_VAL	cython/cytool.c	36;"	d	file:
+Py_OptimizeFlag	cython/cytool.c	49;"	d	file:
+Py_TPFLAGS_CHECKTYPES	cython/cytool.c	65;"	d	file:
+Py_TPFLAGS_HAVE_FINALIZE	cython/cytool.c	74;"	d	file:
+Py_TPFLAGS_HAVE_INDEX	cython/cytool.c	68;"	d	file:
+Py_TPFLAGS_HAVE_NEWBUFFER	cython/cytool.c	71;"	d	file:
+Py_hash_t	cython/cytool.c	/^  typedef long Py_hash_t;$/;"	t	file:
+R1	cython/iou-test.py	/^R1=np.array([10,5,np.deg2rad(60),80,40])$/;"	v
+R1	cython/iou-test.py	/^R1=np.array([10,5,np.deg2rad(60-45),80,40])$/;"	v
+R1	cython/iou-test.py	/^R1=np.array([10,5,np.deg2rad(60-60),80,40])$/;"	v
+R1	cython/iou-test.py	/^R1=np.array([30.,40,0,20,20])$/;"	v
+R1	gpu_IoU/iou-test.py	/^R1=np.array([10,5,np.deg2rad(60),80,40])$/;"	v
+R1	gpu_IoU/iou-test.py	/^R1=np.array([10,5,np.deg2rad(60-45),80,40])$/;"	v
+R1	gpu_IoU/iou-test.py	/^R1=np.array([10,5,np.deg2rad(60-60),80,40])$/;"	v
+R1	gpu_IoU/iou-test.py	/^R1=np.array([20,-15,np.deg2rad(60),20,10])$/;"	v
+R1	gpu_IoU/iou-test.py	/^R1=np.array([30.,40,0,20,20])$/;"	v
+R2	cython/iou-test.py	/^R2=np.array([5,5,np.deg2rad(45),60,30])$/;"	v
+R2	cython/iou-test.py	/^R2=np.array([5,5,np.deg2rad(45-45),60,30])$/;"	v
+R2	cython/iou-test.py	/^R2=np.array([5,5,np.deg2rad(45-60),60,30])$/;"	v
+R2	cython/iou-test.py	/^R2=np.array([50.,60,0,20,20])$/;"	v
+R2	gpu_IoU/iou-test.py	/^R2=np.array([15,51,np.deg2rad(45),60,30])$/;"	v
+R2	gpu_IoU/iou-test.py	/^R2=np.array([5,5,np.deg2rad(45),60,30])$/;"	v
+R2	gpu_IoU/iou-test.py	/^R2=np.array([5,5,np.deg2rad(45-45),60,30])$/;"	v
+R2	gpu_IoU/iou-test.py	/^R2=np.array([5,5,np.deg2rad(45-60),60,30])$/;"	v
+R2	gpu_IoU/iou-test.py	/^R2=np.array([50.,60,0,20,20])$/;"	v
+RandomCropAug	it/origin-image.py	/^def RandomCropAug(size, interp=2):$/;"	f
+RandomOrderAug	it/origin-image.py	/^def RandomOrderAug(ts):$/;"	f
+RandomSizedCropAug	it/origin-image.py	/^def RandomSizedCropAug(size, min_area, ratio, interp=2):$/;"	f
+ResizeAug	it/origin-image.py	/^def ResizeAug(size, interp=2):$/;"	f
+ResizeIter	it/io-0.py	/^class ResizeIter(DataIter):$/;"	c
+S	iou.py	/^S= 1.*(interP_on_origin[0,:].size*2+interP_on_origin_bord[0,:].size)\/(p_whole[0,:].size*2+p_whole_bord[0,:].size)$/;"	v
+SetupContext	cython/cytool.c	/^    void* (*SetupContext)(const char*, int, const char*);$/;"	m	struct:__anon8	file:
+V	iou_metric.py	/^V=Viewer(model_prefix, epoch)$/;"	v
+Viewer	predict_viewer.py	/^class Viewer(object):$/;"	c
+X	iou.py	/^X=X[1:-1,1:-1]$/;"	v
+XXX_genAnchor	nms/tool.py	/^def XXX_genAnchor(im_info,angleD,HoW,sideLength,feat_shape,stride):$/;"	f
+XXX_genAnchor	tool.py	/^def XXX_genAnchor(im_info,angleD,HoW,sideLength,feat_shape,stride):$/;"	f
+X_bord	iou.py	/^X_bord=np.concatenate( ( X[0,:],X[1:-1,0],X[1:-1,-1],X[-1,:] ))$/;"	v
+Y	iou.py	/^Y=Y[1:-1,1:-1]$/;"	v
+Y_bord	iou.py	/^Y_bord=np.concatenate( (  Y[0,:],Y[1:-1,0],Y[1:-1,-1],Y[-1,:]))$/;"	v
+_Complex_I	cython/cytool.c	467;"	d	file:
+_Complex_I	cython/cytool.c	468;"	d	file:
+_USE_MATH_DEFINES	cython/cytool.c	207;"	d	file:
+__PYX_BUF_FLAGS_PACKED_STRUCT	cython/cytool.c	479;"	d	file:
+__PYX_BUILD_PY_SSIZE_T	cython/cytool.c	51;"	d	file:
+__PYX_DEFAULT_STRING_ENCODING	cython/cytool.c	/^static char* __PYX_DEFAULT_STRING_ENCODING;$/;"	v	file:
+__PYX_DEFAULT_STRING_ENCODING	cython/cytool.c	277;"	d	file:
+__PYX_DEFAULT_STRING_ENCODING_IS_ASCII	cython/cytool.c	275;"	d	file:
+__PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT	cython/cytool.c	276;"	d	file:
+__PYX_EXTERN_C	cython/cytool.c	231;"	d	file:
+__PYX_EXTERN_C	cython/cytool.c	233;"	d	file:
+__PYX_HAVE_API__cytool	cython/cytool.c	238;"	d	file:
+__PYX_HAVE_RT_ImportModule	cython/cytool.c	12487;"	d	file:
+__PYX_HAVE_RT_ImportType	cython/cytool.c	12504;"	d	file:
+__PYX_HAVE__cytool	cython/cytool.c	237;"	d	file:
+__PYX_NAN	cython/cytool.c	/^static CYTHON_INLINE float __PYX_NAN() {$/;"	f	file:
+__PYX_NAN	cython/cytool.c	211;"	d	file:
+__PYX_VERIFY_RETURN_INT	cython/cytool.c	11528;"	d	file:
+__PYX_VERIFY_RETURN_INT_EXC	cython/cytool.c	11530;"	d	file:
+__PYX__VERIFY_RETURN_INT	cython/cytool.c	11532;"	d	file:
+__Pyx_AddTraceback	cython/cytool.c	/^static void __Pyx_AddTraceback(const char *funcname, int c_line,$/;"	f	file:
+__Pyx_ArgTypeTest	cython/cytool.c	/^static CYTHON_INLINE int __Pyx_ArgTypeTest(PyObject *obj, PyTypeObject *type, int none_allowed,$/;"	f	file:
+__Pyx_BUILTIN_MODULE_NAME	cython/cytool.c	54;"	d	file:
+__Pyx_BUILTIN_MODULE_NAME	cython/cytool.c	59;"	d	file:
+__Pyx_BufFmt_CheckString	cython/cytool.c	/^static const char* __Pyx_BufFmt_CheckString(__Pyx_BufFmt_Context* ctx, const char* ts) {$/;"	f	file:
+__Pyx_BufFmt_Context	cython/cytool.c	/^} __Pyx_BufFmt_Context;$/;"	t	typeref:struct:__anon5	file:
+__Pyx_BufFmt_DescribeTypeChar	cython/cytool.c	/^static const char* __Pyx_BufFmt_DescribeTypeChar(char ch, int is_complex) {$/;"	f	file:
+__Pyx_BufFmt_ExpectNumber	cython/cytool.c	/^static int __Pyx_BufFmt_ExpectNumber(const char **ts) {$/;"	f	file:
+__Pyx_BufFmt_Init	cython/cytool.c	/^static void __Pyx_BufFmt_Init(__Pyx_BufFmt_Context* ctx,$/;"	f	file:
+__Pyx_BufFmt_ParseNumber	cython/cytool.c	/^static int __Pyx_BufFmt_ParseNumber(const char** ts) {$/;"	f	file:
+__Pyx_BufFmt_ProcessTypeChunk	cython/cytool.c	/^static int __Pyx_BufFmt_ProcessTypeChunk(__Pyx_BufFmt_Context* ctx) {$/;"	f	file:
+__Pyx_BufFmt_RaiseExpected	cython/cytool.c	/^static void __Pyx_BufFmt_RaiseExpected(__Pyx_BufFmt_Context* ctx) {$/;"	f	file:
+__Pyx_BufFmt_RaiseUnexpectedChar	cython/cytool.c	/^static void __Pyx_BufFmt_RaiseUnexpectedChar(char ch) {$/;"	f	file:
+__Pyx_BufFmt_StackElem	cython/cytool.c	/^} __Pyx_BufFmt_StackElem;$/;"	t	typeref:struct:__anon4	file:
+__Pyx_BufFmt_TypeCharToAlignment	cython/cytool.c	/^static size_t __Pyx_BufFmt_TypeCharToAlignment(char ch, CYTHON_UNUSED int is_complex) {$/;"	f	file:
+__Pyx_BufFmt_TypeCharToGroup	cython/cytool.c	/^static char __Pyx_BufFmt_TypeCharToGroup(char ch, int is_complex) {$/;"	f	file:
+__Pyx_BufFmt_TypeCharToNativeSize	cython/cytool.c	/^static size_t __Pyx_BufFmt_TypeCharToNativeSize(char ch, int is_complex) {$/;"	f	file:
+__Pyx_BufFmt_TypeCharToPadding	cython/cytool.c	/^static size_t __Pyx_BufFmt_TypeCharToPadding(char ch, CYTHON_UNUSED int is_complex) {$/;"	f	file:
+__Pyx_BufFmt_TypeCharToStandardSize	cython/cytool.c	/^static size_t __Pyx_BufFmt_TypeCharToStandardSize(char ch, int is_complex) {$/;"	f	file:
+__Pyx_BufPtrStrided1d	cython/cytool.c	922;"	d	file:
+__Pyx_Buf_DimInfo	cython/cytool.c	/^} __Pyx_Buf_DimInfo;$/;"	t	typeref:struct:__anon10	file:
+__Pyx_Buffer	cython/cytool.c	/^} __Pyx_Buffer;$/;"	t	typeref:struct:__anon11	file:
+__Pyx_CIMAG	cython/cytool.c	1041;"	d	file:
+__Pyx_CIMAG	cython/cytool.c	1044;"	d	file:
+__Pyx_CIMAG	cython/cytool.c	1048;"	d	file:
+__Pyx_CLEAR	cython/cytool.c	829;"	d	file:
+__Pyx_CREAL	cython/cytool.c	1040;"	d	file:
+__Pyx_CREAL	cython/cytool.c	1043;"	d	file:
+__Pyx_CREAL	cython/cytool.c	1047;"	d	file:
+__Pyx_CodeObjectCache	cython/cytool.c	/^struct __Pyx_CodeObjectCache {$/;"	s	file:
+__Pyx_CodeObjectCacheEntry	cython/cytool.c	/^} __Pyx_CodeObjectCacheEntry;$/;"	t	typeref:struct:__anon9	file:
+__Pyx_CreateCodeObjectForTraceback	cython/cytool.c	/^static PyCodeObject* __Pyx_CreateCodeObjectForTraceback($/;"	f	file:
+__Pyx_DECREF	cython/cytool.c	801;"	d	file:
+__Pyx_DECREF	cython/cytool.c	813;"	d	file:
+__Pyx_DECREF_SET	cython/cytool.c	825;"	d	file:
+__Pyx_DefaultClassType	cython/cytool.c	57;"	d	file:
+__Pyx_DefaultClassType	cython/cytool.c	62;"	d	file:
+__Pyx_ErrFetch	cython/cytool.c	/^static CYTHON_INLINE void __Pyx_ErrFetch(PyObject **type, PyObject **value, PyObject **tb) {$/;"	f	file:
+__Pyx_ErrRestore	cython/cytool.c	/^static CYTHON_INLINE void __Pyx_ErrRestore(PyObject *type, PyObject *value, PyObject *tb) {$/;"	f	file:
+__Pyx_GIVEREF	cython/cytool.c	803;"	d	file:
+__Pyx_GIVEREF	cython/cytool.c	815;"	d	file:
+__Pyx_GOTREF	cython/cytool.c	802;"	d	file:
+__Pyx_GOTREF	cython/cytool.c	814;"	d	file:
+__Pyx_GetBuffer	cython/cytool.c	/^static int __Pyx_GetBuffer(PyObject *obj, Py_buffer *view, int flags) {$/;"	f	file:
+__Pyx_GetBuffer	cython/cytool.c	1022;"	d	file:
+__Pyx_GetBufferAndValidate	cython/cytool.c	/^static CYTHON_INLINE int __Pyx_GetBufferAndValidate($/;"	f	file:
+__Pyx_GetBuiltinName	cython/cytool.c	/^static PyObject *__Pyx_GetBuiltinName(PyObject *name) {$/;"	f	file:
+__Pyx_GetItemInt	cython/cytool.c	928;"	d	file:
+__Pyx_GetItemInt_Fast	cython/cytool.c	/^static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i, int is_list,$/;"	f	file:
+__Pyx_GetItemInt_Generic	cython/cytool.c	/^static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {$/;"	f	file:
+__Pyx_GetItemInt_List	cython/cytool.c	933;"	d	file:
+__Pyx_GetItemInt_List_Fast	cython/cytool.c	/^static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,$/;"	f	file:
+__Pyx_GetItemInt_Tuple	cython/cytool.c	939;"	d	file:
+__Pyx_GetItemInt_Tuple_Fast	cython/cytool.c	/^static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i,$/;"	f	file:
+__Pyx_GetModuleGlobalName	cython/cytool.c	/^static CYTHON_INLINE PyObject *__Pyx_GetModuleGlobalName(PyObject *name) {$/;"	f	file:
+__Pyx_INCREF	cython/cytool.c	800;"	d	file:
+__Pyx_INCREF	cython/cytool.c	812;"	d	file:
+__Pyx_Import	cython/cytool.c	/^static PyObject *__Pyx_Import(PyObject *name, PyObject *from_list, int level) {$/;"	f	file:
+__Pyx_ImportModule	cython/cytool.c	/^static PyObject *__Pyx_ImportModule(const char *name) {$/;"	f	file:
+__Pyx_ImportType	cython/cytool.c	/^static PyTypeObject *__Pyx_ImportType(const char *module_name, const char *class_name,$/;"	f	file:
+__Pyx_InitCachedBuiltins	cython/cytool.c	/^static int __Pyx_InitCachedBuiltins(void) {$/;"	f	file:
+__Pyx_InitCachedConstants	cython/cytool.c	/^static int __Pyx_InitCachedConstants(void) {$/;"	f	file:
+__Pyx_InitGlobals	cython/cytool.c	/^static int __Pyx_InitGlobals(void) {$/;"	f	file:
+__Pyx_InitStrings	cython/cytool.c	/^static int __Pyx_InitStrings(__Pyx_StringTabEntry *t) {$/;"	f	file:
+__Pyx_IsLittleEndian	cython/cytool.c	/^static CYTHON_INLINE int __Pyx_IsLittleEndian(void) {$/;"	f	file:
+__Pyx_IterFinish	cython/cytool.c	/^static CYTHON_INLINE int __Pyx_IterFinish(void) {$/;"	f	file:
+__Pyx_IternextUnpackEndCheck	cython/cytool.c	/^static int __Pyx_IternextUnpackEndCheck(PyObject *retval, Py_ssize_t expected) {$/;"	f	file:
+__Pyx_ListComp_Append	cython/cytool.c	/^static CYTHON_INLINE int __Pyx_ListComp_Append(PyObject* list, PyObject* x) {$/;"	f	file:
+__Pyx_ListComp_Append	cython/cytool.c	892;"	d	file:
+__Pyx_LocalBuf_ND	cython/cytool.c	/^} __Pyx_LocalBuf_ND;$/;"	t	typeref:struct:__anon12	file:
+__Pyx_MODULE_NAME	cython/cytool.c	1194;"	d	file:
+__Pyx_NewRef	cython/cytool.c	342;"	d	file:
+__Pyx_Owned_Py_None	cython/cytool.c	343;"	d	file:
+__Pyx_ParseOptionalKeywords	cython/cytool.c	/^static int __Pyx_ParseOptionalKeywords($/;"	f	file:
+__Pyx_PyAsyncMethodsStruct	cython/cytool.c	/^} __Pyx_PyAsyncMethodsStruct;$/;"	t	typeref:struct:__anon1	file:
+__Pyx_PyAsyncMethodsStruct	cython/cytool.c	169;"	d	file:
+__Pyx_PyBaseString_Check	cython/cytool.c	120;"	d	file:
+__Pyx_PyBaseString_Check	cython/cytool.c	123;"	d	file:
+__Pyx_PyBaseString_CheckExact	cython/cytool.c	121;"	d	file:
+__Pyx_PyBaseString_CheckExact	cython/cytool.c	124;"	d	file:
+__Pyx_PyBool_FromLong	cython/cytool.c	344;"	d	file:
+__Pyx_PyByteArray_FromCString	cython/cytool.c	326;"	d	file:
+__Pyx_PyByteArray_FromString	cython/cytool.c	310;"	d	file:
+__Pyx_PyByteArray_FromStringAndSize	cython/cytool.c	311;"	d	file:
+__Pyx_PyBytes_FromCString	cython/cytool.c	325;"	d	file:
+__Pyx_PyBytes_FromString	cython/cytool.c	312;"	d	file:
+__Pyx_PyBytes_FromStringAndSize	cython/cytool.c	313;"	d	file:
+__Pyx_PyCode_New	cython/cytool.c	55;"	d	file:
+__Pyx_PyCode_New	cython/cytool.c	60;"	d	file:
+__Pyx_PyDict_GetItem	cython/cytool.c	/^static PyObject *__Pyx_PyDict_GetItem(PyObject *d, PyObject* key) {$/;"	f	file:
+__Pyx_PyDict_GetItem	cython/cytool.c	979;"	d	file:
+__Pyx_PyIdentifier_FromString	cython/cytool.c	1148;"	d	file:
+__Pyx_PyIdentifier_FromString	cython/cytool.c	1150;"	d	file:
+__Pyx_PyIndex_AsSsize_t	cython/cytool.c	/^static CYTHON_INLINE Py_ssize_t __Pyx_PyIndex_AsSsize_t(PyObject* b) {$/;"	f	file:
+__Pyx_PyInt_AddObjC	cython/cytool.c	/^static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, CYTHON_UNUSED long intval, CYTHON_UNUSED int inplace) {$/;"	f	file:
+__Pyx_PyInt_AddObjC	cython/cytool.c	918;"	d	file:
+__Pyx_PyInt_AsHash_t	cython/cytool.c	158;"	d	file:
+__Pyx_PyInt_AsHash_t	cython/cytool.c	161;"	d	file:
+__Pyx_PyInt_As_int	cython/cytool.c	/^static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *x) {$/;"	f	file:
+__Pyx_PyInt_As_long	cython/cytool.c	/^static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *x) {$/;"	f	file:
+__Pyx_PyInt_As_npy_long	cython/cytool.c	/^static CYTHON_INLINE npy_long __Pyx_PyInt_As_npy_long(PyObject *x) {$/;"	f	file:
+__Pyx_PyInt_FromHash_t	cython/cytool.c	157;"	d	file:
+__Pyx_PyInt_FromHash_t	cython/cytool.c	160;"	d	file:
+__Pyx_PyInt_FromSize_t	cython/cytool.c	/^static CYTHON_INLINE PyObject * __Pyx_PyInt_FromSize_t(size_t ival) {$/;"	f	file:
+__Pyx_PyInt_From_Py_intptr_t	cython/cytool.c	/^static CYTHON_INLINE PyObject* __Pyx_PyInt_From_Py_intptr_t(Py_intptr_t value) {$/;"	f	file:
+__Pyx_PyInt_From_enum__NPY_TYPES	cython/cytool.c	/^static CYTHON_INLINE PyObject* __Pyx_PyInt_From_enum__NPY_TYPES(enum NPY_TYPES value) {$/;"	f	file:
+__Pyx_PyInt_From_int	cython/cytool.c	/^static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value) {$/;"	f	file:
+__Pyx_PyInt_From_long	cython/cytool.c	/^static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {$/;"	f	file:
+__Pyx_PyInt_From_npy_long	cython/cytool.c	/^static CYTHON_INLINE PyObject* __Pyx_PyInt_From_npy_long(npy_long value) {$/;"	f	file:
+__Pyx_PyInt_RemainderObjC	cython/cytool.c	/^static PyObject* __Pyx_PyInt_RemainderObjC(PyObject *op1, PyObject *op2, CYTHON_UNUSED long intval, CYTHON_UNUSED int inplace) {$/;"	f	file:
+__Pyx_PyInt_RemainderObjC	cython/cytool.c	911;"	d	file:
+__Pyx_PyInt_TrueDivideObjC	cython/cytool.c	/^static PyObject* __Pyx_PyInt_TrueDivideObjC(PyObject *op1, PyObject *op2, CYTHON_UNUSED long intval, CYTHON_UNUSED int inplace) {$/;"	f	file:
+__Pyx_PyInt_TrueDivideObjC	cython/cytool.c	956;"	d	file:
+__Pyx_PyMethod_New	cython/cytool.c	164;"	d	file:
+__Pyx_PyMethod_New	cython/cytool.c	166;"	d	file:
+__Pyx_PyNumber_Divide	cython/cytool.c	222;"	d	file:
+__Pyx_PyNumber_Divide	cython/cytool.c	225;"	d	file:
+__Pyx_PyNumber_InPlaceDivide	cython/cytool.c	223;"	d	file:
+__Pyx_PyNumber_InPlaceDivide	cython/cytool.c	226;"	d	file:
+__Pyx_PyNumber_Int	cython/cytool.c	/^static CYTHON_INLINE PyObject* __Pyx_PyNumber_Int(PyObject* x) {$/;"	f	file:
+__Pyx_PyObject_AsSString	cython/cytool.c	322;"	d	file:
+__Pyx_PyObject_AsString	cython/cytool.c	/^static CYTHON_INLINE char* __Pyx_PyObject_AsString(PyObject* o) {$/;"	f	file:
+__Pyx_PyObject_AsStringAndSize	cython/cytool.c	/^static CYTHON_INLINE char* __Pyx_PyObject_AsStringAndSize(PyObject* o, Py_ssize_t *length) {$/;"	f	file:
+__Pyx_PyObject_AsUString	cython/cytool.c	323;"	d	file:
+__Pyx_PyObject_Call	cython/cytool.c	/^static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw) {$/;"	f	file:
+__Pyx_PyObject_Call	cython/cytool.c	854;"	d	file:
+__Pyx_PyObject_CallMethO	cython/cytool.c	/^static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg) {$/;"	f	file:
+__Pyx_PyObject_CallNoArg	cython/cytool.c	/^static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func) {$/;"	f	file:
+__Pyx_PyObject_CallNoArg	cython/cytool.c	898;"	d	file:
+__Pyx_PyObject_CallOneArg	cython/cytool.c	/^static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg) {$/;"	f	file:
+__Pyx_PyObject_FromCString	cython/cytool.c	324;"	d	file:
+__Pyx_PyObject_FromString	cython/cytool.c	278;"	d	file:
+__Pyx_PyObject_FromStringAndSize	cython/cytool.c	279;"	d	file:
+__Pyx_PyObject_GetAttrStr	cython/cytool.c	/^static CYTHON_INLINE PyObject* __Pyx_PyObject_GetAttrStr(PyObject* obj, PyObject* attr_name) {$/;"	f	file:
+__Pyx_PyObject_GetAttrStr	cython/cytool.c	844;"	d	file:
+__Pyx_PyObject_GetSlice	cython/cytool.c	/^static CYTHON_INLINE PyObject* __Pyx_PyObject_GetSlice(PyObject* obj,$/;"	f	file:
+__Pyx_PyObject_IsTrue	cython/cytool.c	/^static CYTHON_INLINE int __Pyx_PyObject_IsTrue(PyObject* x) {$/;"	f	file:
+__Pyx_PyStr_FromCString	cython/cytool.c	327;"	d	file:
+__Pyx_PyStr_FromString	cython/cytool.c	316;"	d	file:
+__Pyx_PyStr_FromString	cython/cytool.c	319;"	d	file:
+__Pyx_PyStr_FromStringAndSize	cython/cytool.c	317;"	d	file:
+__Pyx_PyStr_FromStringAndSize	cython/cytool.c	320;"	d	file:
+__Pyx_PyString_Format	cython/cytool.c	108;"	d	file:
+__Pyx_PyString_Format	cython/cytool.c	110;"	d	file:
+__Pyx_PyString_FormatSafe	cython/cytool.c	105;"	d	file:
+__Pyx_PyType_AsAsync	cython/cytool.c	170;"	d	file:
+__Pyx_PyType_AsAsync	cython/cytool.c	177;"	d	file:
+__Pyx_PyType_AsAsync	cython/cytool.c	179;"	d	file:
+__Pyx_PyUnicode_AsUnicode	cython/cytool.c	341;"	d	file:
+__Pyx_PyUnicode_Concat	cython/cytool.c	95;"	d	file:
+__Pyx_PyUnicode_Concat	cython/cytool.c	98;"	d	file:
+__Pyx_PyUnicode_ConcatSafe	cython/cytool.c	96;"	d	file:
+__Pyx_PyUnicode_ConcatSafe	cython/cytool.c	99;"	d	file:
+__Pyx_PyUnicode_DATA	cython/cytool.c	83;"	d	file:
+__Pyx_PyUnicode_DATA	cython/cytool.c	91;"	d	file:
+__Pyx_PyUnicode_FormatSafe	cython/cytool.c	106;"	d	file:
+__Pyx_PyUnicode_FromCString	cython/cytool.c	328;"	d	file:
+__Pyx_PyUnicode_FromString	cython/cytool.c	/^static CYTHON_INLINE PyObject* __Pyx_PyUnicode_FromString(const char* c_str) {$/;"	f	file:
+__Pyx_PyUnicode_FromStringAndSize	cython/cytool.c	402;"	d	file:
+__Pyx_PyUnicode_FromStringAndSize	cython/cytool.c	404;"	d	file:
+__Pyx_PyUnicode_FromUnicode	cython/cytool.c	339;"	d	file:
+__Pyx_PyUnicode_FromUnicodeAndLength	cython/cytool.c	340;"	d	file:
+__Pyx_PyUnicode_GET_LENGTH	cython/cytool.c	80;"	d	file:
+__Pyx_PyUnicode_GET_LENGTH	cython/cytool.c	88;"	d	file:
+__Pyx_PyUnicode_KIND	cython/cytool.c	82;"	d	file:
+__Pyx_PyUnicode_KIND	cython/cytool.c	90;"	d	file:
+__Pyx_PyUnicode_READ	cython/cytool.c	84;"	d	file:
+__Pyx_PyUnicode_READ	cython/cytool.c	92;"	d	file:
+__Pyx_PyUnicode_READY	cython/cytool.c	78;"	d	file:
+__Pyx_PyUnicode_READY	cython/cytool.c	87;"	d	file:
+__Pyx_PyUnicode_READ_CHAR	cython/cytool.c	81;"	d	file:
+__Pyx_PyUnicode_READ_CHAR	cython/cytool.c	89;"	d	file:
+__Pyx_Py_UNICODE_strlen	cython/cytool.c	/^static CYTHON_INLINE size_t __Pyx_Py_UNICODE_strlen(const Py_UNICODE *u)$/;"	f	file:
+__Pyx_Py_UNICODE_strlen	cython/cytool.c	337;"	d	file:
+__Pyx_Raise	cython/cytool.c	/^static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause) {$/;"	f	file:
+__Pyx_Raise	cython/cytool.c	/^static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb,$/;"	f	file:
+__Pyx_RaiseArgtupleInvalid	cython/cytool.c	/^static void __Pyx_RaiseArgtupleInvalid($/;"	f	file:
+__Pyx_RaiseArgumentTypeInvalid	cython/cytool.c	/^static void __Pyx_RaiseArgumentTypeInvalid(const char* name, PyObject *obj, PyTypeObject *type) {$/;"	f	file:
+__Pyx_RaiseDoubleKeywordsError	cython/cytool.c	/^static void __Pyx_RaiseDoubleKeywordsError($/;"	f	file:
+__Pyx_RaiseNeedMoreValuesError	cython/cytool.c	/^static CYTHON_INLINE void __Pyx_RaiseNeedMoreValuesError(Py_ssize_t index) {$/;"	f	file:
+__Pyx_RaiseNoneNotIterableError	cython/cytool.c	/^static CYTHON_INLINE void __Pyx_RaiseNoneNotIterableError(void) {$/;"	f	file:
+__Pyx_RaiseTooManyValuesError	cython/cytool.c	/^static CYTHON_INLINE void __Pyx_RaiseTooManyValuesError(Py_ssize_t expected) {$/;"	f	file:
+__Pyx_RefNanny	cython/cytool.c	/^  static __Pyx_RefNannyAPIStruct *__Pyx_RefNanny = NULL;$/;"	v	file:
+__Pyx_RefNannyAPIStruct	cython/cytool.c	/^  } __Pyx_RefNannyAPIStruct;$/;"	t	typeref:struct:__anon8	file:
+__Pyx_RefNannyDeclarations	cython/cytool.c	784;"	d	file:
+__Pyx_RefNannyDeclarations	cython/cytool.c	809;"	d	file:
+__Pyx_RefNannyFinishContext	cython/cytool.c	798;"	d	file:
+__Pyx_RefNannyFinishContext	cython/cytool.c	811;"	d	file:
+__Pyx_RefNannyImportAPI	cython/cytool.c	/^static __Pyx_RefNannyAPIStruct *__Pyx_RefNannyImportAPI(const char *modname) {$/;"	f	file:
+__Pyx_RefNannySetupContext	cython/cytool.c	786;"	d	file:
+__Pyx_RefNannySetupContext	cython/cytool.c	795;"	d	file:
+__Pyx_RefNannySetupContext	cython/cytool.c	810;"	d	file:
+__Pyx_ReleaseBuffer	cython/cytool.c	/^static void __Pyx_ReleaseBuffer(Py_buffer *view) {$/;"	f	file:
+__Pyx_ReleaseBuffer	cython/cytool.c	1023;"	d	file:
+__Pyx_SET_CIMAG	cython/cytool.c	1052;"	d	file:
+__Pyx_SET_CIMAG	cython/cytool.c	1055;"	d	file:
+__Pyx_SET_CREAL	cython/cytool.c	1051;"	d	file:
+__Pyx_SET_CREAL	cython/cytool.c	1054;"	d	file:
+__Pyx_SafeReleaseBuffer	cython/cytool.c	/^static CYTHON_INLINE void __Pyx_SafeReleaseBuffer(Py_buffer* info) {$/;"	f	file:
+__Pyx_StringTabEntry	cython/cytool.c	/^                const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry;$/;"	t	typeref:struct:__anon2	file:
+__Pyx_StructField	cython/cytool.c	/^} __Pyx_StructField;$/;"	t	typeref:struct:__Pyx_StructField_	file:
+__Pyx_StructField_	cython/cytool.c	/^typedef struct __Pyx_StructField_ {$/;"	s	file:
+__Pyx_TypeCheck	cython/cytool.c	129;"	d	file:
+__Pyx_TypeInfo	cython/cytool.c	/^} __Pyx_TypeInfo;$/;"	t	typeref:struct:__anon3	file:
+__Pyx_TypeInfo_nn___pyx_t_6cytool_DTYPE_t	cython/cytool.c	/^static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_6cytool_DTYPE_t = { "DTYPE_t", NULL, sizeof(__pyx_t_6cytool_DTYPE_t), { 0 }, 0, 'R', 0, 0 };$/;"	v	file:
+__Pyx_TypeTest	cython/cytool.c	/^static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type) {$/;"	f	file:
+__Pyx_XCLEAR	cython/cytool.c	830;"	d	file:
+__Pyx_XDECREF	cython/cytool.c	805;"	d	file:
+__Pyx_XDECREF	cython/cytool.c	817;"	d	file:
+__Pyx_XDECREF_SET	cython/cytool.c	821;"	d	file:
+__Pyx_XGIVEREF	cython/cytool.c	807;"	d	file:
+__Pyx_XGIVEREF	cython/cytool.c	819;"	d	file:
+__Pyx_XGOTREF	cython/cytool.c	806;"	d	file:
+__Pyx_XGOTREF	cython/cytool.c	818;"	d	file:
+__Pyx_XINCREF	cython/cytool.c	804;"	d	file:
+__Pyx_XINCREF	cython/cytool.c	816;"	d	file:
+__Pyx_ZeroBuffer	cython/cytool.c	/^static CYTHON_INLINE void __Pyx_ZeroBuffer(Py_buffer* buf) {$/;"	f	file:
+__Pyx__PyObject_CallOneArg	cython/cytool.c	/^static PyObject* __Pyx__PyObject_CallOneArg(PyObject *func, PyObject *arg) {$/;"	f	file:
+__Pyx_c_abs	cython/cytool.c	/^        static CYTHON_INLINE double __Pyx_c_abs(__pyx_t_double_complex z) {$/;"	f	file:
+__Pyx_c_abs	cython/cytool.c	1110;"	d	file:
+__Pyx_c_abs	cython/cytool.c	1117;"	d	file:
+__Pyx_c_absf	cython/cytool.c	/^        static CYTHON_INLINE float __Pyx_c_absf(__pyx_t_float_complex z) {$/;"	f	file:
+__Pyx_c_absf	cython/cytool.c	1071;"	d	file:
+__Pyx_c_absf	cython/cytool.c	1078;"	d	file:
+__Pyx_c_conj	cython/cytool.c	/^    static CYTHON_INLINE __pyx_t_double_complex __Pyx_c_conj(__pyx_t_double_complex a) {$/;"	f	file:
+__Pyx_c_conj	cython/cytool.c	1108;"	d	file:
+__Pyx_c_conj	cython/cytool.c	1115;"	d	file:
+__Pyx_c_conjf	cython/cytool.c	/^    static CYTHON_INLINE __pyx_t_float_complex __Pyx_c_conjf(__pyx_t_float_complex a) {$/;"	f	file:
+__Pyx_c_conjf	cython/cytool.c	1069;"	d	file:
+__Pyx_c_conjf	cython/cytool.c	1076;"	d	file:
+__Pyx_c_diff	cython/cytool.c	/^    static CYTHON_INLINE __pyx_t_double_complex __Pyx_c_diff(__pyx_t_double_complex a, __pyx_t_double_complex b) {$/;"	f	file:
+__Pyx_c_diff	cython/cytool.c	1102;"	d	file:
+__Pyx_c_difff	cython/cytool.c	/^    static CYTHON_INLINE __pyx_t_float_complex __Pyx_c_difff(__pyx_t_float_complex a, __pyx_t_float_complex b) {$/;"	f	file:
+__Pyx_c_difff	cython/cytool.c	1063;"	d	file:
+__Pyx_c_eq	cython/cytool.c	/^    static CYTHON_INLINE int __Pyx_c_eq(__pyx_t_double_complex a, __pyx_t_double_complex b) {$/;"	f	file:
+__Pyx_c_eq	cython/cytool.c	1100;"	d	file:
+__Pyx_c_eqf	cython/cytool.c	/^    static CYTHON_INLINE int __Pyx_c_eqf(__pyx_t_float_complex a, __pyx_t_float_complex b) {$/;"	f	file:
+__Pyx_c_eqf	cython/cytool.c	1061;"	d	file:
+__Pyx_c_is_zero	cython/cytool.c	/^    static CYTHON_INLINE int __Pyx_c_is_zero(__pyx_t_double_complex a) {$/;"	f	file:
+__Pyx_c_is_zero	cython/cytool.c	1107;"	d	file:
+__Pyx_c_is_zero	cython/cytool.c	1114;"	d	file:
+__Pyx_c_is_zerof	cython/cytool.c	/^    static CYTHON_INLINE int __Pyx_c_is_zerof(__pyx_t_float_complex a) {$/;"	f	file:
+__Pyx_c_is_zerof	cython/cytool.c	1068;"	d	file:
+__Pyx_c_is_zerof	cython/cytool.c	1075;"	d	file:
+__Pyx_c_neg	cython/cytool.c	/^    static CYTHON_INLINE __pyx_t_double_complex __Pyx_c_neg(__pyx_t_double_complex a) {$/;"	f	file:
+__Pyx_c_neg	cython/cytool.c	1105;"	d	file:
+__Pyx_c_negf	cython/cytool.c	/^    static CYTHON_INLINE __pyx_t_float_complex __Pyx_c_negf(__pyx_t_float_complex a) {$/;"	f	file:
+__Pyx_c_negf	cython/cytool.c	1066;"	d	file:
+__Pyx_c_pow	cython/cytool.c	/^        static CYTHON_INLINE __pyx_t_double_complex __Pyx_c_pow(__pyx_t_double_complex a, __pyx_t_double_complex b) {$/;"	f	file:
+__Pyx_c_pow	cython/cytool.c	1111;"	d	file:
+__Pyx_c_pow	cython/cytool.c	1118;"	d	file:
+__Pyx_c_powf	cython/cytool.c	/^        static CYTHON_INLINE __pyx_t_float_complex __Pyx_c_powf(__pyx_t_float_complex a, __pyx_t_float_complex b) {$/;"	f	file:
+__Pyx_c_powf	cython/cytool.c	1072;"	d	file:
+__Pyx_c_powf	cython/cytool.c	1079;"	d	file:
+__Pyx_c_prod	cython/cytool.c	/^    static CYTHON_INLINE __pyx_t_double_complex __Pyx_c_prod(__pyx_t_double_complex a, __pyx_t_double_complex b) {$/;"	f	file:
+__Pyx_c_prod	cython/cytool.c	1103;"	d	file:
+__Pyx_c_prodf	cython/cytool.c	/^    static CYTHON_INLINE __pyx_t_float_complex __Pyx_c_prodf(__pyx_t_float_complex a, __pyx_t_float_complex b) {$/;"	f	file:
+__Pyx_c_prodf	cython/cytool.c	1064;"	d	file:
+__Pyx_c_quot	cython/cytool.c	/^    static CYTHON_INLINE __pyx_t_double_complex __Pyx_c_quot(__pyx_t_double_complex a, __pyx_t_double_complex b) {$/;"	f	file:
+__Pyx_c_quot	cython/cytool.c	1104;"	d	file:
+__Pyx_c_quotf	cython/cytool.c	/^    static CYTHON_INLINE __pyx_t_float_complex __Pyx_c_quotf(__pyx_t_float_complex a, __pyx_t_float_complex b) {$/;"	f	file:
+__Pyx_c_quotf	cython/cytool.c	1065;"	d	file:
+__Pyx_c_sum	cython/cytool.c	/^    static CYTHON_INLINE __pyx_t_double_complex __Pyx_c_sum(__pyx_t_double_complex a, __pyx_t_double_complex b) {$/;"	f	file:
+__Pyx_c_sum	cython/cytool.c	1101;"	d	file:
+__Pyx_c_sumf	cython/cytool.c	/^    static CYTHON_INLINE __pyx_t_float_complex __Pyx_c_sumf(__pyx_t_float_complex a, __pyx_t_float_complex b) {$/;"	f	file:
+__Pyx_c_sumf	cython/cytool.c	1062;"	d	file:
+__Pyx_check_binary_version	cython/cytool.c	/^static int __Pyx_check_binary_version(void) {$/;"	f	file:
+__Pyx_fits_Py_ssize_t	cython/cytool.c	282;"	d	file:
+__Pyx_init_sys_getdefaultencoding_params	cython/cytool.c	/^static int __Pyx_init_sys_getdefaultencoding_params(void) {$/;"	f	file:
+__Pyx_long_cast	cython/cytool.c	281;"	d	file:
+__Pyx_minusones	cython/cytool.c	/^static Py_ssize_t __Pyx_minusones[] = {-1, -1, -1, -1, -1, -1, -1, -1};$/;"	v	file:
+__Pyx_pad_double	cython/cytool.c	/^typedef struct { double x; char c; } __Pyx_pad_double;$/;"	t	typeref:struct:__anon25	file:
+__Pyx_pad_float	cython/cytool.c	/^typedef struct { float x; char c; } __Pyx_pad_float;$/;"	t	typeref:struct:__anon24	file:
+__Pyx_pad_int	cython/cytool.c	/^typedef struct { int x; char c; } __Pyx_pad_int;$/;"	t	typeref:struct:__anon22	file:
+__Pyx_pad_long	cython/cytool.c	/^typedef struct { long x; char c; } __Pyx_pad_long;$/;"	t	typeref:struct:__anon23	file:
+__Pyx_pad_longdouble	cython/cytool.c	/^typedef struct { long double x; char c; } __Pyx_pad_longdouble;$/;"	t	typeref:struct:__anon26	file:
+__Pyx_pad_longlong	cython/cytool.c	/^typedef struct { PY_LONG_LONG x; char c; } __Pyx_pad_longlong;$/;"	t	typeref:struct:__anon28	file:
+__Pyx_pad_short	cython/cytool.c	/^typedef struct { short x; char c; } __Pyx_pad_short;$/;"	t	typeref:struct:__anon21	file:
+__Pyx_pad_void_p	cython/cytool.c	/^typedef struct { void *x; char c; } __Pyx_pad_void_p;$/;"	t	typeref:struct:__anon27	file:
+__Pyx_sst_abs	cython/cytool.c	294;"	d	file:
+__Pyx_sst_abs	cython/cytool.c	296;"	d	file:
+__Pyx_sst_abs	cython/cytool.c	298;"	d	file:
+__Pyx_sst_abs	cython/cytool.c	300;"	d	file:
+__Pyx_sst_abs	cython/cytool.c	302;"	d	file:
+__Pyx_sst_abs	cython/cytool.c	304;"	d	file:
+__Pyx_sst_abs	cython/cytool.c	306;"	d	file:
+__Pyx_st_double	cython/cytool.c	/^typedef struct { char c; double x; } __Pyx_st_double;$/;"	t	typeref:struct:__anon17	file:
+__Pyx_st_float	cython/cytool.c	/^typedef struct { char c; float x; } __Pyx_st_float;$/;"	t	typeref:struct:__anon16	file:
+__Pyx_st_int	cython/cytool.c	/^typedef struct { char c; int x; } __Pyx_st_int;$/;"	t	typeref:struct:__anon14	file:
+__Pyx_st_long	cython/cytool.c	/^typedef struct { char c; long x; } __Pyx_st_long;$/;"	t	typeref:struct:__anon15	file:
+__Pyx_st_longdouble	cython/cytool.c	/^typedef struct { char c; long double x; } __Pyx_st_longdouble;$/;"	t	typeref:struct:__anon18	file:
+__Pyx_st_longlong	cython/cytool.c	/^typedef struct { char c; PY_LONG_LONG x; } __Pyx_st_longlong;$/;"	t	typeref:struct:__anon20	file:
+__Pyx_st_short	cython/cytool.c	/^typedef struct { char c; short x; } __Pyx_st_short;$/;"	t	typeref:struct:__anon13	file:
+__Pyx_st_void_p	cython/cytool.c	/^typedef struct { char c; void *x; } __Pyx_st_void_p;$/;"	t	typeref:struct:__anon19	file:
+__Pyx_sys_getdefaultencoding_not_ascii	cython/cytool.c	/^static int __Pyx_sys_getdefaultencoding_not_ascii;$/;"	v	file:
+__Pyx_uchar_cast	cython/cytool.c	280;"	d	file:
+__Pyx_void_to_None	cython/cytool.c	192;"	d	file:
+__Pyx_zeros	cython/cytool.c	/^static Py_ssize_t __Pyx_zeros[] = {0, 0, 0, 0, 0, 0, 0, 0};$/;"	v	file:
+__acc_grad	module/module.py	/^    def __acc_grad(self,mod,in_grads):$/;"	m	class:MutableModule	file:
+__anchor2limits__	gpu_IoU/gpu_IoU.py	/^def __anchor2limits__(anchor_alpha, mx_anchor_rh, mx_anchor_rw, mx_anchor_x, mx_anchor_y):$/;"	f	file:
+__anchor2limits__	nms/gpu_IoU.py	/^def __anchor2limits__(anchor_alpha, mx_anchor_rh, mx_anchor_rw, mx_anchor_x, mx_anchor_y):$/;"	f	file:
+__call__	make_model.py	/^    def __call__(self, cfg_pred, cfg_gdt, cfg_mask):$/;"	m	class:CfgLosser	file:
+__call__	make_model.py	/^    def __call__(self,bbx_pred, bbx_gdt, rpn_outside_weight, rpn_inside_weight):$/;"	m	class:BBxLosser	file:
+__cdecl	cython/cytool.c	20;"	d	file:
+__del__	it/io-0.py	/^    def __del__(self):$/;"	m	class:MXDataIter	file:
+__del__	it/io-0.py	/^    def __del__(self):$/;"	m	class:PrefetchingIter	file:
+__fastcall	cython/cytool.c	23;"	d	file:
+__init__	angleIter.py	/^            imgPath = config.it.imgPath):$/;"	m	class:angleIter
+__init__	it/angleIter.py	/^  def __init__(self,symGp=None,featName=None, is_train=True):$/;"	m	class:angleIter
+__init__	it/angleIter_0.py	/^	def __init__(self,symGp=None):$/;"	m	class:angleIter
+__init__	it/io-0.py	/^    def __init__(self):$/;"	m	class:DataIter
+__init__	it/io-0.py	/^    def __init__(self, data, label, pad=None, index=None,$/;"	m	class:DataBatch
+__init__	it/io-0.py	/^    def __init__(self, data, label=None, batch_size=1, shuffle=False,$/;"	m	class:NDArrayIter
+__init__	it/io-0.py	/^    def __init__(self, data_iter, size, reset_internal=True):$/;"	m	class:ResizeIter
+__init__	it/io-0.py	/^    def __init__(self, handle, data_name='data', label_name='softmax_label', **_):$/;"	m	class:MXDataIter
+__init__	it/io-0.py	/^    def __init__(self, iters, rename_data=None, rename_label=None):$/;"	m	class:PrefetchingIter
+__init__	it/origin-image.py	/^    def __init__(self, batch_size, data_shape, label_width=1,$/;"	m	class:ImageIter
+__init__	make_model.py	/^    def __init__(self):$/;"	m	class:CfgLosser
+__init__	make_model.py	/^    def __init__(self,sclr=cfg.train.l1_smooth_sclr, bbx_loss_scalar=cfg.train.bbox_scalar):$/;"	m	class:BBxLosser
+__init__	make_symbol.py	/^    def __init__ (self, feval, **arg_keys):$/;"	m	class:AngleMetric
+__init__	module/module.py	/^    def __init__(self, symbol, data_names, label_names,$/;"	m	class:MutableModule
+__init__	nms/tool.py	/^  def __init__(self):$/;"	m	class:GroupMetrix
+__init__	nms/tool.py	/^  def __init__(self,proc='proc',logging=None):$/;"	m	class:mytick
+__init__	predict_viewer.py	/^                     pred_scor_name='rpn_label_loss', data_names=['data',],label_names=['target_label',]):$/;"	m	class:Viewer
+__init__	tool.py	/^  def __init__(self):$/;"	m	class:GroupMetrix
+__init__	tool.py	/^  def __init__(self,proc='proc',logging=None):$/;"	m	class:mytick
+__iter__	it/io-0.py	/^    def __iter__(self):$/;"	m	class:DataIter	file:
+__new__	it/io-0.py	/^    def __new__(cls, name, shape, dtype=mx_real_t, layout='NCHW'):$/;"	m	class:DataDesc	file:
+__next__	it/io-0.py	/^    def __next__(self):$/;"	m	class:DataIter	file:
+__pyx_PyFloat_AsDouble	cython/cytool.c	350;"	d	file:
+__pyx_PyFloat_AsDouble	cython/cytool.c	352;"	d	file:
+__pyx_PyFloat_AsFloat	cython/cytool.c	354;"	d	file:
+__pyx_b	cython/cytool.c	/^static PyObject *__pyx_b;$/;"	v	file:
+__pyx_bisect_code_objects	cython/cytool.c	/^static int __pyx_bisect_code_objects(__Pyx_CodeObjectCacheEntry* entries, int count, int code_line) {$/;"	f	file:
+__pyx_buffmt_parse_array	cython/cytool.c	/^__pyx_buffmt_parse_array(__Pyx_BufFmt_Context* ctx, const char** tsp)$/;"	f	file:
+__pyx_builtin_RuntimeError	cython/cytool.c	/^static PyObject *__pyx_builtin_RuntimeError;$/;"	v	file:
+__pyx_builtin_ValueError	cython/cytool.c	/^static PyObject *__pyx_builtin_ValueError;$/;"	v	file:
+__pyx_builtin_range	cython/cytool.c	/^static PyObject *__pyx_builtin_range;$/;"	v	file:
+__pyx_builtin_xrange	cython/cytool.c	/^static PyObject *__pyx_builtin_xrange;$/;"	v	file:
+__pyx_cfilenm	cython/cytool.c	/^static const char * __pyx_cfilenm= __FILE__;$/;"	v	file:
+__pyx_clineno	cython/cytool.c	/^static int __pyx_clineno = 0;$/;"	v	file:
+__pyx_code_cache	cython/cytool.c	/^static struct __Pyx_CodeObjectCache __pyx_code_cache = {0,0,NULL};$/;"	v	typeref:struct:__Pyx_CodeObjectCache	file:
+__pyx_codeobj__53	cython/cytool.c	/^static PyObject *__pyx_codeobj__53;$/;"	v	file:
+__pyx_codeobj__55	cython/cytool.c	/^static PyObject *__pyx_codeobj__55;$/;"	v	file:
+__pyx_codeobj__57	cython/cytool.c	/^static PyObject *__pyx_codeobj__57;$/;"	v	file:
+__pyx_codeobj__59	cython/cytool.c	/^static PyObject *__pyx_codeobj__59;$/;"	v	file:
+__pyx_codeobj__61	cython/cytool.c	/^static PyObject *__pyx_codeobj__61;$/;"	v	file:
+__pyx_d	cython/cytool.c	/^static PyObject *__pyx_d;$/;"	v	file:
+__pyx_doc_6cytool_2cp2p	cython/cytool.c	/^static char __pyx_doc_6cytool_2cp2p[] = "\\n            return the four vertices gaven the centerPoint and angle, etc\\n\\t";$/;"	v	file:
+__pyx_doc_6cytool_4has_intersec	cython/cytool.c	/^static char __pyx_doc_6cytool_4has_intersec[] = "\\n      bx:\\n           x,y,alphR,rh,rw\\n\\t";$/;"	v	file:
+__pyx_doc_6cytool_6iou	cython/cytool.c	/^static char __pyx_doc_6cytool_6iou[] = "\\n\\t  A novel numerical approach to estimate IoU :) !\\n           for single case\\n                  anchor,gdt :  x,y alphaR, rh,rw\\n\\n\\t            |y\\n\\t            |  \/\\n\\t\\t    | \/\\n\\t\\t    |\/alpha\\n\\t            ------->x\\n\\t";$/;"	v	file:
+__pyx_doc_6cytool_8it_IoU	cython/cytool.c	/^static char __pyx_doc_6cytool_8it_IoU[] = "\\n\\tanchor:  num x  5 # 5:       x,y,alphaR,rh,rw\\n                                            0 1    2   3  4\\n\\n\\tgdt   :  n  x 5         # 5: x , y , alphaR , rh , rw\\n\\t                                0    1   2      3      4   \\n\\n    return: iou_matrix  \\n                       : num x n\\n\\t";$/;"	v	file:
+__pyx_empty_bytes	cython/cytool.c	/^static PyObject *__pyx_empty_bytes;$/;"	v	file:
+__pyx_empty_tuple	cython/cytool.c	/^static PyObject *__pyx_empty_tuple;$/;"	v	file:
+__pyx_f	cython/cytool.c	/^static const char *__pyx_f[] = {$/;"	v	file:
+__pyx_f_5numpy_PyArray_MultiIterNew1	cython/cytool.c	/^static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__pyx_v_a) {$/;"	f	file:
+__pyx_f_5numpy_PyArray_MultiIterNew2	cython/cytool.c	/^static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__pyx_v_a, PyObject *__pyx_v_b) {$/;"	f	file:
+__pyx_f_5numpy_PyArray_MultiIterNew3	cython/cytool.c	/^static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__pyx_v_a, PyObject *__pyx_v_b, PyObject *__pyx_v_c) {$/;"	f	file:
+__pyx_f_5numpy_PyArray_MultiIterNew4	cython/cytool.c	/^static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__pyx_v_a, PyObject *__pyx_v_b, PyObject *__pyx_v_c, PyObject *__pyx_v_d) {$/;"	f	file:
+__pyx_f_5numpy_PyArray_MultiIterNew5	cython/cytool.c	/^static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__pyx_v_a, PyObject *__pyx_v_b, PyObject *__pyx_v_c, PyObject *__pyx_v_d, PyObject *__pyx_v_e) {$/;"	f	file:
+__pyx_f_5numpy__util_dtypestring	cython/cytool.c	/^static CYTHON_INLINE char *__pyx_f_5numpy__util_dtypestring(PyArray_Descr *__pyx_v_descr, char *__pyx_v_f, char *__pyx_v_end, int *__pyx_v_offset) {$/;"	f	file:
+__pyx_f_5numpy_get_array_base	cython/cytool.c	/^static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__pyx_v_arr) {$/;"	f	file:
+__pyx_f_5numpy_set_array_base	cython/cytool.c	/^static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_arr, PyObject *__pyx_v_base) {$/;"	f	file:
+__pyx_filename	cython/cytool.c	/^static const char *__pyx_filename;$/;"	v	file:
+__pyx_find_code_object	cython/cytool.c	/^static PyCodeObject *__pyx_find_code_object(int code_line) {$/;"	f	file:
+__pyx_float_1_	cython/cytool.c	/^static PyObject *__pyx_float_1_;$/;"	v	file:
+__pyx_insert_code_object	cython/cytool.c	/^static void __pyx_insert_code_object(int code_line, PyCodeObject* code_object) {$/;"	f	file:
+__pyx_int_0	cython/cytool.c	/^static PyObject *__pyx_int_0;$/;"	v	file:
+__pyx_int_1	cython/cytool.c	/^static PyObject *__pyx_int_1;$/;"	v	file:
+__pyx_int_2	cython/cytool.c	/^static PyObject *__pyx_int_2;$/;"	v	file:
+__pyx_int_4	cython/cytool.c	/^static PyObject *__pyx_int_4;$/;"	v	file:
+__pyx_int_neg_4	cython/cytool.c	/^static PyObject *__pyx_int_neg_4;$/;"	v	file:
+__pyx_k_B	cython/cytool.c	/^static char __pyx_k_B[] = "B";$/;"	v	file:
+__pyx_k_DTYPE	cython/cytool.c	/^static char __pyx_k_DTYPE[] = "DTYPE";$/;"	v	file:
+__pyx_k_Format_string_allocated_too_shor	cython/cytool.c	/^static char __pyx_k_Format_string_allocated_too_shor[] = "Format string allocated too short, see comment in numpy.pxd";$/;"	v	file:
+__pyx_k_Format_string_allocated_too_shor_2	cython/cytool.c	/^static char __pyx_k_Format_string_allocated_too_shor_2[] = "Format string allocated too short.";$/;"	v	file:
+__pyx_k_H	cython/cytool.c	/^static char __pyx_k_H[] = "H";$/;"	v	file:
+__pyx_k_I	cython/cytool.c	/^static char __pyx_k_I[] = "I";$/;"	v	file:
+__pyx_k_L	cython/cytool.c	/^static char __pyx_k_L[] = "L";$/;"	v	file:
+__pyx_k_M	cython/cytool.c	/^static char __pyx_k_M[] = "M";$/;"	v	file:
+__pyx_k_Non_native_byte_order_not_suppor	cython/cytool.c	/^static char __pyx_k_Non_native_byte_order_not_suppor[] = "Non-native byte order not supported";$/;"	v	file:
+__pyx_k_O	cython/cytool.c	/^static char __pyx_k_O[] = "O";$/;"	v	file:
+__pyx_k_P	cython/cytool.c	/^static char __pyx_k_P[] = "P";$/;"	v	file:
+__pyx_k_P1	cython/cytool.c	/^static char __pyx_k_P1[] = "P1";$/;"	v	file:
+__pyx_k_P1_mt	cython/cytool.c	/^static char __pyx_k_P1_mt[] = "P1_mt";$/;"	v	file:
+__pyx_k_P1_on_P1s	cython/cytool.c	/^static char __pyx_k_P1_on_P1s[] = "P1_on_P1s";$/;"	v	file:
+__pyx_k_P1_on_P2s	cython/cytool.c	/^static char __pyx_k_P1_on_P2s[] = "P1_on_P2s";$/;"	v	file:
+__pyx_k_P2	cython/cytool.c	/^static char __pyx_k_P2[] = "P2";$/;"	v	file:
+__pyx_k_P2_mt	cython/cytool.c	/^static char __pyx_k_P2_mt[] = "P2_mt";$/;"	v	file:
+__pyx_k_P2_on_P1s	cython/cytool.c	/^static char __pyx_k_P2_on_P1s[] = "P2_on_P1s";$/;"	v	file:
+__pyx_k_P2_on_P2s	cython/cytool.c	/^static char __pyx_k_P2_on_P2s[] = "P2_on_P2s";$/;"	v	file:
+__pyx_k_Q	cython/cytool.c	/^static char __pyx_k_Q[] = "Q";$/;"	v	file:
+__pyx_k_RuntimeError	cython/cytool.c	/^static char __pyx_k_RuntimeError[] = "RuntimeError";$/;"	v	file:
+__pyx_k_S_R1	cython/cytool.c	/^static char __pyx_k_S_R1[] = "S_R1";$/;"	v	file:
+__pyx_k_S_R2	cython/cytool.c	/^static char __pyx_k_S_R2[] = "S_R2";$/;"	v	file:
+__pyx_k_S_of_R1	cython/cytool.c	/^static char __pyx_k_S_of_R1[] = "S_of_R1";$/;"	v	file:
+__pyx_k_ValueError	cython/cytool.c	/^static char __pyx_k_ValueError[] = "ValueError";$/;"	v	file:
+__pyx_k_X	cython/cytool.c	/^static char __pyx_k_X[] = "X";$/;"	v	file:
+__pyx_k_X_bord	cython/cytool.c	/^static char __pyx_k_X_bord[] = "X_bord";$/;"	v	file:
+__pyx_k_X_bord_1	cython/cytool.c	/^static char __pyx_k_X_bord_1[] = "X_bord_1";$/;"	v	file:
+__pyx_k_X_bord_2	cython/cytool.c	/^static char __pyx_k_X_bord_2[] = "X_bord_2";$/;"	v	file:
+__pyx_k_Y	cython/cytool.c	/^static char __pyx_k_Y[] = "Y";$/;"	v	file:
+__pyx_k_Y_bord	cython/cytool.c	/^static char __pyx_k_Y_bord[] = "Y_bord";$/;"	v	file:
+__pyx_k_Y_bord_1	cython/cytool.c	/^static char __pyx_k_Y_bord_1[] = "Y_bord_1";$/;"	v	file:
+__pyx_k_Y_bord_2	cython/cytool.c	/^static char __pyx_k_Y_bord_2[] = "Y_bord_2";$/;"	v	file:
+__pyx_k_Zd	cython/cytool.c	/^static char __pyx_k_Zd[] = "Zd";$/;"	v	file:
+__pyx_k_Zf	cython/cytool.c	/^static char __pyx_k_Zf[] = "Zf";$/;"	v	file:
+__pyx_k_Zg	cython/cytool.c	/^static char __pyx_k_Zg[] = "Zg";$/;"	v	file:
+__pyx_k_alpha	cython/cytool.c	/^static char __pyx_k_alpha[] = "alpha";$/;"	v	file:
+__pyx_k_alpha1	cython/cytool.c	/^static char __pyx_k_alpha1[] = "alpha1";$/;"	v	file:
+__pyx_k_alpha2	cython/cytool.c	/^static char __pyx_k_alpha2[] = "alpha2";$/;"	v	file:
+__pyx_k_anchor	cython/cytool.c	/^static char __pyx_k_anchor[] = "anchor";$/;"	v	file:
+__pyx_k_anchor_num	cython/cytool.c	/^static char __pyx_k_anchor_num[] = "anchor_num";$/;"	v	file:
+__pyx_k_arange	cython/cytool.c	/^static char __pyx_k_arange[] = "arange";$/;"	v	file:
+__pyx_k_array	cython/cytool.c	/^static char __pyx_k_array[] = "array";$/;"	v	file:
+__pyx_k_b	cython/cytool.c	/^static char __pyx_k_b[] = "b";$/;"	v	file:
+__pyx_k_beta	cython/cytool.c	/^static char __pyx_k_beta[] = "beta";$/;"	v	file:
+__pyx_k_bord_cnt	cython/cytool.c	/^static char __pyx_k_bord_cnt[] = "bord_cnt";$/;"	v	file:
+__pyx_k_concatenate	cython/cytool.c	/^static char __pyx_k_concatenate[] = "concatenate";$/;"	v	file:
+__pyx_k_cos	cython/cytool.c	/^static char __pyx_k_cos[] = "cos";$/;"	v	file:
+__pyx_k_cp	cython/cytool.c	/^static char __pyx_k_cp[] = "cp";$/;"	v	file:
+__pyx_k_cp2p	cython/cytool.c	/^static char __pyx_k_cp2p[] = "cp2p";$/;"	v	file:
+__pyx_k_cytool	cython/cytool.c	/^static char __pyx_k_cytool[] = "cytool";$/;"	v	file:
+__pyx_k_d	cython/cytool.c	/^static char __pyx_k_d[] = "d";$/;"	v	file:
+__pyx_k_dirH	cython/cytool.c	/^static char __pyx_k_dirH[] = "dirH";$/;"	v	file:
+__pyx_k_dirW	cython/cytool.c	/^static char __pyx_k_dirW[] = "dirW";$/;"	v	file:
+__pyx_k_dot	cython/cytool.c	/^static char __pyx_k_dot[] = "dot";$/;"	v	file:
+__pyx_k_dtype	cython/cytool.c	/^static char __pyx_k_dtype[] = "dtype";$/;"	v	file:
+__pyx_k_e1	cython/cytool.c	/^static char __pyx_k_e1[] = "e1";$/;"	v	file:
+__pyx_k_e1_2	cython/cytool.c	/^static char __pyx_k_e1_2[] = "e1_2";$/;"	v	file:
+__pyx_k_e2	cython/cytool.c	/^static char __pyx_k_e2[] = "e2";$/;"	v	file:
+__pyx_k_e2_2	cython/cytool.c	/^static char __pyx_k_e2_2[] = "e2_2";$/;"	v	file:
+__pyx_k_empty	cython/cytool.c	/^static char __pyx_k_empty[] = "empty";$/;"	v	file:
+__pyx_k_exp	cython/cytool.c	/^static char __pyx_k_exp[] = "exp";$/;"	v	file:
+__pyx_k_f	cython/cytool.c	/^static char __pyx_k_f[] = "f";$/;"	v	file:
+__pyx_k_flatten	cython/cytool.c	/^static char __pyx_k_flatten[] = "flatten";$/;"	v	file:
+__pyx_k_float	cython/cytool.c	/^static char __pyx_k_float[] = "float";$/;"	v	file:
+__pyx_k_float32	cython/cytool.c	/^static char __pyx_k_float32[] = "float32";$/;"	v	file:
+__pyx_k_g	cython/cytool.c	/^static char __pyx_k_g[] = "g";$/;"	v	file:
+__pyx_k_gdt	cython/cytool.c	/^static char __pyx_k_gdt[] = "gdt";$/;"	v	file:
+__pyx_k_gdt_num	cython/cytool.c	/^static char __pyx_k_gdt_num[] = "gdt_num";$/;"	v	file:
+__pyx_k_grid_on_P1_space	cython/cytool.c	/^static char __pyx_k_grid_on_P1_space[] = "grid_on_P1_space";$/;"	v	file:
+__pyx_k_grid_on_P1_space_bord	cython/cytool.c	/^static char __pyx_k_grid_on_P1_space_bord[] = "grid_on_P1_space_bord";$/;"	v	file:
+__pyx_k_grid_on_P2_space	cython/cytool.c	/^static char __pyx_k_grid_on_P2_space[] = "grid_on_P2_space";$/;"	v	file:
+__pyx_k_grid_on_P2_space_bord	cython/cytool.c	/^static char __pyx_k_grid_on_P2_space_bord[] = "grid_on_P2_space_bord";$/;"	v	file:
+__pyx_k_h	cython/cytool.c	/^static char __pyx_k_h[] = "h";$/;"	v	file:
+__pyx_k_has_intersec	cython/cytool.c	/^static char __pyx_k_has_intersec[] = "has_intersec";$/;"	v	file:
+__pyx_k_home_chen_k_workspace_angleNet	cython/cytool.c	/^static char __pyx_k_home_chen_k_workspace_angleNet[] = "\/home\/chen-k\/workspace\/angleNet\/lab\/cython\/cytool.pyx";$/;"	v	file:
+__pyx_k_i	cython/cytool.c	/^static char __pyx_k_i[] = "i";$/;"	v	file:
+__pyx_k_import	cython/cytool.c	/^static char __pyx_k_import[] = "__import__";$/;"	v	file:
+__pyx_k_inner_cnt	cython/cytool.c	/^static char __pyx_k_inner_cnt[] = "inner_cnt";$/;"	v	file:
+__pyx_k_int	cython/cytool.c	/^static char __pyx_k_int[] = "int";$/;"	v	file:
+__pyx_k_iou	cython/cytool.c	/^static char __pyx_k_iou[] = "iou";$/;"	v	file:
+__pyx_k_iou_matrix	cython/cytool.c	/^static char __pyx_k_iou_matrix[] = "iou_matrix";$/;"	v	file:
+__pyx_k_it_IoU	cython/cytool.c	/^static char __pyx_k_it_IoU[] = "it_IoU";$/;"	v	file:
+__pyx_k_j	cython/cytool.c	/^static char __pyx_k_j[] = "j";$/;"	v	file:
+__pyx_k_k1	cython/cytool.c	/^static char __pyx_k_k1[] = "k1";$/;"	v	file:
+__pyx_k_k2	cython/cytool.c	/^static char __pyx_k_k2[] = "k2";$/;"	v	file:
+__pyx_k_l	cython/cytool.c	/^static char __pyx_k_l[] = "l";$/;"	v	file:
+__pyx_k_linspace	cython/cytool.c	/^static char __pyx_k_linspace[] = "linspace";$/;"	v	file:
+__pyx_k_main	cython/cytool.c	/^static char __pyx_k_main[] = "__main__";$/;"	v	file:
+__pyx_k_max	cython/cytool.c	/^static char __pyx_k_max[] = "max";$/;"	v	file:
+__pyx_k_meshgrid	cython/cytool.c	/^static char __pyx_k_meshgrid[] = "meshgrid";$/;"	v	file:
+__pyx_k_min	cython/cytool.c	/^static char __pyx_k_min[] = "min";$/;"	v	file:
+__pyx_k_ndarray_is_not_C_contiguous	cython/cytool.c	/^static char __pyx_k_ndarray_is_not_C_contiguous[] = "ndarray is not C contiguous";$/;"	v	file:
+__pyx_k_ndarray_is_not_Fortran_contiguou	cython/cytool.c	/^static char __pyx_k_ndarray_is_not_Fortran_contiguou[] = "ndarray is not Fortran contiguous";$/;"	v	file:
+__pyx_k_need_a_hand_Chen_Y_Liang_Apr_29	cython/cytool.c	/^static char __pyx_k_need_a_hand_Chen_Y_Liang_Apr_29[] = "\\n      need a hand?\\n      Chen Y.Liang\\n      Apr 29, 2017\\n";$/;"	v	file:
+__pyx_k_np	cython/cytool.c	/^static char __pyx_k_np[] = "np";$/;"	v	file:
+__pyx_k_numpy	cython/cytool.c	/^static char __pyx_k_numpy[] = "numpy";$/;"	v	file:
+__pyx_k_p1_bl	cython/cytool.c	/^static char __pyx_k_p1_bl[] = "p1_bl";$/;"	v	file:
+__pyx_k_p1_idx	cython/cytool.c	/^static char __pyx_k_p1_idx[] = "p1_idx";$/;"	v	file:
+__pyx_k_p1_idx_p	cython/cytool.c	/^static char __pyx_k_p1_idx_p[] = "p1_idx_p";$/;"	v	file:
+__pyx_k_p1_tr	cython/cytool.c	/^static char __pyx_k_p1_tr[] = "p1_tr";$/;"	v	file:
+__pyx_k_p1s_x_bound	cython/cytool.c	/^static char __pyx_k_p1s_x_bound[] = "p1s_x_bound";$/;"	v	file:
+__pyx_k_p1s_y_bound	cython/cytool.c	/^static char __pyx_k_p1s_y_bound[] = "p1s_y_bound";$/;"	v	file:
+__pyx_k_p2_bl	cython/cytool.c	/^static char __pyx_k_p2_bl[] = "p2_bl";$/;"	v	file:
+__pyx_k_p2_idx	cython/cytool.c	/^static char __pyx_k_p2_idx[] = "p2_idx";$/;"	v	file:
+__pyx_k_p2_idx_p	cython/cytool.c	/^static char __pyx_k_p2_idx_p[] = "p2_idx_p";$/;"	v	file:
+__pyx_k_p2_tr	cython/cytool.c	/^static char __pyx_k_p2_tr[] = "p2_tr";$/;"	v	file:
+__pyx_k_p2s_x_bound	cython/cytool.c	/^static char __pyx_k_p2s_x_bound[] = "p2s_x_bound";$/;"	v	file:
+__pyx_k_p2s_y_bound	cython/cytool.c	/^static char __pyx_k_p2s_y_bound[] = "p2s_y_bound";$/;"	v	file:
+__pyx_k_p_bo	cython/cytool.c	/^static char __pyx_k_p_bo[] = "p_bo";$/;"	v	file:
+__pyx_k_p_in	cython/cytool.c	/^static char __pyx_k_p_in[] = "p_in";$/;"	v	file:
+__pyx_k_q	cython/cytool.c	/^static char __pyx_k_q[] = "q";$/;"	v	file:
+__pyx_k_r	cython/cytool.c	/^static char __pyx_k_r[] = "_r";$/;"	v	file:
+__pyx_k_range	cython/cytool.c	/^static char __pyx_k_range[] = "range";$/;"	v	file:
+__pyx_k_rh	cython/cytool.c	/^static char __pyx_k_rh[] = "rh";$/;"	v	file:
+__pyx_k_rh1	cython/cytool.c	/^static char __pyx_k_rh1[] = "rh1";$/;"	v	file:
+__pyx_k_rh2	cython/cytool.c	/^static char __pyx_k_rh2[] = "rh2";$/;"	v	file:
+__pyx_k_round	cython/cytool.c	/^static char __pyx_k_round[] = "round";$/;"	v	file:
+__pyx_k_rw	cython/cytool.c	/^static char __pyx_k_rw[] = "rw";$/;"	v	file:
+__pyx_k_rw1	cython/cytool.c	/^static char __pyx_k_rw1[] = "rw1";$/;"	v	file:
+__pyx_k_rw2	cython/cytool.c	/^static char __pyx_k_rw2[] = "rw2";$/;"	v	file:
+__pyx_k_sin	cython/cytool.c	/^static char __pyx_k_sin[] = "sin";$/;"	v	file:
+__pyx_k_size	cython/cytool.c	/^static char __pyx_k_size[] = "size";$/;"	v	file:
+__pyx_k_sum	cython/cytool.c	/^static char __pyx_k_sum[] = "sum";$/;"	v	file:
+__pyx_k_test	cython/cytool.c	/^static char __pyx_k_test[] = "__test__";$/;"	v	file:
+__pyx_k_transpose	cython/cytool.c	/^static char __pyx_k_transpose[] = "transpose";$/;"	v	file:
+__pyx_k_unknown_dtype_code_in_numpy_pxd	cython/cytool.c	/^static char __pyx_k_unknown_dtype_code_in_numpy_pxd[] = "unknown dtype code in numpy.pxd (%d)";$/;"	v	file:
+__pyx_k_v1	cython/cytool.c	/^static char __pyx_k_v1[] = "v1";$/;"	v	file:
+__pyx_k_v2	cython/cytool.c	/^static char __pyx_k_v2[] = "v2";$/;"	v	file:
+__pyx_k_v3	cython/cytool.c	/^static char __pyx_k_v3[] = "v3";$/;"	v	file:
+__pyx_k_v4	cython/cytool.c	/^static char __pyx_k_v4[] = "v4";$/;"	v	file:
+__pyx_k_vstack	cython/cytool.c	/^static char __pyx_k_vstack[] = "vstack";$/;"	v	file:
+__pyx_k_weight_cnt	cython/cytool.c	/^static char __pyx_k_weight_cnt[] = "weight_cnt";$/;"	v	file:
+__pyx_k_weight_total_cnt	cython/cytool.c	/^static char __pyx_k_weight_total_cnt[] = "weight_total_cnt";$/;"	v	file:
+__pyx_k_x_num	cython/cytool.c	/^static char __pyx_k_x_num[] = "x_num";$/;"	v	file:
+__pyx_k_xlin	cython/cytool.c	/^static char __pyx_k_xlin[] = "xlin";$/;"	v	file:
+__pyx_k_xrange	cython/cytool.c	/^static char __pyx_k_xrange[] = "xrange";$/;"	v	file:
+__pyx_k_y_num	cython/cytool.c	/^static char __pyx_k_y_num[] = "y_num";$/;"	v	file:
+__pyx_k_ylin	cython/cytool.c	/^static char __pyx_k_ylin[] = "ylin";$/;"	v	file:
+__pyx_kp_s_home_chen_k_workspace_angleNet	cython/cytool.c	/^static PyObject *__pyx_kp_s_home_chen_k_workspace_angleNet;$/;"	v	file:
+__pyx_kp_u_Format_string_allocated_too_shor	cython/cytool.c	/^static PyObject *__pyx_kp_u_Format_string_allocated_too_shor;$/;"	v	file:
+__pyx_kp_u_Format_string_allocated_too_shor_2	cython/cytool.c	/^static PyObject *__pyx_kp_u_Format_string_allocated_too_shor_2;$/;"	v	file:
+__pyx_kp_u_Non_native_byte_order_not_suppor	cython/cytool.c	/^static PyObject *__pyx_kp_u_Non_native_byte_order_not_suppor;$/;"	v	file:
+__pyx_kp_u_ndarray_is_not_C_contiguous	cython/cytool.c	/^static PyObject *__pyx_kp_u_ndarray_is_not_C_contiguous;$/;"	v	file:
+__pyx_kp_u_ndarray_is_not_Fortran_contiguou	cython/cytool.c	/^static PyObject *__pyx_kp_u_ndarray_is_not_Fortran_contiguou;$/;"	v	file:
+__pyx_kp_u_unknown_dtype_code_in_numpy_pxd	cython/cytool.c	/^static PyObject *__pyx_kp_u_unknown_dtype_code_in_numpy_pxd;$/;"	v	file:
+__pyx_lineno	cython/cytool.c	/^static int __pyx_lineno;$/;"	v	file:
+__pyx_m	cython/cytool.c	/^static PyObject *__pyx_m;$/;"	v	file:
+__pyx_mdef_6cytool_1M	cython/cytool.c	/^static PyMethodDef __pyx_mdef_6cytool_1M = {"M", (PyCFunction)__pyx_pw_6cytool_1M, METH_O, 0};$/;"	v	file:
+__pyx_mdef_6cytool_3cp2p	cython/cytool.c	/^static PyMethodDef __pyx_mdef_6cytool_3cp2p = {"cp2p", (PyCFunction)__pyx_pw_6cytool_3cp2p, METH_VARARGS|METH_KEYWORDS, __pyx_doc_6cytool_2cp2p};$/;"	v	file:
+__pyx_mdef_6cytool_5has_intersec	cython/cytool.c	/^static PyMethodDef __pyx_mdef_6cytool_5has_intersec = {"has_intersec", (PyCFunction)__pyx_pw_6cytool_5has_intersec, METH_VARARGS|METH_KEYWORDS, __pyx_doc_6cytool_4has_intersec};$/;"	v	file:
+__pyx_mdef_6cytool_7iou	cython/cytool.c	/^static PyMethodDef __pyx_mdef_6cytool_7iou = {"iou", (PyCFunction)__pyx_pw_6cytool_7iou, METH_VARARGS|METH_KEYWORDS, __pyx_doc_6cytool_6iou};$/;"	v	file:
+__pyx_mdef_6cytool_9it_IoU	cython/cytool.c	/^static PyMethodDef __pyx_mdef_6cytool_9it_IoU = {"it_IoU", (PyCFunction)__pyx_pw_6cytool_9it_IoU, METH_VARARGS|METH_KEYWORDS, __pyx_doc_6cytool_8it_IoU};$/;"	v	file:
+__pyx_methods	cython/cytool.c	/^static PyMethodDef __pyx_methods[] = {$/;"	v	file:
+__pyx_module_is_main_cytool	cython/cytool.c	/^int __pyx_module_is_main_cytool = 0;$/;"	v
+__pyx_moduledef	cython/cytool.c	/^static struct PyModuleDef __pyx_moduledef = {$/;"	v	typeref:struct:PyModuleDef	file:
+__pyx_n_s_DTYPE	cython/cytool.c	/^static PyObject *__pyx_n_s_DTYPE;$/;"	v	file:
+__pyx_n_s_M	cython/cytool.c	/^static PyObject *__pyx_n_s_M;$/;"	v	file:
+__pyx_n_s_P	cython/cytool.c	/^static PyObject *__pyx_n_s_P;$/;"	v	file:
+__pyx_n_s_P1	cython/cytool.c	/^static PyObject *__pyx_n_s_P1;$/;"	v	file:
+__pyx_n_s_P1_mt	cython/cytool.c	/^static PyObject *__pyx_n_s_P1_mt;$/;"	v	file:
+__pyx_n_s_P1_on_P1s	cython/cytool.c	/^static PyObject *__pyx_n_s_P1_on_P1s;$/;"	v	file:
+__pyx_n_s_P1_on_P2s	cython/cytool.c	/^static PyObject *__pyx_n_s_P1_on_P2s;$/;"	v	file:
+__pyx_n_s_P2	cython/cytool.c	/^static PyObject *__pyx_n_s_P2;$/;"	v	file:
+__pyx_n_s_P2_mt	cython/cytool.c	/^static PyObject *__pyx_n_s_P2_mt;$/;"	v	file:
+__pyx_n_s_P2_on_P1s	cython/cytool.c	/^static PyObject *__pyx_n_s_P2_on_P1s;$/;"	v	file:
+__pyx_n_s_P2_on_P2s	cython/cytool.c	/^static PyObject *__pyx_n_s_P2_on_P2s;$/;"	v	file:
+__pyx_n_s_RuntimeError	cython/cytool.c	/^static PyObject *__pyx_n_s_RuntimeError;$/;"	v	file:
+__pyx_n_s_S_R1	cython/cytool.c	/^static PyObject *__pyx_n_s_S_R1;$/;"	v	file:
+__pyx_n_s_S_R2	cython/cytool.c	/^static PyObject *__pyx_n_s_S_R2;$/;"	v	file:
+__pyx_n_s_S_of_R1	cython/cytool.c	/^static PyObject *__pyx_n_s_S_of_R1;$/;"	v	file:
+__pyx_n_s_ValueError	cython/cytool.c	/^static PyObject *__pyx_n_s_ValueError;$/;"	v	file:
+__pyx_n_s_X	cython/cytool.c	/^static PyObject *__pyx_n_s_X;$/;"	v	file:
+__pyx_n_s_X_bord	cython/cytool.c	/^static PyObject *__pyx_n_s_X_bord;$/;"	v	file:
+__pyx_n_s_X_bord_1	cython/cytool.c	/^static PyObject *__pyx_n_s_X_bord_1;$/;"	v	file:
+__pyx_n_s_X_bord_2	cython/cytool.c	/^static PyObject *__pyx_n_s_X_bord_2;$/;"	v	file:
+__pyx_n_s_Y	cython/cytool.c	/^static PyObject *__pyx_n_s_Y;$/;"	v	file:
+__pyx_n_s_Y_bord	cython/cytool.c	/^static PyObject *__pyx_n_s_Y_bord;$/;"	v	file:
+__pyx_n_s_Y_bord_1	cython/cytool.c	/^static PyObject *__pyx_n_s_Y_bord_1;$/;"	v	file:
+__pyx_n_s_Y_bord_2	cython/cytool.c	/^static PyObject *__pyx_n_s_Y_bord_2;$/;"	v	file:
+__pyx_n_s_alpha	cython/cytool.c	/^static PyObject *__pyx_n_s_alpha;$/;"	v	file:
+__pyx_n_s_alpha1	cython/cytool.c	/^static PyObject *__pyx_n_s_alpha1;$/;"	v	file:
+__pyx_n_s_alpha2	cython/cytool.c	/^static PyObject *__pyx_n_s_alpha2;$/;"	v	file:
+__pyx_n_s_anchor	cython/cytool.c	/^static PyObject *__pyx_n_s_anchor;$/;"	v	file:
+__pyx_n_s_anchor_num	cython/cytool.c	/^static PyObject *__pyx_n_s_anchor_num;$/;"	v	file:
+__pyx_n_s_arange	cython/cytool.c	/^static PyObject *__pyx_n_s_arange;$/;"	v	file:
+__pyx_n_s_array	cython/cytool.c	/^static PyObject *__pyx_n_s_array;$/;"	v	file:
+__pyx_n_s_beta	cython/cytool.c	/^static PyObject *__pyx_n_s_beta;$/;"	v	file:
+__pyx_n_s_bord_cnt	cython/cytool.c	/^static PyObject *__pyx_n_s_bord_cnt;$/;"	v	file:
+__pyx_n_s_concatenate	cython/cytool.c	/^static PyObject *__pyx_n_s_concatenate;$/;"	v	file:
+__pyx_n_s_cos	cython/cytool.c	/^static PyObject *__pyx_n_s_cos;$/;"	v	file:
+__pyx_n_s_cp	cython/cytool.c	/^static PyObject *__pyx_n_s_cp;$/;"	v	file:
+__pyx_n_s_cp2p	cython/cytool.c	/^static PyObject *__pyx_n_s_cp2p;$/;"	v	file:
+__pyx_n_s_cytool	cython/cytool.c	/^static PyObject *__pyx_n_s_cytool;$/;"	v	file:
+__pyx_n_s_dirH	cython/cytool.c	/^static PyObject *__pyx_n_s_dirH;$/;"	v	file:
+__pyx_n_s_dirW	cython/cytool.c	/^static PyObject *__pyx_n_s_dirW;$/;"	v	file:
+__pyx_n_s_dot	cython/cytool.c	/^static PyObject *__pyx_n_s_dot;$/;"	v	file:
+__pyx_n_s_dtype	cython/cytool.c	/^static PyObject *__pyx_n_s_dtype;$/;"	v	file:
+__pyx_n_s_e1	cython/cytool.c	/^static PyObject *__pyx_n_s_e1;$/;"	v	file:
+__pyx_n_s_e1_2	cython/cytool.c	/^static PyObject *__pyx_n_s_e1_2;$/;"	v	file:
+__pyx_n_s_e2	cython/cytool.c	/^static PyObject *__pyx_n_s_e2;$/;"	v	file:
+__pyx_n_s_e2_2	cython/cytool.c	/^static PyObject *__pyx_n_s_e2_2;$/;"	v	file:
+__pyx_n_s_empty	cython/cytool.c	/^static PyObject *__pyx_n_s_empty;$/;"	v	file:
+__pyx_n_s_exp	cython/cytool.c	/^static PyObject *__pyx_n_s_exp;$/;"	v	file:
+__pyx_n_s_flatten	cython/cytool.c	/^static PyObject *__pyx_n_s_flatten;$/;"	v	file:
+__pyx_n_s_float	cython/cytool.c	/^static PyObject *__pyx_n_s_float;$/;"	v	file:
+__pyx_n_s_float32	cython/cytool.c	/^static PyObject *__pyx_n_s_float32;$/;"	v	file:
+__pyx_n_s_gdt	cython/cytool.c	/^static PyObject *__pyx_n_s_gdt;$/;"	v	file:
+__pyx_n_s_gdt_num	cython/cytool.c	/^static PyObject *__pyx_n_s_gdt_num;$/;"	v	file:
+__pyx_n_s_grid_on_P1_space	cython/cytool.c	/^static PyObject *__pyx_n_s_grid_on_P1_space;$/;"	v	file:
+__pyx_n_s_grid_on_P1_space_bord	cython/cytool.c	/^static PyObject *__pyx_n_s_grid_on_P1_space_bord;$/;"	v	file:
+__pyx_n_s_grid_on_P2_space	cython/cytool.c	/^static PyObject *__pyx_n_s_grid_on_P2_space;$/;"	v	file:
+__pyx_n_s_grid_on_P2_space_bord	cython/cytool.c	/^static PyObject *__pyx_n_s_grid_on_P2_space_bord;$/;"	v	file:
+__pyx_n_s_has_intersec	cython/cytool.c	/^static PyObject *__pyx_n_s_has_intersec;$/;"	v	file:
+__pyx_n_s_i	cython/cytool.c	/^static PyObject *__pyx_n_s_i;$/;"	v	file:
+__pyx_n_s_import	cython/cytool.c	/^static PyObject *__pyx_n_s_import;$/;"	v	file:
+__pyx_n_s_inner_cnt	cython/cytool.c	/^static PyObject *__pyx_n_s_inner_cnt;$/;"	v	file:
+__pyx_n_s_int	cython/cytool.c	/^static PyObject *__pyx_n_s_int;$/;"	v	file:
+__pyx_n_s_iou	cython/cytool.c	/^static PyObject *__pyx_n_s_iou;$/;"	v	file:
+__pyx_n_s_iou_matrix	cython/cytool.c	/^static PyObject *__pyx_n_s_iou_matrix;$/;"	v	file:
+__pyx_n_s_it_IoU	cython/cytool.c	/^static PyObject *__pyx_n_s_it_IoU;$/;"	v	file:
+__pyx_n_s_j	cython/cytool.c	/^static PyObject *__pyx_n_s_j;$/;"	v	file:
+__pyx_n_s_k1	cython/cytool.c	/^static PyObject *__pyx_n_s_k1;$/;"	v	file:
+__pyx_n_s_k2	cython/cytool.c	/^static PyObject *__pyx_n_s_k2;$/;"	v	file:
+__pyx_n_s_linspace	cython/cytool.c	/^static PyObject *__pyx_n_s_linspace;$/;"	v	file:
+__pyx_n_s_main	cython/cytool.c	/^static PyObject *__pyx_n_s_main;$/;"	v	file:
+__pyx_n_s_max	cython/cytool.c	/^static PyObject *__pyx_n_s_max;$/;"	v	file:
+__pyx_n_s_meshgrid	cython/cytool.c	/^static PyObject *__pyx_n_s_meshgrid;$/;"	v	file:
+__pyx_n_s_min	cython/cytool.c	/^static PyObject *__pyx_n_s_min;$/;"	v	file:
+__pyx_n_s_np	cython/cytool.c	/^static PyObject *__pyx_n_s_np;$/;"	v	file:
+__pyx_n_s_numpy	cython/cytool.c	/^static PyObject *__pyx_n_s_numpy;$/;"	v	file:
+__pyx_n_s_p1_bl	cython/cytool.c	/^static PyObject *__pyx_n_s_p1_bl;$/;"	v	file:
+__pyx_n_s_p1_idx	cython/cytool.c	/^static PyObject *__pyx_n_s_p1_idx;$/;"	v	file:
+__pyx_n_s_p1_idx_p	cython/cytool.c	/^static PyObject *__pyx_n_s_p1_idx_p;$/;"	v	file:
+__pyx_n_s_p1_tr	cython/cytool.c	/^static PyObject *__pyx_n_s_p1_tr;$/;"	v	file:
+__pyx_n_s_p1s_x_bound	cython/cytool.c	/^static PyObject *__pyx_n_s_p1s_x_bound;$/;"	v	file:
+__pyx_n_s_p1s_y_bound	cython/cytool.c	/^static PyObject *__pyx_n_s_p1s_y_bound;$/;"	v	file:
+__pyx_n_s_p2_bl	cython/cytool.c	/^static PyObject *__pyx_n_s_p2_bl;$/;"	v	file:
+__pyx_n_s_p2_idx	cython/cytool.c	/^static PyObject *__pyx_n_s_p2_idx;$/;"	v	file:
+__pyx_n_s_p2_idx_p	cython/cytool.c	/^static PyObject *__pyx_n_s_p2_idx_p;$/;"	v	file:
+__pyx_n_s_p2_tr	cython/cytool.c	/^static PyObject *__pyx_n_s_p2_tr;$/;"	v	file:
+__pyx_n_s_p2s_x_bound	cython/cytool.c	/^static PyObject *__pyx_n_s_p2s_x_bound;$/;"	v	file:
+__pyx_n_s_p2s_y_bound	cython/cytool.c	/^static PyObject *__pyx_n_s_p2s_y_bound;$/;"	v	file:
+__pyx_n_s_p_bo	cython/cytool.c	/^static PyObject *__pyx_n_s_p_bo;$/;"	v	file:
+__pyx_n_s_p_in	cython/cytool.c	/^static PyObject *__pyx_n_s_p_in;$/;"	v	file:
+__pyx_n_s_r	cython/cytool.c	/^static PyObject *__pyx_n_s_r;$/;"	v	file:
+__pyx_n_s_range	cython/cytool.c	/^static PyObject *__pyx_n_s_range;$/;"	v	file:
+__pyx_n_s_rh	cython/cytool.c	/^static PyObject *__pyx_n_s_rh;$/;"	v	file:
+__pyx_n_s_rh1	cython/cytool.c	/^static PyObject *__pyx_n_s_rh1;$/;"	v	file:
+__pyx_n_s_rh2	cython/cytool.c	/^static PyObject *__pyx_n_s_rh2;$/;"	v	file:
+__pyx_n_s_round	cython/cytool.c	/^static PyObject *__pyx_n_s_round;$/;"	v	file:
+__pyx_n_s_rw	cython/cytool.c	/^static PyObject *__pyx_n_s_rw;$/;"	v	file:
+__pyx_n_s_rw1	cython/cytool.c	/^static PyObject *__pyx_n_s_rw1;$/;"	v	file:
+__pyx_n_s_rw2	cython/cytool.c	/^static PyObject *__pyx_n_s_rw2;$/;"	v	file:
+__pyx_n_s_sin	cython/cytool.c	/^static PyObject *__pyx_n_s_sin;$/;"	v	file:
+__pyx_n_s_size	cython/cytool.c	/^static PyObject *__pyx_n_s_size;$/;"	v	file:
+__pyx_n_s_sum	cython/cytool.c	/^static PyObject *__pyx_n_s_sum;$/;"	v	file:
+__pyx_n_s_test	cython/cytool.c	/^static PyObject *__pyx_n_s_test;$/;"	v	file:
+__pyx_n_s_transpose	cython/cytool.c	/^static PyObject *__pyx_n_s_transpose;$/;"	v	file:
+__pyx_n_s_v1	cython/cytool.c	/^static PyObject *__pyx_n_s_v1;$/;"	v	file:
+__pyx_n_s_v2	cython/cytool.c	/^static PyObject *__pyx_n_s_v2;$/;"	v	file:
+__pyx_n_s_v3	cython/cytool.c	/^static PyObject *__pyx_n_s_v3;$/;"	v	file:
+__pyx_n_s_v4	cython/cytool.c	/^static PyObject *__pyx_n_s_v4;$/;"	v	file:
+__pyx_n_s_vstack	cython/cytool.c	/^static PyObject *__pyx_n_s_vstack;$/;"	v	file:
+__pyx_n_s_weight_cnt	cython/cytool.c	/^static PyObject *__pyx_n_s_weight_cnt;$/;"	v	file:
+__pyx_n_s_weight_total_cnt	cython/cytool.c	/^static PyObject *__pyx_n_s_weight_total_cnt;$/;"	v	file:
+__pyx_n_s_x_num	cython/cytool.c	/^static PyObject *__pyx_n_s_x_num;$/;"	v	file:
+__pyx_n_s_xlin	cython/cytool.c	/^static PyObject *__pyx_n_s_xlin;$/;"	v	file:
+__pyx_n_s_xrange	cython/cytool.c	/^static PyObject *__pyx_n_s_xrange;$/;"	v	file:
+__pyx_n_s_y_num	cython/cytool.c	/^static PyObject *__pyx_n_s_y_num;$/;"	v	file:
+__pyx_n_s_ylin	cython/cytool.c	/^static PyObject *__pyx_n_s_ylin;$/;"	v	file:
+__pyx_pf_5numpy_7ndarray_2__releasebuffer__	cython/cytool.c	/^static void __pyx_pf_5numpy_7ndarray_2__releasebuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info) {$/;"	f	file:
+__pyx_pf_5numpy_7ndarray___getbuffer__	cython/cytool.c	/^static int __pyx_pf_5numpy_7ndarray___getbuffer__(PyArrayObject *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags) {$/;"	f	file:
+__pyx_pf_6cytool_2cp2p	cython/cytool.c	/^static PyObject *__pyx_pf_6cytool_2cp2p(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_cp, __pyx_t_6cytool_DTYPE_t __pyx_v_alpha, __pyx_t_6cytool_DTYPE_t __pyx_v_rh, __pyx_t_6cytool_DTYPE_t __pyx_v_rw) {$/;"	f	file:
+__pyx_pf_6cytool_4has_intersec	cython/cytool.c	/^static PyObject *__pyx_pf_6cytool_4has_intersec(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_P1, PyArrayObject *__pyx_v_P2, __pyx_t_6cytool_DTYPE_t __pyx_v_alpha1, __pyx_t_6cytool_DTYPE_t __pyx_v_alpha2) {$/;"	f	file:
+__pyx_pf_6cytool_6iou	cython/cytool.c	/^static PyObject *__pyx_pf_6cytool_6iou(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_anchor, PyArrayObject *__pyx_v_gdt, __pyx_t_5numpy_int_t __pyx_v_x_num) {$/;"	f	file:
+__pyx_pf_6cytool_8it_IoU	cython/cytool.c	/^static PyObject *__pyx_pf_6cytool_8it_IoU(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_anchor, PyArrayObject *__pyx_v_gdt, __pyx_t_5numpy_int_t __pyx_v_x_num) {$/;"	f	file:
+__pyx_pf_6cytool_M	cython/cytool.c	/^static PyObject *__pyx_pf_6cytool_M(CYTHON_UNUSED PyObject *__pyx_self, __pyx_t_6cytool_DTYPE_t __pyx_v_beta) {$/;"	f	file:
+__pyx_ptype_5numpy_broadcast	cython/cytool.c	/^static PyTypeObject *__pyx_ptype_5numpy_broadcast = 0;$/;"	v	file:
+__pyx_ptype_5numpy_dtype	cython/cytool.c	/^static PyTypeObject *__pyx_ptype_5numpy_dtype = 0;$/;"	v	file:
+__pyx_ptype_5numpy_flatiter	cython/cytool.c	/^static PyTypeObject *__pyx_ptype_5numpy_flatiter = 0;$/;"	v	file:
+__pyx_ptype_5numpy_ndarray	cython/cytool.c	/^static PyTypeObject *__pyx_ptype_5numpy_ndarray = 0;$/;"	v	file:
+__pyx_ptype_5numpy_ufunc	cython/cytool.c	/^static PyTypeObject *__pyx_ptype_5numpy_ufunc = 0;$/;"	v	file:
+__pyx_ptype_7cpython_4type_type	cython/cytool.c	/^static PyTypeObject *__pyx_ptype_7cpython_4type_type = 0;$/;"	v	file:
+__pyx_pw_5numpy_7ndarray_1__getbuffer__	cython/cytool.c	/^static CYTHON_UNUSED int __pyx_pw_5numpy_7ndarray_1__getbuffer__(PyObject *__pyx_v_self, Py_buffer *__pyx_v_info, int __pyx_v_flags) {$/;"	f	file:
+__pyx_pw_5numpy_7ndarray_3__releasebuffer__	cython/cytool.c	/^static CYTHON_UNUSED void __pyx_pw_5numpy_7ndarray_3__releasebuffer__(PyObject *__pyx_v_self, Py_buffer *__pyx_v_info) {$/;"	f	file:
+__pyx_pw_6cytool_1M	cython/cytool.c	/^static PyObject *__pyx_pw_6cytool_1M(PyObject *__pyx_self, PyObject *__pyx_arg_beta) {$/;"	f	file:
+__pyx_pw_6cytool_3cp2p	cython/cytool.c	/^static PyObject *__pyx_pw_6cytool_3cp2p(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {$/;"	f	file:
+__pyx_pw_6cytool_5has_intersec	cython/cytool.c	/^static PyObject *__pyx_pw_6cytool_5has_intersec(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {$/;"	f	file:
+__pyx_pw_6cytool_7iou	cython/cytool.c	/^static PyObject *__pyx_pw_6cytool_7iou(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {$/;"	f	file:
+__pyx_pw_6cytool_9it_IoU	cython/cytool.c	/^static PyObject *__pyx_pw_6cytool_9it_IoU(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {$/;"	f	file:
+__pyx_slice_	cython/cytool.c	/^static PyObject *__pyx_slice_;$/;"	v	file:
+__pyx_slice__11	cython/cytool.c	/^static PyObject *__pyx_slice__11;$/;"	v	file:
+__pyx_slice__13	cython/cytool.c	/^static PyObject *__pyx_slice__13;$/;"	v	file:
+__pyx_slice__15	cython/cytool.c	/^static PyObject *__pyx_slice__15;$/;"	v	file:
+__pyx_slice__19	cython/cytool.c	/^static PyObject *__pyx_slice__19;$/;"	v	file:
+__pyx_slice__20	cython/cytool.c	/^static PyObject *__pyx_slice__20;$/;"	v	file:
+__pyx_slice__21	cython/cytool.c	/^static PyObject *__pyx_slice__21;$/;"	v	file:
+__pyx_slice__22	cython/cytool.c	/^static PyObject *__pyx_slice__22;$/;"	v	file:
+__pyx_slice__23	cython/cytool.c	/^static PyObject *__pyx_slice__23;$/;"	v	file:
+__pyx_slice__24	cython/cytool.c	/^static PyObject *__pyx_slice__24;$/;"	v	file:
+__pyx_slice__25	cython/cytool.c	/^static PyObject *__pyx_slice__25;$/;"	v	file:
+__pyx_slice__26	cython/cytool.c	/^static PyObject *__pyx_slice__26;$/;"	v	file:
+__pyx_slice__27	cython/cytool.c	/^static PyObject *__pyx_slice__27;$/;"	v	file:
+__pyx_slice__28	cython/cytool.c	/^static PyObject *__pyx_slice__28;$/;"	v	file:
+__pyx_slice__29	cython/cytool.c	/^static PyObject *__pyx_slice__29;$/;"	v	file:
+__pyx_slice__3	cython/cytool.c	/^static PyObject *__pyx_slice__3;$/;"	v	file:
+__pyx_slice__31	cython/cytool.c	/^static PyObject *__pyx_slice__31;$/;"	v	file:
+__pyx_slice__33	cython/cytool.c	/^static PyObject *__pyx_slice__33;$/;"	v	file:
+__pyx_slice__35	cython/cytool.c	/^static PyObject *__pyx_slice__35;$/;"	v	file:
+__pyx_slice__37	cython/cytool.c	/^static PyObject *__pyx_slice__37;$/;"	v	file:
+__pyx_slice__39	cython/cytool.c	/^static PyObject *__pyx_slice__39;$/;"	v	file:
+__pyx_slice__41	cython/cytool.c	/^static PyObject *__pyx_slice__41;$/;"	v	file:
+__pyx_slice__43	cython/cytool.c	/^static PyObject *__pyx_slice__43;$/;"	v	file:
+__pyx_slice__5	cython/cytool.c	/^static PyObject *__pyx_slice__5;$/;"	v	file:
+__pyx_slice__7	cython/cytool.c	/^static PyObject *__pyx_slice__7;$/;"	v	file:
+__pyx_slice__9	cython/cytool.c	/^static PyObject *__pyx_slice__9;$/;"	v	file:
+__pyx_string_tab	cython/cytool.c	/^static __Pyx_StringTabEntry __pyx_string_tab[] = {$/;"	v	file:
+__pyx_t_5numpy_cdouble_t	cython/cytool.c	/^typedef npy_cdouble __pyx_t_5numpy_cdouble_t;$/;"	t	file:
+__pyx_t_5numpy_cfloat_t	cython/cytool.c	/^typedef npy_cfloat __pyx_t_5numpy_cfloat_t;$/;"	t	file:
+__pyx_t_5numpy_clongdouble_t	cython/cytool.c	/^typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;$/;"	t	file:
+__pyx_t_5numpy_complex_t	cython/cytool.c	/^typedef npy_cdouble __pyx_t_5numpy_complex_t;$/;"	t	file:
+__pyx_t_5numpy_double_t	cython/cytool.c	/^typedef npy_double __pyx_t_5numpy_double_t;$/;"	t	file:
+__pyx_t_5numpy_float32_t	cython/cytool.c	/^typedef npy_float32 __pyx_t_5numpy_float32_t;$/;"	t	file:
+__pyx_t_5numpy_float64_t	cython/cytool.c	/^typedef npy_float64 __pyx_t_5numpy_float64_t;$/;"	t	file:
+__pyx_t_5numpy_float_t	cython/cytool.c	/^typedef npy_double __pyx_t_5numpy_float_t;$/;"	t	file:
+__pyx_t_5numpy_int16_t	cython/cytool.c	/^typedef npy_int16 __pyx_t_5numpy_int16_t;$/;"	t	file:
+__pyx_t_5numpy_int32_t	cython/cytool.c	/^typedef npy_int32 __pyx_t_5numpy_int32_t;$/;"	t	file:
+__pyx_t_5numpy_int64_t	cython/cytool.c	/^typedef npy_int64 __pyx_t_5numpy_int64_t;$/;"	t	file:
+__pyx_t_5numpy_int8_t	cython/cytool.c	/^typedef npy_int8 __pyx_t_5numpy_int8_t;$/;"	t	file:
+__pyx_t_5numpy_int_t	cython/cytool.c	/^typedef npy_long __pyx_t_5numpy_int_t;$/;"	t	file:
+__pyx_t_5numpy_intp_t	cython/cytool.c	/^typedef npy_intp __pyx_t_5numpy_intp_t;$/;"	t	file:
+__pyx_t_5numpy_long_t	cython/cytool.c	/^typedef npy_longlong __pyx_t_5numpy_long_t;$/;"	t	file:
+__pyx_t_5numpy_longdouble_t	cython/cytool.c	/^typedef npy_longdouble __pyx_t_5numpy_longdouble_t;$/;"	t	file:
+__pyx_t_5numpy_longlong_t	cython/cytool.c	/^typedef npy_longlong __pyx_t_5numpy_longlong_t;$/;"	t	file:
+__pyx_t_5numpy_uint16_t	cython/cytool.c	/^typedef npy_uint16 __pyx_t_5numpy_uint16_t;$/;"	t	file:
+__pyx_t_5numpy_uint32_t	cython/cytool.c	/^typedef npy_uint32 __pyx_t_5numpy_uint32_t;$/;"	t	file:
+__pyx_t_5numpy_uint64_t	cython/cytool.c	/^typedef npy_uint64 __pyx_t_5numpy_uint64_t;$/;"	t	file:
+__pyx_t_5numpy_uint8_t	cython/cytool.c	/^typedef npy_uint8 __pyx_t_5numpy_uint8_t;$/;"	t	file:
+__pyx_t_5numpy_uint_t	cython/cytool.c	/^typedef npy_ulong __pyx_t_5numpy_uint_t;$/;"	t	file:
+__pyx_t_5numpy_uintp_t	cython/cytool.c	/^typedef npy_uintp __pyx_t_5numpy_uintp_t;$/;"	t	file:
+__pyx_t_5numpy_ulong_t	cython/cytool.c	/^typedef npy_ulonglong __pyx_t_5numpy_ulong_t;$/;"	t	file:
+__pyx_t_5numpy_ulonglong_t	cython/cytool.c	/^typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;$/;"	t	file:
+__pyx_t_6cytool_DTYPE_t	cython/cytool.c	/^typedef __pyx_t_5numpy_float_t __pyx_t_6cytool_DTYPE_t;$/;"	t	file:
+__pyx_t_double_complex	cython/cytool.c	/^    typedef ::std::complex< double > __pyx_t_double_complex;$/;"	t	class:std	file:
+__pyx_t_double_complex	cython/cytool.c	/^    typedef double _Complex __pyx_t_double_complex;$/;"	t	file:
+__pyx_t_double_complex	cython/cytool.c	/^    typedef struct { double real, imag; } __pyx_t_double_complex;$/;"	t	typeref:struct:__anon7	file:
+__pyx_t_double_complex_from_parts	cython/cytool.c	/^    static CYTHON_INLINE __pyx_t_double_complex __pyx_t_double_complex_from_parts(double x, double y) {$/;"	f	file:
+__pyx_t_float_complex	cython/cytool.c	/^    typedef ::std::complex< float > __pyx_t_float_complex;$/;"	t	class:std	file:
+__pyx_t_float_complex	cython/cytool.c	/^    typedef float _Complex __pyx_t_float_complex;$/;"	t	file:
+__pyx_t_float_complex	cython/cytool.c	/^    typedef struct { float real, imag; } __pyx_t_float_complex;$/;"	t	typeref:struct:__anon6	file:
+__pyx_t_float_complex_from_parts	cython/cytool.c	/^    static CYTHON_INLINE __pyx_t_float_complex __pyx_t_float_complex_from_parts(float x, float y) {$/;"	f	file:
+__pyx_tuple__10	cython/cytool.c	/^static PyObject *__pyx_tuple__10;$/;"	v	file:
+__pyx_tuple__12	cython/cytool.c	/^static PyObject *__pyx_tuple__12;$/;"	v	file:
+__pyx_tuple__14	cython/cytool.c	/^static PyObject *__pyx_tuple__14;$/;"	v	file:
+__pyx_tuple__16	cython/cytool.c	/^static PyObject *__pyx_tuple__16;$/;"	v	file:
+__pyx_tuple__17	cython/cytool.c	/^static PyObject *__pyx_tuple__17;$/;"	v	file:
+__pyx_tuple__18	cython/cytool.c	/^static PyObject *__pyx_tuple__18;$/;"	v	file:
+__pyx_tuple__2	cython/cytool.c	/^static PyObject *__pyx_tuple__2;$/;"	v	file:
+__pyx_tuple__30	cython/cytool.c	/^static PyObject *__pyx_tuple__30;$/;"	v	file:
+__pyx_tuple__32	cython/cytool.c	/^static PyObject *__pyx_tuple__32;$/;"	v	file:
+__pyx_tuple__34	cython/cytool.c	/^static PyObject *__pyx_tuple__34;$/;"	v	file:
+__pyx_tuple__36	cython/cytool.c	/^static PyObject *__pyx_tuple__36;$/;"	v	file:
+__pyx_tuple__38	cython/cytool.c	/^static PyObject *__pyx_tuple__38;$/;"	v	file:
+__pyx_tuple__4	cython/cytool.c	/^static PyObject *__pyx_tuple__4;$/;"	v	file:
+__pyx_tuple__40	cython/cytool.c	/^static PyObject *__pyx_tuple__40;$/;"	v	file:
+__pyx_tuple__42	cython/cytool.c	/^static PyObject *__pyx_tuple__42;$/;"	v	file:
+__pyx_tuple__44	cython/cytool.c	/^static PyObject *__pyx_tuple__44;$/;"	v	file:
+__pyx_tuple__45	cython/cytool.c	/^static PyObject *__pyx_tuple__45;$/;"	v	file:
+__pyx_tuple__46	cython/cytool.c	/^static PyObject *__pyx_tuple__46;$/;"	v	file:
+__pyx_tuple__47	cython/cytool.c	/^static PyObject *__pyx_tuple__47;$/;"	v	file:
+__pyx_tuple__48	cython/cytool.c	/^static PyObject *__pyx_tuple__48;$/;"	v	file:
+__pyx_tuple__49	cython/cytool.c	/^static PyObject *__pyx_tuple__49;$/;"	v	file:
+__pyx_tuple__50	cython/cytool.c	/^static PyObject *__pyx_tuple__50;$/;"	v	file:
+__pyx_tuple__51	cython/cytool.c	/^static PyObject *__pyx_tuple__51;$/;"	v	file:
+__pyx_tuple__52	cython/cytool.c	/^static PyObject *__pyx_tuple__52;$/;"	v	file:
+__pyx_tuple__54	cython/cytool.c	/^static PyObject *__pyx_tuple__54;$/;"	v	file:
+__pyx_tuple__56	cython/cytool.c	/^static PyObject *__pyx_tuple__56;$/;"	v	file:
+__pyx_tuple__58	cython/cytool.c	/^static PyObject *__pyx_tuple__58;$/;"	v	file:
+__pyx_tuple__6	cython/cytool.c	/^static PyObject *__pyx_tuple__6;$/;"	v	file:
+__pyx_tuple__60	cython/cytool.c	/^static PyObject *__pyx_tuple__60;$/;"	v	file:
+__pyx_tuple__8	cython/cytool.c	/^static PyObject *__pyx_tuple__8;$/;"	v	file:
+__repr__	it/io-0.py	/^    def __repr__(self):$/;"	m	class:DataDesc	file:
+__scater_fill__	gpu_IoU/gpu_IoU.py	/^def __scater_fill__(gdt_alpha, mx_gdt_rh, mx_gdt_rw, mx_gdt_x, mx_gdt_y, k, ctx):$/;"	f	file:
+__scater_fill__	nms/gpu_IoU.py	/^def __scater_fill__(gdt_alpha, mx_gdt_rh, mx_gdt_rw, mx_gdt_x, mx_gdt_y, k, ctx):$/;"	f	file:
+__stdcall	cython/cytool.c	17;"	d	file:
+_getdata	it/io-0.py	/^    def _getdata(self, data_source):$/;"	m	class:NDArrayIter
+_init_data	it/io-0.py	/^def _init_data(data, allow_empty, default_name):$/;"	f
+_init_io_module	it/io-0.py	/^def _init_io_module():$/;"	f
+_make_io_iterator	it/io-0.py	/^def _make_io_iterator(handle):$/;"	f
+_reset_bind	module/module.py	/^    def _reset_bind(self):$/;"	m	class:MutableModule
+a	index/test.py	/^a= [$/;"	v
+a	index/test.py	/^a=flt_a.asnumpy()$/;"	v
+a	index/test.py	/^a=mx.nd.array(a)$/;"	v
+a	index/test.py	/^a=np.array(a)$/;"	v
+a	test/NDArray/test.py	/^a=np.array([[1,2,3],[-3,-2,-1]])$/;"	v
+acc_backward	module/module.py	/^    def acc_backward(self, out_grads=None):$/;"	m	class:MutableModule
+acc_list	net-test.py	/^acc_list =[]$/;"	v
+acc_update	module/module.py	/^    def acc_update(self,normsize=1):$/;"	m	class:MutableModule
+alpha	gpu_IoU/test.py	/^alpha = mx.nd.array(np.array([[1],[2],[3]]) )$/;"	v
+alpha1	iou.py	/^alpha1=np.deg2rad(40)$/;"	v
+alpha2	iou.py	/^alpha2=np.deg2rad(-40)$/;"	v
+am_aiter	cython/cytool.c	/^    unaryfunc am_aiter;$/;"	m	struct:__anon1	file:
+am_anext	cython/cytool.c	/^    unaryfunc am_anext;$/;"	m	struct:__anon1	file:
+am_await	cython/cytool.c	/^    unaryfunc am_await;$/;"	m	struct:__anon1	file:
+anchor	adpt_iou.py	/^                feat_shape, stride)$/;"	v
+anchor	predict_viz.py	/^              feat_shape, stride) # anchor : N x 5$/;"	v
+angle	crop_rotation/generate_samples.py	/^        angle = np.random.randint(0,180)$/;"	v
+angleIter	angleIter.py	/^class angleIter(mx.io.DataIter):$/;"	c
+angleIter	it/angleIter.py	/^class angleIter(mx.io.DataIter):$/;"	c
+angleIter	it/angleIter_0.py	/^class angleIter(mx.io.DataIter):$/;"	c
+arg	it/dict-test.py	/^arg={'a':1,'d':-10}$/;"	v
+arg	it/dict-test.py	/^arg={'d':-10,'a':1}$/;"	v
+arraysize	cython/cytool.c	/^  size_t arraysize[8];$/;"	m	struct:__anon3	file:
+aug	it/origin-image.py	/^    def aug(src):$/;"	f	function:CastAug
+aug	it/origin-image.py	/^    def aug(src):$/;"	f	function:CenterCropAug
+aug	it/origin-image.py	/^    def aug(src):$/;"	f	function:ColorNormalizeAug
+aug	it/origin-image.py	/^    def aug(src):$/;"	f	function:HorizontalFlipAug
+aug	it/origin-image.py	/^    def aug(src):$/;"	f	function:LightingAug
+aug	it/origin-image.py	/^    def aug(src):$/;"	f	function:RandomCropAug
+aug	it/origin-image.py	/^    def aug(src):$/;"	f	function:RandomOrderAug
+aug	it/origin-image.py	/^    def aug(src):$/;"	f	function:RandomSizedCropAug
+aug	it/origin-image.py	/^    def aug(src):$/;"	f	function:ResizeAug
+ax	test/text/test.py	/^ax = plt. gca()$/;"	v
+b	test/NDArray/test.py	/^b=np.array([[1,2,3],[-3,-2,-1]])*-10$/;"	v
+background_file	crop_rotation/gen.py	/^background_file = 'background-448.png'$/;"	v
+background_file	crop_rotation/generate_samples.py	/^background_file='background-448.png'$/;"	v
+background_img	crop_rotation/gen.py	/^background_img = cv2.imread(background_file)[:,:,[2,1,0]]$/;"	v
+background_img	crop_rotation/generate_samples.py	/^background_img = cv2.imread(background_file)$/;"	v
+backward	module/module.py	/^    def backward(self, out_grads=None):$/;"	m	class:MutableModule
+baseline_bbox	iou_metric.py	/^    baseline_bbox = np.loadtxt( os.path.join(baseline_dir,'result-boxes%s.txt'%(imgname.split('.')[0])), delimiter=',' )$/;"	v
+baseline_dir	iou_metric.py	/^baseline_dir= '..\/output\/metric-model\/baseline'  # store prediction files from baseline$/;"	v
+baseline_iou	iou_metric.py	/^    baseline_iou = baseline_iou_matrix.max(axis=-2)$/;"	v
+baseline_iou_matrix	iou_metric.py	/^    baseline_iou_matrix = gpu_it_IoU(baseline_bbox, gdt[:,1:], cfg.train.iou_x_num)$/;"	v
+baseline_save_s	iou_metric.py	/^baseline_save_s= '\\n'+'-'*40+'\\n'+'Axis-aligned model...\\n'+'-'*40+'\\n'$/;"	v
+batch_set_mult_lr	make_model.py	/^def batch_set_mult_lr(optimizer, relaxed_param_names, lr):$/;"	f
+batch_set_mult_lr	make_symbol.py	/^def batch_set_mult_lr(mod, relaxed_param_names, lr):$/;"	f
+baug	it/origin-image.py	/^        def baug(src):$/;"	f	function:ColorJitterAug
+bbox_inv_transfer	nms/tool.py	/^def bbox_inv_transfer(anchor,predict_bbx, xpu='cpu'):$/;"	f
+bbox_inv_transfer	tool.py	/^def bbox_inv_transfer(anchor,predict_bbx, xpu='cpu'):$/;"	f
+bbx_transfer	nms/tool.py	/^def  bbx_transfer(anchor,anchor_gdt):$/;"	f
+bbx_transfer	tool.py	/^def  bbx_transfer(anchor,anchor_gdt):$/;"	f
+bin_img	it/matrix-test.py	/^bin_img = np.load(matName+'-bin.npy')$/;"	v
+bind	module/module.py	/^    def bind(self, data_shapes, label_shapes=None, for_training=True,$/;"	m	class:MutableModule
+c	cython/cytool.c	/^typedef struct { PY_LONG_LONG x; char c; } __Pyx_pad_longlong;$/;"	m	struct:__anon28	file:
+c	cython/cytool.c	/^typedef struct { char c; PY_LONG_LONG x; } __Pyx_st_longlong;$/;"	m	struct:__anon20	file:
+c	cython/cytool.c	/^typedef struct { char c; double x; } __Pyx_st_double;$/;"	m	struct:__anon17	file:
+c	cython/cytool.c	/^typedef struct { char c; float x; } __Pyx_st_float;$/;"	m	struct:__anon16	file:
+c	cython/cytool.c	/^typedef struct { char c; int x; } __Pyx_st_int;$/;"	m	struct:__anon14	file:
+c	cython/cytool.c	/^typedef struct { char c; long double x; } __Pyx_st_longdouble;$/;"	m	struct:__anon18	file:
+c	cython/cytool.c	/^typedef struct { char c; long x; } __Pyx_st_long;$/;"	m	struct:__anon15	file:
+c	cython/cytool.c	/^typedef struct { char c; short x; } __Pyx_st_short;$/;"	m	struct:__anon13	file:
+c	cython/cytool.c	/^typedef struct { char c; void *x; } __Pyx_st_void_p;$/;"	m	struct:__anon19	file:
+c	cython/cytool.c	/^typedef struct { double x; char c; } __Pyx_pad_double;$/;"	m	struct:__anon25	file:
+c	cython/cytool.c	/^typedef struct { float x; char c; } __Pyx_pad_float;$/;"	m	struct:__anon24	file:
+c	cython/cytool.c	/^typedef struct { int x; char c; } __Pyx_pad_int;$/;"	m	struct:__anon22	file:
+c	cython/cytool.c	/^typedef struct { long double x; char c; } __Pyx_pad_longdouble;$/;"	m	struct:__anon26	file:
+c	cython/cytool.c	/^typedef struct { long x; char c; } __Pyx_pad_long;$/;"	m	struct:__anon23	file:
+c	cython/cytool.c	/^typedef struct { short x; char c; } __Pyx_pad_short;$/;"	m	struct:__anon21	file:
+c	cython/cytool.c	/^typedef struct { void *x; char c; } __Pyx_pad_void_p;$/;"	m	struct:__anon27	file:
+c	it/evidence.py	/^c=m.flatten()$/;"	v
+caug	it/origin-image.py	/^        def caug(src):$/;"	f	function:ColorJitterAug
+cc	it/evidence.py	/^cc=np.vstack([c,-c])$/;"	v
+center_crop	it/origin-image.py	/^def center_crop(src, size, interp=2):$/;"	f
+cfg	adpt_iou.py	/^cfg = config.config$/;"	v
+cfg	angleIter.py	/^cfg = config$/;"	v
+cfg	iou_metric.py	/^cfg = config.config$/;"	v
+cfg	it/angleIter.py	/^cfg = config$/;"	v
+cfg	viz_gdt.py	/^cfg = config.config$/;"	v
+checkAndSet	angleIter.py	/^  def checkAndSet(self):$/;"	m	class:angleIter
+checkAndSet	it/angleIter.py	/^  def checkAndSet(self):$/;"	m	class:angleIter
+checkAndSet	it/angleIter_0.py	/^	def checkAndSet(self):$/;"	m	class:angleIter
+check_order	nms/tool.py	/^def check_order(feat_hw=(28,28),stride=(16,16), anchor_num=6,dim=5):$/;"	f
+check_order	tool.py	/^def check_order(feat_hw=(28,28),stride=(16,16), anchor_num=6,dim=5):$/;"	f
+checkout_ioufile	angleIter.py	/^  def checkout_ioufile(self):$/;"	m	class:angleIter
+checkout_ioufile	it/angleIter.py	/^  def checkout_ioufile(self):$/;"	m	class:angleIter
+checkout_ioufile	it/angleIter_0.py	/^	def checkout_ioufile(self):$/;"	m	class:angleIter
+cnt	clip.py	/^cnt=0$/;"	v
+code_line	cython/cytool.c	/^    int code_line;$/;"	m	struct:__anon9	file:
+code_object	cython/cytool.c	/^    PyCodeObject* code_object;$/;"	m	struct:__anon9	file:
+color_normalize	it/origin-image.py	/^def color_normalize(src, mean, std=None):$/;"	f
+config	config.py	/^config = edict()$/;"	v
+console	config.py	/^	console = logging.StreamHandler()$/;"	v
+context_file	resume_net_test.py	/^context_file='..\/data\/debug\/Sat-Dec-16-16:28:02-2017.cpk'$/;"	v
+count	cython/cytool.c	/^    int count;$/;"	m	struct:__Pyx_CodeObjectCache	file:
+cp2p	cython/cytool.pyx	/^def cp2p(np.ndarray[DTYPE_t, ndim=1] cp, DTYPE_t alpha, DTYPE_t rh, DTYPE_t rw):$/;"	f
+cp2p	cython/has_intersec.py	/^def cp2p( cp,  alpha, rh,  rw):$/;"	f
+cp2p	cython/iou-test.py	/^def cp2p(cp,alpha,rh,rw):$/;"	f
+cp2p	gpu_IoU/cytool.pyx	/^def cp2p(np.ndarray[DTYPE_t, ndim=1] cp, DTYPE_t alpha, DTYPE_t rh, DTYPE_t rw):$/;"	f
+cp2p	gpu_IoU/iou-test.py	/^def cp2p(cp,alpha,rh,rw):$/;"	f
+cp2p	iou.py	/^def cp2p(cp,alpha,rh,rw):$/;"	f
+cpu_m	Debug-log/Dec-5/test.py	/^cpu_m = np.load('[0, 60, -60][1.5, 3][60, 80]None_0_anchor_iou_cpu.npz')$/;"	v
+creator	it/io-0.py	/^    def creator(*args, **kwargs):$/;"	f	function:_make_io_iterator
+crop_dir	crop_rotation/gen.py	/^crop_dir = '..\/..\/data\/crop\/'$/;"	v
+crop_file	crop_rotation/generate_samples.py	/^crop_file = '1_390.png'$/;"	v
+crop_img	crop_rotation/crop.py	/^def crop_img(img, tl, br, ignore_partitial=True):$/;"	f
+ctx	predict_viz.py	/^ctx = mx.gpu()$/;"	v
+cv2	it/origin-image.py	/^    cv2 = None$/;"	v
+d	angleNet.py	/^d=it.next()$/;"	v
+d	crop_rotation/test.py	/^d = gen_label_dict(txtpath)$/;"	v
+d	it-test.py	/^d=it.next()$/;"	v
+d	it/it-test.py	/^d=it.next()$/;"	v
+d	misc_tmp.py	/^    d={}$/;"	v
+d	net-test.py	/^d = data[2].asnumpy()$/;"	v
+d	net-test.py	/^d=it.next()$/;"	v
+d	predict_viz.py	/^    d=it.next()$/;"	v
+d	resume_net_test.py	/^    d=cpk.load(f)$/;"	v
+d	resume_net_test.py	/^d=it.next()$/;"	v
+d	test_make_model.py	/^d = mx.nd.random.uniform(0, 255,shape=(1,3,448,448), ctx=cfg.train.ctx)$/;"	v
+d	viz_gdt.py	/^d = gen_label_dict(labeltxt)$/;"	v
+d0	angleNet.py	/^d0 = copy.copy(d)$/;"	v
+d0	net-test.py	/^d0=d$/;"	v
+d0	resume_net_test.py	/^d0=d['d0']$/;"	v
+d0	train.py	/^d0=it.next()$/;"	v
+data	cython/cytool.c	/^  char *data;$/;"	m	struct:__anon12	file:
+dataBatch	predict_viz.py	/^    dataBatch = mx.io.DataBatch([img_data,])$/;"	v
+data_l	softmax_debug/prob_model.py	/^data_l = np.random.randint(-1,1,(80,))$/;"	v
+data_names	module/module.py	/^    def data_names(self):$/;"	m	class:MutableModule
+data_shapes	module/module.py	/^    def data_shapes(self):$/;"	m	class:MutableModule
+data_x	softmax_debug/prob_model.py	/^data_x = np.random.randint(0,255,(80,120))$/;"	v
+debug_skip_load	it/io-0.py	/^    def debug_skip_load(self):$/;"	m	class:MXDataIter
+diminfo	cython/cytool.c	/^  __Pyx_Buf_DimInfo diminfo[8];$/;"	m	struct:__anon12	file:
+drawAngleBox	cython/has_intersec.py	/^def drawAngleBox(vecP,color='red'):$/;"	f
+drawAngleBox	cython/iou-test.py	/^def drawAngleBox(vecP,color='red'):$/;"	f
+drawAngleBox	gpu_IoU/iou-test.py	/^def drawAngleBox(vecP,color='red'):$/;"	f
+drawAngleBox	iou.py	/^def drawAngleBox(vecP,color='red'):$/;"	f
+draw_angleBox	nms/tool.py	/^def draw_angleBox(img,anchor,color, line_width=1):$/;"	f
+draw_angleBox	tool.py	/^def draw_angleBox(img,anchor,color, line_width=1):$/;"	f
+elapse	net-test.py	/^      elapse = t1-t0$/;"	v
+elapse	train.py	/^      elapse = t1-t0$/;"	v
+elapsed	angleNet.py	/^      elapsed = end_time - start_time$/;"	v
+enc_count	cython/cytool.c	/^  size_t new_count, enc_count;$/;"	m	struct:__anon5	file:
+enc_packmode	cython/cytool.c	/^  char enc_packmode;$/;"	m	struct:__anon5	file:
+enc_type	cython/cytool.c	/^  char enc_type;$/;"	m	struct:__anon5	file:
+encoding	cython/cytool.c	/^typedef struct {PyObject **p; char *s; const Py_ssize_t n; const char* encoding;$/;"	m	struct:__anon2	file:
+end_time	angleNet.py	/^      end_time = time.time()$/;"	v
+entries	cython/cytool.c	/^    __Pyx_CodeObjectCacheEntry* entries;$/;"	m	struct:__Pyx_CodeObjectCache	file:
+entry	crop_rotation/generate_samples.py	/^    entry =''$/;"	v
+feat_shape	predict_viz.py	/^    feat_shape = feat_shape[0]$/;"	v
+feat_sym	adpt_iou.py	/^feat_sym=symbol.get_internals()[cfg.net.rpn_conv_name+'_output']  if cfg.it.debug.feat_shape is None else None$/;"	v
+feat_sym	iou_metric.py	/^feat_sym=symbol.get_internals()[cfg.net.rpn_conv_name+'_output']  if cfg.it.debug.feat_shape is None else None$/;"	v
+feat_symbol	predict_viz.py	/^    feat_symbol = symbol.get_internals()[cfg.net.rpn_conv_name+'_output']$/;"	v
+feval_acc_angleMetric	make_symbol.py	/^def feval_acc_angleMetric(label, pred):$/;"	f
+feval_l1_angleMetric	make_symbol.py	/^def feval_l1_angleMetric( label, pred):$/;"	f
+fg	net-test.py	/^fg=plt.figure()$/;"	v
+fg	predict_viz.py	/^fg=plt.figure()$/;"	v
+field	cython/cytool.c	/^  __Pyx_StructField* field;$/;"	m	struct:__anon4	file:
+fields	cython/cytool.c	/^  struct __Pyx_StructField_* fields;$/;"	m	struct:__anon3	typeref:struct:__anon3::__Pyx_StructField_	file:
+filePathAndNname	config.py	/^filePathAndNname = config.train.outputPath+config.train.timeStamp+'-training.log'$/;"	v
+filename	config.py	/^            filename=filePathAndNname,$/;"	v
+fixed_crop	it/origin-image.py	/^def fixed_crop(src, x0, y0, w, h, size=None, interp=2):$/;"	f
+flags	cython/cytool.c	/^  int flags;$/;"	m	struct:__anon3	file:
+flt_a	index/test.py	/^flt_a = mx.nd.reshape(a,(1,-1,2))$/;"	v
+fmt_offset	cython/cytool.c	/^  size_t fmt_offset;$/;"	m	struct:__anon5	file:
+format	config.py	/^                    format=LOGFMT$/;"	v
+formatter	config.py	/^	formatter = logging.Formatter(LOGFMT)$/;"	v
+forward	module/module.py	/^    def forward(self, data_batch, is_train=None):$/;"	m	class:MutableModule
+gdt	crop_rotation/test.py	/^gdt = parseLine(imgdir, s)$/;"	v
+gdt_bbox	net-test.py	/^gdt_bbox = d.label[1].asnumpy()$/;"	v
+gdts	viz_gdt.py	/^    gdts= parseLine(s)$/;"	v
+genAnchor	nms/tool.py	/^def genAnchor(im_info,angleD,HoW,sideLength,feat_shape,stride):$/;"	f
+genAnchor	tool.py	/^def genAnchor(im_info,angleD,HoW,sideLength,feat_shape,stride):$/;"	f
+genIdx	angleIter.py	/^  def genIdx(self):$/;"	m	class:angleIter
+genIdx	it/angleIter.py	/^  def genIdx(self):$/;"	m	class:angleIter
+genIdx	it/angleIter_0.py	/^	def genIdx(self):$/;"	m	class:angleIter
+gen_bbx_model	make_model.py	/^def gen_bbx_model():$/;"	f
+gen_cfd_model	make_model.py	/^def gen_cfd_model():$/;"	f
+gen_endian	crop_rotation/crop.py	/^def gen_endian(entry):$/;"	f
+gen_endian	crop_rotation/test.py	/^def gen_endian(entry):$/;"	f
+gen_feat_model	make_model.py	/^def gen_feat_model():$/;"	f
+gen_iou	angleIter.py	/^  def gen_iou(self):$/;"	m	class:angleIter
+gen_iou	it/angleIter.py	/^  def gen_iou(self):$/;"	m	class:angleIter
+gen_ioufileDir	angleIter.py	/^  def gen_ioufileDir(self,imgName,featName):$/;"	m	class:angleIter
+gen_ioufileDir	it/angleIter.py	/^  def gen_ioufileDir(self,imgName,featName):$/;"	m	class:angleIter
+gen_label_dict	adpt_iou.py	/^def gen_label_dict(labelfile):$/;"	f
+gen_label_dict	crop_rotation/crop.py	/^def gen_label_dict(txtpath):$/;"	f
+gen_label_dict	crop_rotation/test.py	/^def gen_label_dict(labelfile):$/;"	f
+gen_label_dict	iou_metric.py	/^def gen_label_dict(labelfile):$/;"	f
+gen_label_dict	viz_gdt.py	/^def gen_label_dict(labelfile):$/;"	f
+gen_model	make_symbol.py	/^        label_names=cfg.it.labelNames,softfixed_param_names=None, softfixed_mul_lr=0 ):$/;"	f
+gen_symbol	make_model.py	/^def gen_symbol():$/;"	f
+gen_symbol	make_symbol.py	/^def gen_symbol():$/;"	f
+getMetric	nms/tool.py	/^  def getMetric(self):$/;"	m	class:GroupMetrix
+getMetric	tool.py	/^  def getMetric(self):$/;"	m	class:GroupMetrix
+get_batch_axis	it/io-0.py	/^    def get_batch_axis(layout):$/;"	m	class:DataDesc
+get_input_grads	module/module.py	/^    def get_input_grads(self, merge_multi_context=True):$/;"	m	class:MutableModule
+get_list	it/io-0.py	/^    def get_list(shapes, types):$/;"	m	class:DataDesc
+get_outputs	module/module.py	/^    def get_outputs(self, merge_multi_context=True):$/;"	m	class:MutableModule
+get_params	module/module.py	/^    def get_params(self):$/;"	m	class:MutableModule
+get_rb_p	cython/iou-test.py	/^def get_rb_p(p_array):$/;"	f
+get_rb_p	gpu_IoU/iou-test.py	/^def get_rb_p(p_array):$/;"	f
+get_tl_p	cython/iou-test.py	/^def get_tl_p(p_array):$/;"	f
+get_tl_p	gpu_IoU/iou-test.py	/^def get_tl_p(p_array):$/;"	f
+get_vgg_conv	offic_make_symbol.py	/^def get_vgg_conv(data):$/;"	f
+get_vgg_train	offic_make_symbol.py	/^def get_vgg_train(num_classes=config.class_num, num_anchors=config.type_num):$/;"	f
+getdata	it/io-0.py	/^    def getdata(self):$/;"	m	class:DataIter
+getdata	it/io-0.py	/^    def getdata(self):$/;"	m	class:MXDataIter
+getdata	it/io-0.py	/^    def getdata(self):$/;"	m	class:NDArrayIter
+getdata	it/io-0.py	/^    def getdata(self):$/;"	m	class:PrefetchingIter
+getdata	it/io-0.py	/^    def getdata(self):$/;"	m	class:ResizeIter
+getindex	it/io-0.py	/^    def getindex(self):$/;"	m	class:DataIter
+getindex	it/io-0.py	/^    def getindex(self):$/;"	m	class:MXDataIter
+getindex	it/io-0.py	/^    def getindex(self):$/;"	m	class:PrefetchingIter
+getindex	it/io-0.py	/^    def getindex(self):$/;"	m	class:ResizeIter
+getlabel	it/io-0.py	/^    def getlabel(self):$/;"	m	class:DataIter
+getlabel	it/io-0.py	/^    def getlabel(self):$/;"	m	class:MXDataIter
+getlabel	it/io-0.py	/^    def getlabel(self):$/;"	m	class:NDArrayIter
+getlabel	it/io-0.py	/^    def getlabel(self):$/;"	m	class:PrefetchingIter
+getlabel	it/io-0.py	/^    def getlabel(self):$/;"	m	class:ResizeIter
+getpad	it/io-0.py	/^    def getpad(self):$/;"	m	class:DataIter
+getpad	it/io-0.py	/^    def getpad(self):$/;"	m	class:MXDataIter
+getpad	it/io-0.py	/^    def getpad(self):$/;"	m	class:NDArrayIter
+getpad	it/io-0.py	/^    def getpad(self):$/;"	m	class:PrefetchingIter
+getpad	it/io-0.py	/^    def getpad(self):$/;"	m	class:ResizeIter
+gpu_it_IoU	gpu_IoU/gpu_IoU.py	/^def gpu_it_IoU(anchors, gdts, k, ctx=mx.gpu()):$/;"	f
+gpu_it_IoU	nms/gpu_IoU.py	/^def gpu_it_IoU(anchors, gdts, k, ctx=mx.gpu()):$/;"	f
+gpu_m	Debug-log/Dec-5/test.py	/^gpu_m = np.load('[0, 60, -60][1.5, 3][60, 80]None_0_anchor_iou_gpu.npz')$/;"	v
+grad_check	clip.py	/^def grad_check(s):$/;"	f
+grid_on_P1_space	iou.py	/^grid_on_P1_space=np.array([ [X.reshape(-1,1)],[Y.reshape(-1,1)]] ).reshape(2,-1)$/;"	v
+grid_on_P1_space_bord	iou.py	/^grid_on_P1_space_bord=np.array([ [X_bord.reshape(-1,1)],[Y_bord.reshape(-1,1)]] ).reshape(2,-1)$/;"	v
+grid_on_P2_space	iou.py	/^grid_on_P2_space=np.array( np.dot( MTran(alpha1-alpha2),grid_on_P1_space))$/;"	v
+grid_on_P2_space_bord	iou.py	/^grid_on_P2_space_bord=np.array( np.dot( MTran(alpha1-alpha2),grid_on_P1_space_bord))$/;"	v
+hard_reset	it/io-0.py	/^    def hard_reset(self):$/;"	m	class:NDArrayIter
+has_intersec	cython/cytool.pyx	/^def has_intersec(np.ndarray[DTYPE_t, ndim=2] P1, np.ndarray[DTYPE_t, ndim=2] P2, DTYPE_t alpha1, DTYPE_t alpha2):$/;"	f
+has_intersec	cython/has_intersec.py	/^def has_intersec(bx1,bx2):$/;"	f
+has_intersec	gpu_IoU/cytool.pyx	/^def has_intersec(np.ndarray[DTYPE_t, ndim=2] P1, np.ndarray[DTYPE_t, ndim=2] P2, DTYPE_t alpha1, DTYPE_t alpha2):$/;"	f
+head	cython/cytool.c	/^  __Pyx_BufFmt_StackElem* head;$/;"	m	struct:__anon5	file:
+hist_range	adpt_iou.py	/^hist_range = np.arange(0,1,.1)$/;"	v
+im_info	predict_viz.py	/^    im_info = np.array( [H,W] )$/;"	v
+imag	cython/cytool.c	/^    typedef struct { double real, imag; } __pyx_t_double_complex;$/;"	m	struct:__anon7	file:
+imag	cython/cytool.c	/^    typedef struct { float real, imag; } __pyx_t_float_complex;$/;"	m	struct:__anon6	file:
+imdecode	it/origin-image.py	/^def imdecode(buf, **kwargs):$/;"	f
+img	crop_rotation/test.py	/^img = img[:,:,[2,1,0]]$/;"	v
+img	crop_rotation/test.py	/^img= cv2.imread(os.path.join(imgdir,imgname))$/;"	v
+img	net-test.py	/^                         mod.get_outputs()[0].asnumpy(),d0.data[1].asnumpy(),show_num=None)$/;"	v
+img	predict_viz.py	/^                         mod.get_outputs()[0].asnumpy(),d0.data[1].asnumpy(),show_num=None)$/;"	v
+img	predict_viz.py	/^        img = mx.nd.array( img_mx_raw.asnumpy() - np.array(cfg.it.mean) )$/;"	v
+img	predict_viz.py	/^    img = mx.nd.transpose(img, axes = (2, 0, 1) )$/;"	v
+img	resume_net_test.py	/^                         model_outputs[0].asnumpy(),d0.data[1].asnumpy(),show_num=None)$/;"	v
+img	test/text/test.py	/^img=mx.img.imdecode(  open(img_path,'rb'). read() ).asnumpy()$/;"	v
+img	viz_gdt.py	/^    img = cv2.imread(os.path.join(imgdir,imgname) )$/;"	v
+img	viz_gdt.py	/^    img = draw_angleBox(img,gdts[:,1:].astype(np.float), [255,0,0], line_width=2)$/;"	v
+img1	it/matrix-test.py	/^img1=np.random.uniform(0,1,(68*70*6,20))$/;"	v
+img2	it/matrix-test.py	/^img2=np.random.uniform(0,5,(4,5))$/;"	v
+imgPath	predict_viz.py	/^imgPath   ='51.png'$/;"	v
+img_data	predict_viz.py	/^    img_data = mx.nd.expand_dims(img, axis=0)$/;"	v
+img_mx_raw	predict_viz.py	/^        img_mx_raw =mx.img.imdecode(f.read())$/;"	v
+img_path	test/text/test.py	/^img_path =  '..\/0.jpg'$/;"	v
+imgdir	crop_rotation/gen.py	/^imgdir='..\/..\/data\/448'$/;"	v
+imgdir	crop_rotation/test.py	/^imgdir='..\/..\/data\/448'$/;"	v
+imgdir	predict_viz.py	/^imgdir    =None$/;"	v
+imgdir	viz_gdt.py	/^imgdir='..\/data\/448'$/;"	v
+imgidx	adpt_iou.py	/^imgidx = np.random.randint(0,len(imglist))$/;"	v
+imglist	adpt_iou.py	/^imglist = os.listdir(imgdir)$/;"	v
+imglist	iou_metric.py	/^imglist = os.listdir(imgdir)$/;"	v
+imglist	viz_gdt.py	/^imglist = os.listdir(imgdir)$/;"	v
+imgname	crop_rotation/generate_samples.py	/^        imgname = '%d.png'%sample_idx$/;"	v
+imgname	crop_rotation/test.py	/^imgname='390.png'$/;"	v
+imgname	viewer_test.py	/^imgname='..\/data\/test\/448\/t5.png'#'man-0.png'#'..\/data\/448\/88.png'#'448.png'##'..\/data\/448\/2.png'#$/;"	v
+imgname_list	crop_rotation/gen.py	/^imgname_list = [name+'.png' for name in imgname_list ]$/;"	v
+imgname_list	crop_rotation/gen.py	/^imgname_list=['390',]$/;"	v
+imgoutput_dir	crop_rotation/generate_samples.py	/^imgoutput_dir='..\/..\/data\/synthesis\/test_2_390\/448'$/;"	v
+indx	index/test.py	/^indx = a[0,:,1]> 3$/;"	v
+init_optimizer	module/module.py	/^    def init_optimizer(self, kvstore='local', optimizer='sgd',$/;"	m	class:MutableModule
+init_params	module/module.py	/^    def init_params(self, initializer=Uniform(0.01), arg_params=None, aux_params=None,$/;"	m	class:MutableModule
+initcytool	cython/cytool.c	/^PyMODINIT_FUNC initcytool(void)$/;"	f
+install_monitor	module/module.py	/^    def install_monitor(self, mon):$/;"	m	class:MutableModule
+interP_on_origin	iou.py	/^interP_on_origin=np.dot( MTran(alpha2), intersectionP)$/;"	v
+interP_on_origin_bord	iou.py	/^interP_on_origin_bord=np.dot( MTran(alpha2), intersectionP_bord)$/;"	v
+intern	cython/cytool.c	/^                const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry;$/;"	m	struct:__anon2	file:
+intersectionP	iou.py	/^intersectionP=p[  :,(p[0,:]>p2_bl[0])*(p[0,:]<p2_tr[0])  * (p[1,:]>p2_bl[1])* (p[1,:]<p2_tr[1]) ] # attached to P2_mt$/;"	v
+intersectionP_bord	iou.py	/^intersectionP_bord=p_bord[  :,(p_bord[0,:]>=p2_bl[0])*(p_bord[0,:]<p2_tr[0])  * (p_bord[1,:]>p2_bl[1])* (p_bord[1,:]<p2_tr[1]) ] # attached to P2_mt$/;"	v
+iou	cython/cytool.pyx	/^def iou(np.ndarray[DTYPE_t,ndim=1] anchor, np.ndarray[DTYPE_t,ndim=1] gdt,np.int_t x_num):$/;"	f
+iou	gpu_IoU/cytool.pyx	/^def iou(np.ndarray[DTYPE_t,ndim=1] anchor, np.ndarray[DTYPE_t,ndim=1] gdt,np.int_t x_num):$/;"	f
+iou	iou_metric.py	/^    iou = iou_matrix.max(axis=-2) # -2 checks ignore count$/;"	v
+iou_cpu	gpu_IoU/iou-test.py	/^iou_cpu = iou(R1,R2,10)$/;"	v
+iou_gpu	gpu_IoU/iou-test.py	/^iou_gpu = gpu_IoU.gpu_it_IoU(np.reshape(R1,(1,5)),np.reshape(R2,(1,5)),10);#reload(gpu_IoU);$/;"	v
+iou_list	adpt_iou.py	/^iou_list =[]$/;"	v
+iou_list	iou_metric.py	/^iou_list =[]$/;"	v
+iou_matrix	adpt_iou.py	/^    iou_matrix = gpu_it_IoU(anchor, gdt[:,1:], cfg.train.iou_x_num )$/;"	v
+iou_matrix	iou_metric.py	/^    iou_matrix = gpu_it_IoU(predict_bbox, gdt[:,1:], cfg.train.iou_x_num)$/;"	v
+iou_v	cython/iou-test.py	/^iou_v = iou(R1,R2,10)$/;"	v
+iou_v	gpu_IoU/iou-test.py	/^iou_v = iou(R1,R2,10)$/;"	v
+is_complex	cython/cytool.c	/^  int is_complex;$/;"	m	struct:__anon5	file:
+is_str	cython/cytool.c	/^                const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry;$/;"	m	struct:__anon2	file:
+is_unicode	cython/cytool.c	/^                const char is_unicode; const char is_str; const char intern; } __Pyx_StringTabEntry;$/;"	m	struct:__anon2	file:
+is_unsigned	cython/cytool.c	/^  char is_unsigned;$/;"	m	struct:__anon3	file:
+is_valid_array	cython/cytool.c	/^  char is_valid_array;$/;"	m	struct:__anon5	file:
+it	angleNet.py	/^it=angleIter(symbol_mod)#'..\/..\/data\/angleList.txt','..\/..\/data\/img',1,100)$/;"	v
+it	it-test.py	/^it=angleIter(symbol_mod)#'..\/..\/data\/angleList.txt','..\/..\/data\/img',1,100)$/;"	v
+it	it/it-test.py	/^it=angleIter()#'..\/..\/data\/angleList.txt','..\/..\/data\/img',1,100)$/;"	v
+it	net-test.py	/^it=angleIter(symbol_mod)#'..\/..\/data\/angleList.txt','..\/..\/data\/img',1,100)$/;"	v
+it	predict_viz.py	/^            labelFile=labelFile, imgPath=imgPath)# use data\/iou\/$scale\/test\/$/;"	v
+it	resume_net_test.py	/^it=angleIter(symbol_mod)#'..\/..\/data\/angleList.txt','..\/..\/data\/img',1,100)$/;"	v
+it	train.py	/^it=angleIter(symbol_mod)#'..\/..\/data\/angleList.txt','..\/..\/data\/img',1,100)$/;"	v
+it_IoU	cython/cytool.pyx	/^def it_IoU(np.ndarray[DTYPE_t,ndim=2] anchor, np.ndarray[DTYPE_t,ndim=2] gdt,np.int_t x_num):$/;"	f
+it_IoU	gpu_IoU/cytool.pyx	/^def it_IoU(np.ndarray[DTYPE_t,ndim=2] anchor, np.ndarray[DTYPE_t,ndim=2] gdt,np.int_t x_num):$/;"	f
+it_anchor	resume_net_test.py	/^it_anchor=d['anchor']$/;"	v
+iter_next	it/io-0.py	/^    def iter_next(self):$/;"	m	class:DataIter
+iter_next	it/io-0.py	/^    def iter_next(self):$/;"	m	class:MXDataIter
+iter_next	it/io-0.py	/^    def iter_next(self):$/;"	m	class:NDArrayIter
+iter_next	it/io-0.py	/^    def iter_next(self):$/;"	m	class:PrefetchingIter
+iter_next	it/io-0.py	/^    def iter_next(self):$/;"	m	class:ResizeIter
+l	gpu_IoU/test.py	/^l=np.zeros((1,4))$/;"	v
+l	net-test.py	/^l = label[1].asnumpy()$/;"	v
+l	net-test.py	/^l=d0.label[0].asnumpy()[0].astype(int)$/;"	v
+l	softmax_debug/prob_model.py	/^l=mx.sym.Variable('label')$/;"	v
+l	test/NDArray/test.py	/^l=[]$/;"	v
+l	test/NDArray/test.py	/^l=[mx.nd.array(a)*-2, -1*mx.nd.array(b)]$/;"	v
+l	test/indices/test.py	/^l=np.random.randint(0,255,())$/;"	v
+l0	test/NDArray/test.py	/^l0= [mx.nd.array(a),mx.nd.array(b)]$/;"	v
+label	net-test.py	/^label = mx.nd.reshape(label[0],(-1,)).asnumpy().astype(int)$/;"	v
+label	net-test.py	/^label= d.label  #$/;"	v
+labelFile	predict_viz.py	/^labelFile =None$/;"	v
+label_dict	adpt_iou.py	/^label_dict = gen_label_dict(labelfile)$/;"	v
+label_dict	iou_metric.py	/^label_dict = gen_label_dict(labelfile)$/;"	v
+label_shapes	module/module.py	/^    def label_shapes(self):$/;"	m	class:MutableModule
+labeltxt	viz_gdt.py	/^labeltxt= '..\/data\/angleList-448.txt'$/;"	v
+ld	it/matrix-test.py	/^ld=np.load(matName+'-noCompress.npz')$/;"	v
+legend_str	iou.py	/^legend_str='('+str(interP_on_origin[0,:].size)+'x2+'+str(interP_on_origin_bord[0,:].size)+')\/('+str(p_whole[0,:].size)+'x2+'+str(p_whole_bord[0,:].size)+')='+str(S)$/;"	v
+likely	cython/cytool.c	433;"	d	file:
+likely	cython/cytool.c	436;"	d	file:
+ll	gpu_IoU/test.py	/^ll=np.repeat(l,2,axis=1)$/;"	v
+load	nms/tool.py	/^  def load(self):$/;"	m	class:mytick
+load	tool.py	/^  def load(self):$/;"	m	class:mytick
+load_anchor_iou	angleIter.py	/^  def load_anchor_iou(self,imgName,featName):$/;"	m	class:angleIter
+load_anchor_iou	it/angleIter.py	/^  def load_anchor_iou(self,imgName,featName):$/;"	m	class:angleIter
+location_bound	crop_rotation/generate_samples.py	/^location_bound= (150,300)$/;"	v
+m	it/evidence.py	/^m=np.random.randint(0,30,(3,4))$/;"	v
+mA_acc	net-test.py	/^mA_acc=mx.metric.create('acc') #mx.metric.CustomMetric(angleMetric)$/;"	v
+mA_acc	train.py	/^mA_acc=mx.metric.CustomMetric(feval_acc_angleMetric, name='masked acc')#mx.metric.create('acc') #$/;"	v
+mA_l1	net-test.py	/^mA_l1 = mx.metric.CustomMetric(feval_l1_angleMetric, name='l1_smooth loss')$/;"	v
+mA_l1	train.py	/^mA_l1 = mx.metric.CustomMetric(feval_l1_angleMetric, name='l1_smooth loss')$/;"	v
+mapgdt	nms/tool.py	/^def mapgdt(iou,th1, th2=1,feat_hw=(28,28), anchor_num=6,block=False):$/;"	f
+mapgdt	tool.py	/^def mapgdt(iou,th1, th2=1,feat_hw=(28,28), anchor_num=6,block=False):$/;"	f
+matName	it/matrix-test.py	/^matName='matrix'$/;"	v
+max_count	cython/cytool.c	/^    int max_count;$/;"	m	struct:__Pyx_CodeObjectCache	file:
+max_update_count	clip.py	/^max_update_count=100$/;"	v
+mod	angleNet.py	/^mod = gen_model(symbol_mod,fixed_param_names,it)$/;"	v
+mod	net-test.py	/^mod = gen_model(symbol_mod,fixed_param_names,it)$/;"	v
+mod	predict_viz.py	/^mod = gen_model(symbol_mod,fixed_param_names,it)$/;"	v
+mod	predict_viz.py	/^mod = mx.mod.Module(symbol_pred, data_names=('data',), label_names=('target_label',), context=ctx)$/;"	v
+mod	softmax_debug/prob_model.py	/^mod = mx.mod.Module(symbol,data_names=['x',], label_names=['label',])$/;"	v
+mod	train.py	/^mod = gen_model(symbol_mod,fixed_param_names,it,softfixed_param_names=softfixed_param_names, softfixed_mul_lr=.01)$/;"	v
+model_epoch	predict_viz.py	/^model_epoch =6#0$/;"	v
+model_outputs	resume_net_test.py	/^model_outputs = d['model_outputs']$/;"	v
+mx_nms	nms/nms.py	/^            iou_thresh=.5, score_thresh=.9, min_area=50*50,max_area=100*200,min_length=30,max_length=220,ctx=mx.gpu()):$/;"	f
+mx_rotate	gpu_IoU/gpu_IoU.py	/^def mx_rotate(x,y, alpha, O=(0.,0.)):$/;"	f
+mx_rotate	nms/gpu_IoU.py	/^def mx_rotate(x,y, alpha, O=(0.,0.)):$/;"	f
+mydic	it/dict-test.py	/^def mydic(a,d=0):$/;"	f
+mytick	nms/tool.py	/^class mytick(object):$/;"	c
+mytick	tool.py	/^class mytick(object):$/;"	c
+n	cython/cytool.c	/^typedef struct {PyObject **p; char *s; const Py_ssize_t n; const char* encoding;$/;"	m	struct:__anon2	file:
+name	cython/cytool.c	/^  const char* name;$/;"	m	struct:__Pyx_StructField_	file:
+name	cython/cytool.c	/^  const char* name;$/;"	m	struct:__anon3	file:
+nd	angleIter.py	/^nd= mx.nd$/;"	v
+nd	it/angleIter.py	/^nd= mx.nd$/;"	v
+nd	it/angleIter_0.py	/^nd= mx.nd$/;"	v
+ndim	cython/cytool.c	/^  int ndim;$/;"	m	struct:__anon3	file:
+new_count	cython/cytool.c	/^  size_t new_count, enc_count;$/;"	m	struct:__anon5	file:
+new_packmode	cython/cytool.c	/^  char new_packmode;$/;"	m	struct:__anon5	file:
+next	angleIter.py	/^  def next(self):  # one img per call$/;"	m	class:angleIter
+next	it/angleIter.py	/^  def next(self):  # one img per call$/;"	m	class:angleIter
+next	it/angleIter_0.py	/^	def next(self):  # one img per call$/;"	m	class:angleIter
+next	it/io-0.py	/^    def next(self):$/;"	m	class:DataIter
+next	it/io-0.py	/^    def next(self):$/;"	m	class:MXDataIter
+next	it/io-0.py	/^    def next(self):$/;"	m	class:NDArrayIter
+next	it/io-0.py	/^    def next(self):$/;"	m	class:PrefetchingIter
+next	it/origin-image.py	/^    def next(self):$/;"	m	class:ImageIter
+next_sample	it/origin-image.py	/^    def next_sample(self):$/;"	m	class:ImageIter
+nofile	config.py	/^def nofile():$/;"	f
+npr	angleIter.py	/^npr=np.random$/;"	v
+npr	it/angleIter.py	/^npr=np.random$/;"	v
+npr	it/angleIter_0.py	/^npr=np.random$/;"	v
+num_sample	crop_rotation/generate_samples.py	/^num_sample = 5000$/;"	v
+offset	cython/cytool.c	/^  size_t offset;$/;"	m	struct:__Pyx_StructField_	file:
+offsetof	cython/cytool.c	13;"	d	file:
+out	net-test.py	/^    out = mod.get_outputs()$/;"	v
+out	net-test.py	/^out = np.argmax(out, axis=2)[0]$/;"	v
+out	net-test.py	/^out= mod.get_outputs()[0].asnumpy()$/;"	v
+out	train.py	/^    out = mod.get_outputs()$/;"	v
+output_file	iou_metric.py	/^                            os.path.basename(model_prefix) +str(epoch)+'.txt' )$/;"	v
+output_names	module/module.py	/^    def output_names(self):$/;"	m	class:MutableModule
+output_shapes	module/module.py	/^    def output_shapes(self):$/;"	m	class:MutableModule
+outputdir	viz_gdt.py	/^outputdir='..\/data\/showgdt\/448'$/;"	v
+p	cython/cytool.c	/^typedef struct {PyObject **p; char *s; const Py_ssize_t n; const char* encoding;$/;"	m	struct:__anon2	file:
+p	iou.py	/^p=grid_on_P2_space$/;"	v
+p1_bl	iou.py	/^p1_bl=np.array(np.min(P1_mt,1).reshape(2,))[0]$/;"	v
+p1_tr	iou.py	/^p1_tr=np.array(np.max(P1_mt,1).reshape(2,))[0]$/;"	v
+p2_bl	iou.py	/^p2_bl=np.array(np.min(P2_mt,1).reshape(2,))[0]$/;"	v
+p2_tr	iou.py	/^p2_tr=np.array(np.max(P2_mt,1).reshape(2,))[0]$/;"	v
+p_bord	iou.py	/^p_bord=grid_on_P2_space_bord$/;"	v
+p_whole	iou.py	/^p_whole=np.dot( MTran(alpha2), p)$/;"	v
+p_whole_bord	iou.py	/^p_whole_bord=np.dot( MTran(alpha2), p_bord)$/;"	v
+pad_rotate	crop_rotation/crop.py	/^def pad_rotate(patch, deg, HW, C=None):$/;"	f
+parase_prefix	predict_viewer.py	/^  def parase_prefix(self):$/;"	m	class:Viewer
+parent_offset	cython/cytool.c	/^  size_t parent_offset;$/;"	m	struct:__anon4	file:
+parseLine	adpt_iou.py	/^def parseLine(s):$/;"	f
+parseLine	angleIter.py	/^  def parseLine(self):$/;"	m	class:angleIter
+parseLine	crop_rotation/crop.py	/^def parseLine(imgdir, s, ret_img=False):$/;"	f
+parseLine	crop_rotation/test.py	/^def parseLine(imgdir, s, ret_img=False):$/;"	f
+parseLine	iou_metric.py	/^def parseLine(s):$/;"	f
+parseLine	it/angleIter.py	/^  def parseLine(self):$/;"	m	class:angleIter
+parseLine	it/angleIter_0.py	/^	def parseLine(self):$/;"	m	class:angleIter
+parseLine	viz_gdt.py	/^def parseLine(s):$/;"	f
+patch	crop_rotation/generate_samples.py	/^patch = cv2.imread(crop_file)$/;"	v
+patch_list	crop_rotation/gen.py	/^    patch_list = rotation_crop(imgdir, s)$/;"	v
+patch_list	crop_rotation/test.py	/^patch_list = rotation_crop(imgdir, s)$/;"	v
+patch_synthesis	crop_rotation/crop.py	/^def patch_synthesis(patch, img):$/;"	f
+pb	net-test.py	/^pb = pred_bbox.asnumpy()$/;"	v
+picked_imgname	adpt_iou.py	/^picked_imgname = None#imglist[imgidx]#'238.png'#$/;"	v
+post_iou	angleIter.py	/^def post_iou(iou_matrix,anchor,gdt):$/;"	f
+post_iou	it/angleIter.py	/^def post_iou(iou_matrix,anchor,gdt):$/;"	f
+post_iou	it/angleIter_0.py	/^def post_iou(iou_matrix,anchor,gdt):$/;"	f
+pred_bbox	net-test.py	/^pred_bbox = mod.get_outputs()[0]$/;"	v
+pred_bbox	net-test.py	/^pred_bbox = mod.get_outputs()[1]$/;"	v
+pred_bbox	net-test.py	/^pred_bbox = mod.get_outputs()[2]$/;"	v
+predict	predict_viewer.py	/^  def predict(self,img_path):$/;"	m	class:Viewer
+predict_bbox	iou_metric.py	/^    predict_bbox = V.view(.8, .1, onlyneed_box=True)$/;"	v
+prefetch_func	it/io-0.py	/^        def prefetch_func(self, i):$/;"	f	function:PrefetchingIter.__init__
+proc4pred	nms/tool.py	/^def proc4pred(imgPath, mean=[0,0,0], std=1):$/;"	f
+proc4pred	tool.py	/^def proc4pred(imgPath, mean=[0,0,0], std=1):$/;"	f
+provide_data	it/io-0.py	/^    def provide_data(self):$/;"	m	class:NDArrayIter
+provide_data	it/io-0.py	/^    def provide_data(self):$/;"	m	class:PrefetchingIter
+provide_label	it/io-0.py	/^    def provide_label(self):$/;"	m	class:NDArrayIter
+provide_label	it/io-0.py	/^    def provide_label(self):$/;"	m	class:PrefetchingIter
+pybuffer	cython/cytool.c	/^  Py_buffer pybuffer;$/;"	m	struct:__anon11	file:
+random_crop	it/origin-image.py	/^def random_crop(src, size, interp=2):$/;"	f
+random_size_crop	it/origin-image.py	/^def random_size_crop(src, size, min_area, ratio, interp=2):$/;"	f
+raw_img	adpt_iou.py	/^raw_img=mx.image.imdecode(open(os.path.join(imgdir,picked_imgname),'rb').read()).asnumpy() if picked_imgname is not None else None$/;"	v
+raw_pred	resume_net_test.py	/^raw_pred = model_outputs[1]$/;"	v
+raw_rotate	gpu_IoU/gpu_IoU.py	/^    def raw_rotate(x,y,alpha):$/;"	f	function:mx_rotate
+raw_rotate	nms/gpu_IoU.py	/^    def raw_rotate(x,y,alpha):$/;"	f	function:mx_rotate
+rb_p2	cython/iou-test.py	/^rb_p2=get_rb_p(cp2p(R1[:2],R1[2],R1[3],R1[4]))$/;"	v
+rb_p2	gpu_IoU/iou-test.py	/^rb_p2=get_rb_p(cp2p(R1[:2],R1[2],R1[3],R1[4]))$/;"	v
+rcbuffer	cython/cytool.c	/^  __Pyx_Buffer *rcbuffer;$/;"	m	struct:__anon12	file:
+real	cython/cytool.c	/^    typedef struct { double real, imag; } __pyx_t_double_complex;$/;"	m	struct:__anon7	file:
+real	cython/cytool.c	/^    typedef struct { float real, imag; } __pyx_t_float_complex;$/;"	m	struct:__anon6	file:
+refcount	cython/cytool.c	/^  size_t refcount;$/;"	m	struct:__anon11	file:
+reset	angleIter.py	/^  def reset(self):$/;"	m	class:angleIter
+reset	it/angleIter.py	/^  def reset(self):$/;"	m	class:angleIter
+reset	it/angleIter_0.py	/^	def reset(self):$/;"	m	class:angleIter
+reset	it/io-0.py	/^    def reset(self):$/;"	m	class:DataIter
+reset	it/io-0.py	/^    def reset(self):$/;"	m	class:MXDataIter
+reset	it/io-0.py	/^    def reset(self):$/;"	m	class:NDArrayIter
+reset	it/io-0.py	/^    def reset(self):$/;"	m	class:PrefetchingIter
+reset	it/io-0.py	/^    def reset(self):$/;"	m	class:ResizeIter
+reset	it/origin-image.py	/^    def reset(self):$/;"	m	class:ImageIter
+reset	nms/tool.py	/^  def reset(self):$/;"	m	class:GroupMetrix
+reset	tool.py	/^  def reset(self):$/;"	m	class:GroupMetrix
+resize_short	it/origin-image.py	/^def resize_short(src, size, interp=2):$/;"	f
+rh1	iou.py	/^rh1=7$/;"	v
+rh2	iou.py	/^rh2=4$/;"	v
+root	cython/cytool.c	/^  __Pyx_StructField root;$/;"	m	struct:__anon5	file:
+rotate_img	crop_rotation/crop.py	/^def rotate_img(img, c, deg, shape_mult=2):$/;"	f
+rotate_img	crop_rotation/test.py	/^def rotate_img(img, c, deg):$/;"	f
+rotated_pad	crop_rotation/gen.py	/^        rotated_pad = pad_rotate(patch,30, (448,448),None)#C)$/;"	v
+rotated_pad	crop_rotation/generate_samples.py	/^        rotated_pad = pad_rotate(patch, angle, background_img.shape[:2], (x,y))$/;"	v
+rotation_crop	crop_rotation/crop.py	/^def rotation_crop(imgdir,line_s):$/;"	f
+rw1	iou.py	/^rw1=5$/;"	v
+rw2	iou.py	/^rw2=2$/;"	v
+s	adpt_iou.py	/^    s = label_dict[imgname]$/;"	v
+s	crop_rotation/gen.py	/^    s = s_dict[imgname]$/;"	v
+s	crop_rotation/test.py	/^s=d[imgname]$/;"	v
+s	crop_rotation/test.py	/^s=raw_input('any key to close...')$/;"	v
+s	cython/cytool.c	/^typedef struct {PyObject **p; char *s; const Py_ssize_t n; const char* encoding;$/;"	m	struct:__anon2	file:
+s	iou_metric.py	/^    s = label_dict[imgname]$/;"	v
+s	viewer_test.py	/^s=raw_input('print any key to close...')$/;"	v
+s	viz_gdt.py	/^    s=d[imgname]$/;"	v
+s_dict	crop_rotation/gen.py	/^s_dict = gen_label_dict(txtpath)$/;"	v
+sample	crop_rotation/generate_samples.py	/^        sample = patch_synthesis( rotated_pad, background_img)$/;"	v
+saug	it/origin-image.py	/^        def saug(src):$/;"	f	function:ColorJitterAug
+save_checkpoint	module/module.py	/^    def save_checkpoint(self,prefix, epoch, save_optimizer_states=False):$/;"	m	class:MutableModule
+save_dir	misc_tmp.py	/^save_dir='..\/data\/debug\/'$/;"	v
+save_s	iou_metric.py	/^                                os.path.basename(model_prefix), epoch)+'-'*40+'\\n'$/;"	v
+scale_down	it/origin-image.py	/^def scale_down(src_size, size):$/;"	f
+score	resume_net_test.py	/^score = model_outputs[0]$/;"	v
+secure_anchor_iou_file	angleIter.py	/^  def secure_anchor_iou_file(self):$/;"	m	class:angleIter
+secure_anchor_iou_file	it/angleIter.py	/^  def secure_anchor_iou_file(self):$/;"	m	class:angleIter
+shape	cython/cytool.c	/^  Py_ssize_t shape, strides, suboffsets;$/;"	m	struct:__anon10	file:
+size	cython/cytool.c	/^  size_t size;$/;"	m	struct:__anon3	file:
+src	cython/Makefile	/^src=cytool$/;"	m
+src	gpu_IoU/Makefile	/^src=cytool$/;"	m
+start_time	angleNet.py	/^      start_time  = time.time()$/;"	v
+start_time	angleNet.py	/^start_time =time.time()$/;"	v
+stride	adpt_iou.py	/^    stride=(im_info[0]\/feat_shape[-2],im_info[1]\/feat_shape[-1])$/;"	v
+stride	predict_viz.py	/^    stride=(im_info[0]\/feat_shape[-2],im_info[1]\/feat_shape[-1])$/;"	v
+strides	cython/cytool.c	/^  Py_ssize_t shape, strides, suboffsets;$/;"	m	struct:__anon10	file:
+struct_alignment	cython/cytool.c	/^  size_t struct_alignment;$/;"	m	struct:__anon5	file:
+suboffsets	cython/cytool.c	/^  Py_ssize_t shape, strides, suboffsets;$/;"	m	struct:__anon10	file:
+sym	symbol/get_internals.py	/^sym = mx.sym.Convolution(sym,num_filter=2,kernel=(1,1),name='conv1')$/;"	v
+sym	symbol/get_internals.py	/^sym = mx.sym.Convolution(sym,num_filter=2,kernel=(1,1),name='conv2')$/;"	v
+sym	symbol/get_internals.py	/^sym = mx.sym.Variable('a')$/;"	v
+sym	symbol/get_internals.py	/^sym = sym -10$/;"	v
+sym	symbol/get_internals.py	/^sym = sym*2$/;"	v
+sym	symbol/get_internals.py	/^sym = sym+1$/;"	v
+sym	symbol/get_internals.py	/^sym= mx.sym.Group([sym_1, sym_2])$/;"	v
+sym_1	symbol/get_internals.py	/^sym_1 = sym.get_internals()['conv1_output']$/;"	v
+sym_2	symbol/get_internals.py	/^sym_2 = sym.get_internals()['conv2_output']$/;"	v
+symbol	adpt_iou.py	/^symbol = mx.sym.load('%s-symbol.json'%cfg.net.symbol_path)$/;"	v
+symbol	iou_metric.py	/^symbol = mx.sym.load('%s-symbol.json'%cfg.net.symbol_path)$/;"	v
+symbol	plot/plot.py	/^symbol=mx.sym.load('symbol_model.json')$/;"	v
+symbol_mod	softmax_debug/prob_model.py	/^symbol_mod = mx.sym.SoftmaxOutput(y,label=l, use_ignore=True, ignore_label=-1)$/;"	v
+symbol_pred	predict_viz.py	/^                     x in ['rpn_label_loss', 'rpn_pred_bbox_reshape'] ] )$/;"	v
+synthesis	crop_rotation/gen.py	/^        synthesis = patch_synthesis(rotated_pad, background_img)$/;"	v
+t0	net-test.py	/^      t0 = time.time()$/;"	v
+t0	net-test.py	/^t0 = time.time()$/;"	v
+t0	train.py	/^      t0 = time.time()$/;"	v
+t0	train.py	/^t0=time.time()$/;"	v
+t1	net-test.py	/^      t1=time.time()$/;"	v
+t1	train.py	/^      t1=time.time()$/;"	v
+target	cython/Makefile	/^target=$(src).so$/;"	m
+target	gpu_IoU/Makefile	/^target=$(src).so$/;"	m
+test	dict_pass/test.py	/^def test(a,b,c):$/;"	f
+text_fig	nms/tool.py	/^def text_fig(ax, xy_list, iou_list):$/;"	f
+text_fig	tool.py	/^def text_fig(ax, xy_list, iou_list):$/;"	f
+tick	nms/tool.py	/^  def tick(self,idx,num):$/;"	m	class:mytick
+tick	tool.py	/^  def tick(self,idx,num):$/;"	m	class:mytick
+time_stamp	misc_tmp.py	/^time_stamp=time.asctime().replace(' ','-')$/;"	v
+title	adpt_iou.py	/^title = 'sideLength: %s, #anchor: %d, #valid-img: %d'%(str(cfg.ANCHOR_sideLength), len(iou_list), valid_imgcnt)$/;"	v
+tl_p1	cython/iou-test.py	/^tl_p1=get_tl_p(cp2p(R1[:2],R1[2],R1[3],R1[4]))$/;"	v
+tl_p1	gpu_IoU/iou-test.py	/^tl_p1=get_tl_p(cp2p(R1[:2],R1[2],R1[3],R1[4]))$/;"	v
+txtfile	crop_rotation/generate_samples.py	/^txtfile = os.path.join( os.path.dirname(imgoutput_dir), 'angleList-'+os.path.basename(imgoutput_dir)+'.txt' )$/;"	v
+txtpath	crop_rotation/gen.py	/^txtpath= '..\/..\/data\/angleList-448.txt'$/;"	v
+txtpath	crop_rotation/test.py	/^txtpath= '..\/..\/data\/angleList-448.txt'$/;"	v
+type	cython/cytool.c	/^  __Pyx_TypeInfo* type;$/;"	m	struct:__Pyx_StructField_	file:
+typegroup	cython/cytool.c	/^  char typegroup;$/;"	m	struct:__anon3	file:
+unlikely	cython/cytool.c	434;"	d	file:
+unlikely	cython/cytool.c	437;"	d	file:
+update	make_symbol.py	/^    def update(self, labels, preds):$/;"	m	class:AngleMetric
+update	module/module.py	/^    def update(self):$/;"	m	class:MutableModule
+update	nms/tool.py	/^  def update(self, mod, d):$/;"	m	class:GroupMetrix
+update	tool.py	/^  def update(self, mod, d):$/;"	m	class:GroupMetrix
+update_metric	module/module.py	/^    def update_metric(self, eval_metric, labels):$/;"	m	class:MutableModule
+v	viewer_test.py	/^v = Viewer(os.path.join('..\/output\/',model_prefix),epoch)$/;"	v
+valid_imgcnt	adpt_iou.py	/^valid_imgcnt=0$/;"	v
+valid_imgcnt	iou_metric.py	/^valid_imgcnt=0$/;"	v
+view	predict_viewer.py	/^  def view(self,filter_th,iou_th,block=False, onlyneed_box=False):$/;"	m	class:Viewer
+viz_anchor_byIoU	nms/tool.py	/^def viz_anchor_byIoU(img, anchors, raw_gdt, IoU, th1, th2=1, title_s='', text=True):$/;"	f
+viz_anchor_byIoU	tool.py	/^def viz_anchor_byIoU(img, anchors, raw_gdt, IoU, th1, th2=1, title_s='', text=True):$/;"	f
+viz_bbox_gdt	nms/tool.py	/^def viz_bbox_gdt(img, anchors, anchor_gdt, rpn_outside_weight,  show_num=None):$/;"	f
+viz_bbox_gdt	tool.py	/^def viz_bbox_gdt(img, anchors, anchor_gdt, rpn_outside_weight,  show_num=None):$/;"	f
+viz_score_predict	nms/tool.py	/^def viz_score_predict(img, anchors, anchor_gdt, predict_bbox, scores, score_th=.9, ax=plt.gca(), show_num=None ):$/;"	f
+viz_score_predict	tool.py	/^def viz_score_predict(img, anchors, anchor_gdt, predict_bbox, scores, score_th=.9, ax=plt.gca(), show_num=None ):$/;"	f
+viz_target	nms/tool.py	/^def viz_target(img, anchors, anchor_gdt, predict_bbox, scores, rpn_inside_weight,  show_num=None):$/;"	f
+viz_target	tool.py	/^def viz_target(img, anchors, anchor_gdt, predict_bbox, scores, rpn_inside_weight,  show_num=None):$/;"	f
+x	cython/cytool.c	/^typedef struct { PY_LONG_LONG x; char c; } __Pyx_pad_longlong;$/;"	m	struct:__anon28	file:
+x	cython/cytool.c	/^typedef struct { char c; PY_LONG_LONG x; } __Pyx_st_longlong;$/;"	m	struct:__anon20	file:
+x	cython/cytool.c	/^typedef struct { char c; double x; } __Pyx_st_double;$/;"	m	struct:__anon17	file:
+x	cython/cytool.c	/^typedef struct { char c; float x; } __Pyx_st_float;$/;"	m	struct:__anon16	file:
+x	cython/cytool.c	/^typedef struct { char c; int x; } __Pyx_st_int;$/;"	m	struct:__anon14	file:
+x	cython/cytool.c	/^typedef struct { char c; long double x; } __Pyx_st_longdouble;$/;"	m	struct:__anon18	file:
+x	cython/cytool.c	/^typedef struct { char c; long x; } __Pyx_st_long;$/;"	m	struct:__anon15	file:
+x	cython/cytool.c	/^typedef struct { char c; short x; } __Pyx_st_short;$/;"	m	struct:__anon13	file:
+x	cython/cytool.c	/^typedef struct { char c; void *x; } __Pyx_st_void_p;$/;"	m	struct:__anon19	file:
+x	cython/cytool.c	/^typedef struct { double x; char c; } __Pyx_pad_double;$/;"	m	struct:__anon25	file:
+x	cython/cytool.c	/^typedef struct { float x; char c; } __Pyx_pad_float;$/;"	m	struct:__anon24	file:
+x	cython/cytool.c	/^typedef struct { int x; char c; } __Pyx_pad_int;$/;"	m	struct:__anon22	file:
+x	cython/cytool.c	/^typedef struct { long double x; char c; } __Pyx_pad_longdouble;$/;"	m	struct:__anon26	file:
+x	cython/cytool.c	/^typedef struct { long x; char c; } __Pyx_pad_long;$/;"	m	struct:__anon23	file:
+x	cython/cytool.c	/^typedef struct { short x; char c; } __Pyx_pad_short;$/;"	m	struct:__anon21	file:
+x	cython/cytool.c	/^typedef struct { void *x; char c; } __Pyx_pad_void_p;$/;"	m	struct:__anon27	file:
+x	cython/iou-test.py	/^x=np.linspace(tl_p1[0], rb_p2[0], 10)$/;"	v
+x	gpu_IoU/iou-test.py	/^x=np.linspace(tl_p1[0], rb_p2[0], 10)$/;"	v
+x	gpu_IoU/test.py	/^x=mx.nd.array(np.random.randint(0,10,(1,4)))$/;"	v
+x	gpu_IoU/tmp.py	/^x=[ -6.21319962,  2.27208042, 10.7573576,  19.24264145, 27.72792435$/;"	v
+x	gpu_IoU/tmp.py	/^x=np.array(x)$/;"	v
+x	gpu_IoU/tmp.py	/^x=np.array(x.asnumpy()[0])$/;"	v
+x	softmax_debug/prob_model.py	/^x=mx.sym.Variable('x')$/;"	v
+x_a	gpu_IoU/test.py	/^x_a = mx.nd.broadcast_mul(x,alpha)$/;"	v
+x_num	iou.py	/^x_num=10$/;"	v
+xlin	iou.py	/^xlin=( np.linspace(p1_bl[0],p1_tr[0],x_num+2))#[1:-1]$/;"	v
+y	cython/iou-test.py	/^y=np.linspace(tl_p1[1], rb_p2[1], 10)$/;"	v
+y	gpu_IoU/iou-test.py	/^y=np.linspace(tl_p1[1], rb_p2[1], 10)$/;"	v
+y	gpu_IoU/tmp.py	/^y=[ -1.26396103e+01, -4.15433121e+00,  4.33095551e+00,  1.28162308e+01$/;"	v
+y	gpu_IoU/tmp.py	/^y=np.array(y)$/;"	v
+y	gpu_IoU/tmp.py	/^y=np.array(y.asnumpy()[0])$/;"	v
+y	softmax_debug/prob_model.py	/^y=mx.sym.FullyConnected(x, num_hidden=10)$/;"	v
+y	test_make_model.py	/^y= feat_model(d)$/;"	v
+y_num	iou.py	/^y_num=np.int(np.round(x_num*1.\/rh1*rw1))$/;"	v
+ylin	iou.py	/^ylin=( np.linspace(p1_bl[1],p1_tr[1],y_num+2)  )#[1:-1]$/;"	v

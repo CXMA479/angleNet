@@ -161,9 +161,12 @@ class Viewer(object):
     print('num of indexed bbox: %d'%len(self.indx))
     self.filter_transfered_bbox = self.predict_transfered_bbox[self.indx,:]
     if onlyneed_box:
-        return self.filter_transfered_bbox
+        score = self.predict_score
+        score = score.asnumpy()[0] if not isinstance(score,np.ndarray) else score
+        score = score[self.indx,1:2]
+        return np.concatenate( [self.filter_transfered_bbox, score], axis=1)
     img = self.img
-    
+
     # nms...
 
     self.view_img = tool.draw_angleBox(img, self.filter_transfered_bbox.astype(np.float),(0,255,0))
@@ -171,15 +174,5 @@ class Viewer(object):
     plt.imshow(self.view_img)
     plt.title(self.imgname)
     plt.show(block=block)
-
-
-
-
-
-
-
-
-
-
 
 

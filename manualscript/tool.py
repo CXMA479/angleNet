@@ -197,7 +197,7 @@ def bbox_inv_transfer(anchor,predict_bbx, xpu='cpu'):
     view_bbox[:,4] = exp(predict_bbx[:,4])*anchor[:,4]
     return view_bbox
 
-def draw_angleBox(img,anchor,color, line_width=2):
+def draw_angleBox(img,anchor,color, line_width=1):
   """
                 img   : H x W x 3 , RGB
                 anchor: N x 5     , x,y,alphaR,rh,rw
@@ -407,6 +407,11 @@ def viz_score_predict(img, anchors, anchor_gdt, predict_bbox, scores, score_th=.
     text_fig(ax, pred_box[:,:2],scores[0,valid_idx,1])
     plt.title(title_s)
     plt.show()
+
+
+
+
+
 
 
 

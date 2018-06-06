@@ -25,13 +25,13 @@ AG_output_prefix = os.path.join( os.path.dirname(labelfile)+'/iou-prob','AG_mode
 
 def mask_nonmax(iou_matrix):
     # each column (ground truth) only has one non-negative ele
-    return np.sign( iou_matrix - iou_matrix.max(-2) ) +1
+    return   iou_matrix * ( np.sign( iou_matrix - iou_matrix.max(-2) ) +1)
 
 for dir_ele in [AA_output_prefix, AG_output_prefix]:
     dir_ele = os.path.dirname(dir_ele)
     if not os.path.isdir(dir_ele):
         print('Create director: %s...'%dir_ele)
-        os.mkdir(dir)
+        os.mkdir(dir_ele)
 
 assert os.path.isdir(imgdir), imgdir
 assert os.path.isfile(labelfile), labelfile
@@ -125,6 +125,9 @@ for imgname in imglist:#['1.png',]:#
     iou_matrix = gpu_it_IoU( predict_bbox[:,:-1], gdt[:,1:], cfg.train.iou_x_num )
     
     baseline_iou_matrix = gpu_it_IoU(baseline_bbox[:,:-1], gdt[:,1:], cfg.train.iou_x_num)
+    iou_matrix = mask_nonmax(iou_matrix)
+    baseline_iou_matrix = mask_nonmax(baseline_iou_matrix)
+
     # concat iou with score
     iou = iou_matrix.max(-1)
     baseline_iou = baseline_iou_matrix.max(-1)

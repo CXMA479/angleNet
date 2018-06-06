@@ -19,7 +19,7 @@ config = edict()
 config.comment ='4x4 feat with GradBlock + config feat-conv+ no wd+ run on the naturally crops'#use zero angle with man-made samples'
 config.it=edict()
 config.it.debug=edict()
-config.it.debug.debug =  True
+config.it.debug.debug = not True
 config.it.debug.feat_shape=None#[5,4]#None # #  [1,3,6,6]
 
 """
@@ -29,15 +29,15 @@ labelName: used for anchor-wise regression
 stride: pixels(in raw img) between to neighbor anchors' centrs
 sideLength: \sqrt{Aera} ,Aera is fixed for one sideLength wrt. angleD
 """
-config.ANCHOR_angleD=(0,)#60,-60) #(-60,)#  # degree
+config.ANCHOR_angleD=(0,60,-60) #(-60,)#  # degree
 config.ANCHOR_HoW=(2, .5, 1)   #(3,)#     #   rh over rw
-config.ANCHOR_sideLength=(80,60,100)
+config.ANCHOR_sideLength=(90,60,130)
 config.ANCHOR_stride =None#  deprecated, calculated in angleIter.py automatically  240#16# (250,250)#
 
 config.class_num=2   # only building and background
 
 config.debug=edict()
-config.debug.debug=    True
+config.debug.debug=  not  True
 config.debug.it = edict()
 config.debug.it.anchor_num = 60  # randomly show some of anchors on the figure in angleIter.next()
 
@@ -52,7 +52,7 @@ config.it.labelFile='../data/angleList-%d.txt'%config.it.scale
 config.it.ioudir = '../data/iou/nat/%d/'%config.it.scale  #  pre-calculate iou to a file for each image, it 
 
 config.it.epoch=20
-config.it.iteration=400000/2/5/2#/10#00#*1000
+config.it.iteration=20000#400000/2/5/2#/10#00#*1000
 config.it.dataNames=['data','rpn_inside_weight','rpn_outside_weight']    #  gdt: label, x, y, alphaR, rh, rw     will be used after proposal operation
 config.it.labelNames=['target_label','target_bbox']         #  target_label ONLY indicats wheather it is object
 config.it.shuffle=True
@@ -65,7 +65,7 @@ config.it.mean=[123.68, 116.28, 103.53]
 
 
 config.train=edict()
-config.train.ctx = mx.gpu(0)#mx.cpu()
+config.train.ctx = mx.gpu(2)#mx.cpu()
 config.train.iou_x_num=10     # referenced by angleIter.py
 config.train.THRESHOLD_OBJECT=.65#65#  # ref by  angleIter.py
 config.train.THRESHOLD_BACKGD =.3#55#

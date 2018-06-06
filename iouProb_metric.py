@@ -13,7 +13,7 @@ from tool import mytick,viz_score_predict, viz_bbox_gdt, viz_target, viz_anchor_
 from predict_viewer import Viewer
 from crop_rotation.crop import rotate_img, gen_endian
 
-model_prefix='../output/metric-model/Wed Apr 11 10:11:49 2018_angleD=[0];HoW=[2, 0.5, 1];sideLength=[80, 60, 100]';epoch=6
+model_prefix='../output/metric-model/Fri Apr 20 09:04:32 2018_angleD=[0, 60, -60];HoW=[2, 0.5, 1];sideLength=[120, 80, 160]';epoch=19#Wed Apr 11 10:11:49 2018_angleD=[0];HoW=[2, 0.5, 1];sideLength=[80, 60, 100]';epoch=6
 #model_prefix='../output/metric-model/Thu Apr 19 11:04:11 2018_angleD=[0, 60, -60];HoW=[2, 0.5, 1];sideLength=[90, 60, 130]';epoch=7
 #imgdir='../data/metric/448'; labelfile='../data/metric/angleList-448.txt' # contents will be analysed...
 imgdir='../data/metric/896'; labelfile='../data/metric/angleList-896.txt' # contents will be analysed...

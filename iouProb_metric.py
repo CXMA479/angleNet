@@ -22,6 +22,11 @@ AA_output_prefix = os.path.join( os.path.dirname(labelfile)+'/iou-prob', 'AA_mod
 AG_output_prefix = os.path.join( os.path.dirname(labelfile)+'/iou-prob','AG_model'+\
                             os.path.basename(model_prefix) +str(epoch) )
 
+
+def mask_nonmax(iou_matrix):
+    # each column (ground truth) only has one non-negative ele
+    return np.sign( iou_matrix - iou_matrix.max(-2) ) +1
+
 for dir_ele in [AA_output_prefix, AG_output_prefix]:
     dir_ele = os.path.dirname(dir_ele)
     if not os.path.isdir(dir_ele):
@@ -123,6 +128,9 @@ for imgname in imglist:#['1.png',]:#
     # concat iou with score
     iou = iou_matrix.max(-1)
     baseline_iou = baseline_iou_matrix.max(-1)
+
+    # each column has only one non-negative element (the maximum)
+
     iou_prob = np.array([iou,predict_bbox[:,-1]]).T
     baseline_iou_prob = np.array([baseline_iou,baseline_bbox[:,-1]]).T
     # dump to file...

@@ -25,7 +25,7 @@ AG_output_prefix = os.path.join( os.path.dirname(labelfile)+'iou-prob',\
 for dir_ele in [AA_output_prefix, AG_output_prefix]:
     dir_ele = os.path.dirname(dir_ele)
     if not os.path.isdir(dir_ele):
-        print('Create director: %s...'%dir_ele)
+        print('Create directory: %s...'%dir_ele)
         os.mkdir(dir)
 
 assert os.path.isdir(imgdir), imgdir

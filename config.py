@@ -4,7 +4,7 @@
      Chen Y. Liang
 """
 import matplotlib
-matplotlib.use('Qt4Agg')
+#matplotlib.use('Qt4Agg')
 import numpy as np
 from easydict import EasyDict as edict
 import logging, time, os
@@ -16,7 +16,7 @@ import mxnet as mx
 
 
 config = edict()
-config.comment ='4x4 feat with GradBlock + config feat-conv+ no wd+ run on the naturally crops'#use zero angle with man-made samples'
+config.comment ='run for comparison with faster-RCNN 1/2 default anchor scales'#use zero angle with man-made samples'
 config.it=edict()
 config.it.debug=edict()
 config.it.debug.debug = not True
@@ -29,9 +29,9 @@ labelName: used for anchor-wise regression
 stride: pixels(in raw img) between to neighbor anchors' centrs
 sideLength: \sqrt{Aera} ,Aera is fixed for one sideLength wrt. angleD
 """
-config.ANCHOR_angleD=(0,60,-60) #(-60,)#  # degree
+config.ANCHOR_angleD=(0,) #(-60,)#  # degree
 config.ANCHOR_HoW=(2, .5, 1)   #(3,)#     #   rh over rw
-config.ANCHOR_sideLength=(90,60,130)
+config.ANCHOR_sideLength=(64,128,256)
 config.ANCHOR_stride =None#  deprecated, calculated in angleIter.py automatically  240#16# (250,250)#
 
 config.class_num=2   # only building and background
@@ -65,7 +65,7 @@ config.it.mean=[123.68, 116.28, 103.53]
 
 
 config.train=edict()
-config.train.ctx = mx.gpu(2)#mx.cpu()
+config.train.ctx = mx.gpu(3)#mx.cpu()
 config.train.iou_x_num=10     # referenced by angleIter.py
 config.train.THRESHOLD_OBJECT=.65#65#  # ref by  angleIter.py
 config.train.THRESHOLD_BACKGD =.3#55#
@@ -81,7 +81,7 @@ config.train.wd=0#1E-5
 config.train.momentum=.6
 config.train.mult_lr= .01
 config.train.l1_smooth_sclr = 3. # ref by mx.sym.smooth_l1
-config.train.clip_gradient=None#1#.1#None#None#
+config.train.clip_gradient=1#None#.1#None#None#
 
 config.train.timeStamp=time.asctime()
 config.train.outputPath='../output/'
@@ -101,7 +101,8 @@ config.type_num = len(config.ANCHOR_HoW)*len(config.ANCHOR_angleD)*len(config.AN
 
 
 config.predict=edict()
-config.predict.ctx=mx.cpu()#mx.gpu(0)
+config.predict.ctx=mx.cpu()#mx.gpu(3)##
+config.predict.nms_ctx = mx.gpu(3)
 
 LOGFMT = '%(levelname)s: %(asctime)s %(filename)s [line: %(lineno)d]  %(message)s'
 

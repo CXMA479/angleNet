@@ -147,13 +147,14 @@ class Viewer(object):
     self.predict_transfered_bbox = self.predict_transfered_bbox[pick_idx,:]
     self.predict_score           = self.predict_score[pick_idx,:]
 
-  def view(self,filter_th,iou_th,block=False, onlyneed_box=False):
+  def view(self,filter_th,iou_th,block=False, onlyneed_box=False,\
+            quiet_model=False):
     #assert 0 < filter_th < 1
     #print self.raw_predict_bbox.shape, self.anchor.shape
 #    print self.mod.get_outputs()[0].context
 #    assert 0
     self.indx = mx_nms(self.predict_bbox, None, self.predict_score,\
-             self.predict_transfered_bbox, iou_th,score_thresh=filter_th,ctx=cfg.predict.ctx)#, min_area=0, max_area=np.inf)
+             self.predict_transfered_bbox, iou_th,score_thresh=filter_th,ctx=cfg.predict.nms_ctx)#, min_area=0, max_area=np.inf)
     
     # predict_score.shape :  1 x num x 2
 
@@ -161,15 +162,17 @@ class Viewer(object):
     print('num of indexed bbox: %d'%len(self.indx))
     self.filter_transfered_bbox = self.predict_transfered_bbox[self.indx,:]
     if onlyneed_box:
-        score = self.predict_score
-        score = score.asnumpy()[0] if not isinstance(score,np.ndarray) else score
-        score = score[self.indx,1:2]
-        return np.concatenate( [self.filter_transfered_bbox, score], axis=1)
+      score = self.predict_score
+      score = score.asnumpy()[0] if not isinstance(score,np.ndarray) else score
+      score = score[self.indx,1:2]
+      return np.concatenate( [self.filter_transfered_bbox, score], axis=1)
     img = self.img
 
     # nms...
 
-    self.view_img = tool.draw_angleBox(img, self.filter_transfered_bbox.astype(np.float),(0,255,0))
+    self.view_img = tool.draw_angleBox(img, self.filter_transfered_bbox.astype(np.float),(253,0, 253))
+    if quiet_model:
+      return
 #    plt.figure()
     plt.imshow(self.view_img)
     plt.title(self.imgname)

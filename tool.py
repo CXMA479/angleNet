@@ -201,7 +201,7 @@ def draw_angleBox(img,anchor,color, line_width=2):
   """
                 img   : H x W x 3 , RGB
                 anchor: N x 5     , x,y,alphaR,rh,rw
-                color: [r,g,b]
+                color: [b.g.r]
   """
 
   retImg=cv2.cvtColor(img,cv2.COLOR_RGB2BGR)

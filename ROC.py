@@ -1,10 +1,14 @@
+assert 0,'this file is deprecated, use voc_eval.py instead.'
+
+
 from sklearn import metrics
 import numpy as np
 import os
 import matplotlib.pyplot as plt
 
 
-txt_dir = '../data/metric/iou-prob'
+txt_dir = '../data/metric/iou-prob-Jun-15'
+delimiter='\t'
 outdir = txt_dir
 iou_th=.5
 
@@ -32,10 +36,15 @@ for model_type in model_type_list:
     plt.axis('equal')
     plt.title(model_type+'PR')
     savename_roc = os.path.join(outdir,model_type+'-ROC.txt')
-    np.savetxt(savename_roc , np.array([fpr,tpr]).T )
+    mat = np.array([fpr,tpr]).T
+#    print mat
+
+    np.savetxt(savename_roc , mat, delimiter=delimiter )
 
     savename_pr = os.path.join(outdir,model_type+'-PR.txt')
-    np.savetxt(savename_pr , np.array([recall, precise]).T )
+    mat = np.array([recall, precise]).T
+    mat = mat[::-1,:]
+    np.savetxt(savename_pr , mat, delimiter=delimiter )
 plt.legend()
 plt.show()
 

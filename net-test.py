@@ -13,7 +13,7 @@ symbol_mod, fixed_param_names = gen_symbol()
 it=angleIter(symbol_mod)#'../../data/angleList.txt','../../data/img',1,100)
 d=it.next()
 d0=d
-#viz_bbox_gdt(it.raw_img, it.anchor, d0.label[1].asnumpy(), d0.data[2].asnumpy(),show_num=None )
+viz_bbox_gdt(it.raw_img, it.anchor, d0.label[1].asnumpy(), d0.data[2].asnumpy(),show_num=None )
 
 
 mA_acc=mx.metric.create('acc') #mx.metric.CustomMetric(angleMetric)

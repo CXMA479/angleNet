@@ -1,5 +1,5 @@
 import matplotlib
-matplotlib.use('Qt4Agg')
+#matplotlib.use('Qt4Agg')
 import matplotlib.pyplot as plt
 import mxnet as mx
 import os,sys

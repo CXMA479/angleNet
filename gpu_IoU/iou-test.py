@@ -133,8 +133,8 @@ R1=np.array([10,5,np.deg2rad(60),80,40])
 R2=np.array([5,5,np.deg2rad(45),60,30])
 
 
+#iou = gpu_IoU.gpu_it_IoU
 
-iou_v = iou(R1,R2,10)
 
 
 
@@ -142,16 +142,20 @@ iou_v = iou(R1,R2,10)
 
 #R1=np.array([720.,480.,-1.04719755,69.2820323,23.09401077])
 #R2=np.array([7.08000000e+02,4.82000000e+02,-1.11225998e+00,5.10000000e+01,1.60000000e+01])
-
+print cp2p(R1[:2],R1[2],R1[3],R1[4])
+print cp2p(R2[:2],R2[2],R2[3],R2[4])
+#assert 0
 drawAngleBox(cp2p(R1[:2],R1[2],R1[3],R1[4]))
 drawAngleBox(cp2p(R2[:2],R2[2],R2[3],R2[4]),'green')
 plt.xlabel('$x$')
 plt.ylabel('$y$')
+#iou_v = iou(R1.reshape((-1,5)),R2.reshape((-1,5)),10)
 iou_v = iou(R1,R2,10)
 plt.title(iou_v)
 plt.show(block=False)
 
-
+s=raw_input()
+assert 0
 
 plt.figure()
 R1=np.array([10,5,np.deg2rad(60-60),80,40])
